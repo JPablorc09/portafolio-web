@@ -1,0 +1,251 @@
+<main class="skills-page">
+
+  <section class="skills-hero">
+    <div class="skills-container">
+
+      <div class="skills-hero__content">
+        <span class="skills-eyebrow">
+          Conocimientos técnicos
+        </span>
+
+        <h1>
+          Habilidades para desarrollar
+          <span>soluciones completas</span>
+        </h1>
+
+        <p>
+          Tecnologías y competencias adquiridas mediante formación académica,
+          experiencia en soporte técnico y desarrollo de proyectos web
+          orientados a necesidades reales.
+        </p>
+
+        <div class="skills-hero__actions">
+          <a
+            class="button button--primary"
+            href="#technical-skills"
+          >
+            Ver habilidades
+          </a>
+
+          <a
+            class="button button--secondary"
+            routerLink="/proyectos"
+          >
+            Ver proyectos
+          </a>
+        </div>
+      </div>
+
+      <div class="skills-hero__summary">
+
+        <article class="summary-card">
+          <span class="summary-card__number">
+            {{ categories.length }}
+          </span>
+
+          <div>
+            <strong>Áreas técnicas</strong>
+            <p>
+              Desarrollo, datos, integraciones e infraestructura.
+            </p>
+          </div>
+        </article>
+
+        <article class="summary-card">
+          <span class="summary-card__number">
+            {{ totalSkills }}
+          </span>
+
+          <div>
+            <strong>Tecnologías y competencias</strong>
+            <p>
+              Herramientas utilizadas en formación y proyectos.
+            </p>
+          </div>
+        </article>
+
+        <article class="summary-card">
+          <span class="summary-card__number">
+            FS
+          </span>
+
+          <div>
+            <strong>Perfil Full Stack</strong>
+            <p>
+              Experiencia desde la interfaz hasta la base de datos.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section
+    id="technical-skills"
+    class="skills-section"
+    aria-labelledby="skills-title"
+  >
+    <div class="skills-container">
+
+      <div class="section-heading">
+        <div>
+          <span class="skills-eyebrow">
+            Stack tecnológico
+          </span>
+
+          <h2 id="skills-title">
+            Competencias técnicas
+          </h2>
+        </div>
+
+        <p>
+          Las habilidades están organizadas según su área de aplicación.
+          Los niveles indican el grado de uso dentro de mi formación,
+          experiencia y proyectos desarrollados.
+        </p>
+      </div>
+
+      <div class="skills-categories">
+        @for (
+          category of categories;
+          track category.id
+        ) {
+          <article class="skill-category">
+
+            <header class="skill-category__header">
+              <div class="skill-category__icon" aria-hidden="true">
+                {{ category.icon }}
+              </div>
+
+              <div>
+                <h3>
+                  {{ category.title }}
+                </h3>
+
+                <p>
+                  {{ category.subtitle }}
+                </p>
+              </div>
+            </header>
+
+            <div class="skill-category__grid">
+              @for (
+                skill of category.skills;
+                track skill.name
+              ) {
+                <div class="skill-item">
+
+                  <div class="skill-item__heading">
+                    <h4>
+                      {{ skill.name }}
+                    </h4>
+
+                    <span
+                      class="skill-level"
+                      [class.skill-level--principal]="
+                        skill.level === 'Principal'
+                      "
+                      [class.skill-level--intermediate]="
+                        skill.level === 'Intermedio'
+                      "
+                      [class.skill-level--complementary]="
+                        skill.level === 'Complementario'
+                      "
+                    >
+                      {{ skill.level }}
+                    </span>
+                  </div>
+
+                  <p>
+                    {{ skill.description }}
+                  </p>
+
+                </div>
+              }
+            </div>
+
+          </article>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <section class="strengths-section">
+    <div class="skills-container">
+
+      <div class="section-heading section-heading--center">
+        <div>
+          <span class="skills-eyebrow">
+            Competencias profesionales
+          </span>
+
+          <h2>
+            Más allá de la tecnología
+          </h2>
+        </div>
+
+        <p>
+          Capacidades que complementan el conocimiento técnico y facilitan
+          el desarrollo de soluciones orientadas a personas y procesos.
+        </p>
+      </div>
+
+      <div class="strengths-grid">
+        @for (
+          strength of strengths;
+          track strength.title
+        ) {
+          <article class="strength-card">
+            <span class="strength-card__icon">
+              {{ strength.icon }}
+            </span>
+
+            <h3>
+              {{ strength.title }}
+            </h3>
+
+            <p>
+              {{ strength.description }}
+            </p>
+          </article>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <section class="skills-cta">
+    <div class="skills-container">
+
+      <div class="skills-cta__content">
+        <div>
+          <span class="skills-eyebrow">
+            Aplicación práctica
+          </span>
+
+          <h2>
+            Conozca cómo aplico estas habilidades en proyectos reales.
+          </h2>
+
+          <p>
+            Explore sistemas web, integraciones empresariales, procesamiento
+            de datos y soluciones desarrolladas con estas tecnologías.
+          </p>
+        </div>
+
+        <a
+          class="button button--light"
+          routerLink="/proyectos"
+        >
+          Explorar proyectos
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</main>

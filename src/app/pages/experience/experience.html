@@ -1,0 +1,153 @@
+<section class="experience-hero">
+  <div class="experience-hero__glow experience-hero__glow--one"></div>
+  <div class="experience-hero__glow experience-hero__glow--two"></div>
+
+  <div class="container experience-hero__container">
+    <div class="experience-hero__content">
+      <span class="experience-hero__eyebrow">
+        Experiencia profesional
+      </span>
+
+      <h1>
+        Soporte técnico, desarrollo de sistemas e integración de soluciones.
+      </h1>
+
+      <p>
+        Mi experiencia combina atención a usuarios, resolución de incidentes,
+        desarrollo de aplicaciones, bases de datos, APIs y publicación de
+        sistemas en entornos empresariales.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="experience-summary section">
+  <div class="container">
+    <div class="experience-summary__grid">
+      @for (highlight of highlights; track highlight.label) {
+        <article class="experience-summary__card">
+          <strong>{{ highlight.value }}</strong>
+          <span>{{ highlight.label }}</span>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="timeline-section section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-heading__eyebrow">
+        Trayectoria
+      </span>
+
+      <h2>
+        Experiencia laboral y proyectos relevantes
+      </h2>
+
+      <p>
+        Una visión general de las responsabilidades, soluciones y tecnologías
+        que he utilizado.
+      </p>
+    </div>
+
+    <div class="timeline">
+      @for (experience of experiences; track experience.position) {
+        <article class="timeline-item">
+          <div class="timeline-item__marker">
+            <span></span>
+          </div>
+
+          <div class="timeline-item__date">
+            <span>{{ experience.period }}</span>
+          </div>
+
+          <div class="timeline-item__card card">
+            <div class="timeline-item__header">
+              <div>
+                <span
+                  class="timeline-item__type"
+                  [class.timeline-item__type--project]="
+                    experience.type === 'proyecto'
+                  "
+                >
+                  {{
+                    experience.type === 'laboral'
+                      ? 'Experiencia laboral'
+                      : 'Proyecto relevante'
+                  }}
+                </span>
+
+                <h3>{{ experience.position }}</h3>
+
+                <div class="timeline-item__company">
+                  <strong>{{ experience.company }}</strong>
+                  <span>{{ experience.location }}</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="timeline-item__description">
+              {{ experience.description }}
+            </p>
+
+            <div class="timeline-item__content">
+              <div>
+                <h4>Responsabilidades y aportes</h4>
+
+                <ul>
+                  @for (
+                    responsibility of experience.responsibilities;
+                    track responsibility
+                  ) {
+                    <li>
+                      <span></span>
+                      {{ responsibility }}
+                    </li>
+                  }
+                </ul>
+              </div>
+
+              <div class="timeline-item__technologies">
+                <h4>Tecnologías utilizadas</h4>
+
+                <div>
+                  @for (
+                    technology of experience.technologies;
+                    track technology
+                  ) {
+                    <span>{{ technology }}</span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="experience-cta section">
+  <div class="container">
+    <div class="experience-cta__card">
+      <div>
+        <span>Experiencia aplicada</span>
+
+        <h2>
+          Cada proyecto me ha permitido fortalecer mis conocimientos técnicos.
+        </h2>
+
+        <p>
+          He trabajado en soluciones relacionadas con soporte, gestión de
+          incidentes, monitoreo, inventario, bases de datos e integración de
+          plataformas empresariales.
+        </p>
+      </div>
+
+      <a routerLink="/proyectos" class="button button--primary">
+        Ver proyectos
+      </a>
+    </div>
+  </div>
+</section>

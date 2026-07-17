@@ -1,0 +1,70 @@
+<article class="project-card">
+
+  <a
+    class="project-card__image-container"
+    [routerLink]="['/proyectos', project.id]"
+    [attr.aria-label]="'Ver proyecto ' + project.title"
+  >
+    <img
+      class="project-card__image"
+      [src]="project.image"
+      [alt]="'Vista previa del proyecto ' + project.title"
+      loading="lazy"
+      (error)="imageError($event)"
+    />
+
+    <div class="project-card__overlay">
+      <span>Ver proyecto</span>
+    </div>
+  </a>
+
+  <div class="project-card__content">
+
+    <span class="project-card__category">
+      {{ project.category }}
+    </span>
+
+    <h3 class="project-card__title">
+      <a [routerLink]="['/proyectos', project.id]">
+        {{ project.title }}
+      </a>
+    </h3>
+
+    <p class="project-card__description">
+      {{ project.shortDescription }}
+    </p>
+
+    <div
+      class="project-card__technologies"
+      aria-label="Tecnologías utilizadas"
+    >
+      @for (
+        technology of project.technologies.slice(0, 5);
+        track technology
+      ) {
+        <span class="project-card__technology">
+          {{ technology }}
+        </span>
+      }
+
+      @if (project.technologies.length > 5) {
+        <span
+          class="project-card__technology
+                 project-card__technology--more"
+        >
+          +{{ project.technologies.length - 5 }}
+        </span>
+      }
+    </div>
+
+    <a
+      class="project-card__link"
+      [routerLink]="['/proyectos', project.id]"
+    >
+      Ver caso de estudio
+      <span aria-hidden="true">→</span>
+    </a>
+
+  </div>
+
+</article>

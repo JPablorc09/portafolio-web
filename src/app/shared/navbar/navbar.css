@@ -1,0 +1,131 @@
+:host {
+  display: block;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  background: rgba(8, 15, 30, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.navbar__container {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 76px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f8fafc;
+  text-decoration: none;
+}
+
+.navbar__logo {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.navbar__identity {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__identity strong {
+  font-size: 0.95rem;
+}
+
+.navbar__identity small {
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar__links a {
+  position: relative;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar__links a:hover,
+.navbar__links a.active {
+  color: #38bdf8;
+}
+
+.navbar__contact {
+  padding: 11px 18px;
+  border-radius: 10px;
+  background: #0284c7;
+  color: #ffffff !important;
+}
+
+.navbar__toggle {
+  display: none;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.navbar__toggle span {
+  width: 25px;
+  height: 2px;
+  display: block;
+  margin: 5px 0;
+  background: #f8fafc;
+}
+
+@media (max-width: 900px) {
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__links {
+    position: absolute;
+    top: 76px;
+    right: 20px;
+    left: 20px;
+    display: none;
+    padding: 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    border-radius: 18px;
+    background: #0f172a;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  }
+
+  .navbar__links--open {
+    display: flex;
+  }
+
+  .navbar__links a {
+    padding: 8px;
+  }
+
+  .navbar__contact {
+    text-align: center;
+  }
+}

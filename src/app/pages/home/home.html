@@ -1,0 +1,119 @@
+<section class="hero">
+  <div class="hero__glow hero__glow--one"></div>
+  <div class="hero__glow hero__glow--two"></div>
+
+  <div class="container hero__container">
+    <div class="hero__content">
+      <div class="hero__status">
+        <span></span>
+        Disponible para nuevas oportunidades
+      </div>
+
+      <p class="hero__eyebrow">Ingeniero de Sistemas</p>
+
+      <h1>
+        Hola, soy
+        <span>Juan Pablo Rojas</span>
+      </h1>
+
+      <h2>
+        Desarrollo soluciones web que conectan tecnología, procesos y usuarios.
+      </h2>
+
+      <p class="hero__description">
+        Tengo experiencia en soporte técnico y desarrollo de aplicaciones
+        utilizando Angular, ASP.NET Core, SQL Server e integración de APIs.
+        Me enfoco en crear sistemas funcionales, seguros y fáciles de utilizar.
+      </p>
+
+      <div class="hero__actions">
+        <a routerLink="/proyectos" class="button button--primary">
+          Ver mis proyectos
+        </a>
+
+        <a
+          href="/assets/documents/CV_Juan_Pablo_Rojas_Contreras.pdf"
+          download="CV_Juan_Pablo_Rojas_Contreras.pdf"
+          rel="noopener"
+          class="button button--outline"
+        >
+          Descargar CV
+        </a>
+      </div>
+
+      <div class="hero__technologies">
+        @for (technology of technologies; track technology) {
+          <span>{{ technology }}</span>
+        }
+      </div>
+    </div>
+
+    <aside class="hero__visual">
+      <div class="profile-card card">
+        <div class="profile-card__image">
+          <span>JP</span>
+        </div>
+
+        <div class="profile-card__body">
+          <small>Perfil profesional</small>
+          <h3>Desarrollo Full Stack</h3>
+          <p>
+            Aplicaciones empresariales, bases de datos, APIs y soporte técnico.
+          </p>
+        </div>
+
+        <div class="profile-card__code">
+          <div>
+            <span>const</span>
+            <strong>developer</strong> = &#123;
+          </div>
+          <div class="profile-card__indent">
+            frontend: <em>'Angular'</em>,
+          </div>
+          <div class="profile-card__indent">
+            backend: <em>'ASP.NET Core'</em>,
+          </div>
+          <div class="profile-card__indent">
+            database: <em>'SQL Server'</em>
+          </div>
+          <div>&#125;;</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="container hero__statistics">
+    @for (statistic of statistics; track statistic.label) {
+      <article>
+        <strong>{{ statistic.value }}</strong>
+        <span>{{ statistic.label }}</span>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="introduction section">
+  <div class="container introduction__grid">
+    <div class="section-heading">
+      <span class="section-heading__eyebrow">Mi enfoque</span>
+
+      <h2>
+        Convierto necesidades operativas en soluciones tecnológicas.
+      </h2>
+    </div>
+
+    <div class="introduction__content">
+      <p>
+        Mi experiencia combina soporte técnico, programación, bases de datos,
+        redes y administración de aplicaciones. Esto me permite comprender
+        tanto las necesidades del usuario como los aspectos técnicos de una
+        solución.
+      </p>
+
+      <a routerLink="/sobre-mi">
+        Conocer más sobre mi perfil
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>

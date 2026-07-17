@@ -1,0 +1,377 @@
+<main class="contact-page">
+
+  <!-- HERO -->
+
+  <section class="contact-hero">
+    <div class="contact-container">
+
+      <div class="contact-hero__content">
+
+        <span class="contact-eyebrow">
+          Contacto profesional
+        </span>
+
+        <h1>
+          Conversemos sobre su próxima
+          <span>solución tecnológica</span>
+        </h1>
+
+        <p>
+          Estoy disponible para oportunidades laborales, proyectos de
+          desarrollo web, integración de sistemas, soporte técnico y
+          soluciones empresariales.
+        </p>
+
+        <div class="contact-hero__actions">
+
+          <a
+            class="button button--primary"
+            [href]="'mailto:' + email"
+          >
+            Enviar correo
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <a
+            class="button button--secondary"
+            routerLink="/proyectos"
+          >
+            Ver proyectos
+          </a>
+
+          <button
+            class="button button--ghost"
+            type="button"
+            (click)="downloadCv()"
+          >
+            Descargar CV
+          </button>
+
+        </div>
+
+      </div>
+
+      <aside class="contact-hero__panel">
+
+        <div class="availability-status">
+          <span class="availability-status__indicator"></span>
+
+          <div>
+            <strong>Disponible para oportunidades</strong>
+            <p>
+              Desarrollo, soporte técnico e integraciones.
+            </p>
+          </div>
+        </div>
+
+        <div class="availability-list">
+
+          @for (
+            item of availability;
+            track item.label
+          ) {
+            <div class="availability-item">
+              <span>
+                {{ item.label }}
+              </span>
+
+              <strong>
+                {{ item.value }}
+              </strong>
+            </div>
+          }
+
+        </div>
+
+        <a
+          class="contact-hero__email"
+          [href]="'mailto:' + email"
+        >
+          <span>@</span>
+
+          <div>
+            <small>Correo electrónico</small>
+            <strong>{{ email }}</strong>
+          </div>
+        </a>
+
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- INFORMACIÓN DE CONTACTO -->
+
+  <section
+    class="contact-information"
+    aria-labelledby="contact-information-title"
+  >
+    <div class="contact-container">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="contact-eyebrow">
+            Información de contacto
+          </span>
+
+          <h2 id="contact-information-title">
+            Formas de comunicarse conmigo
+          </h2>
+        </div>
+
+        <p>
+          Puede utilizar el correo electrónico o mis perfiles profesionales
+          para conversar sobre oportunidades, proyectos o colaboración.
+        </p>
+
+      </div>
+
+      <div class="contact-cards">
+
+        @for (
+          card of contactCards;
+          track card.title
+        ) {
+          <article class="contact-card">
+
+            <div class="contact-card__icon">
+              {{ card.icon }}
+            </div>
+
+            <div class="contact-card__content">
+
+              <span class="contact-card__title">
+                {{ card.title }}
+              </span>
+
+              <h3>
+                {{ card.value }}
+              </h3>
+
+              <p>
+                {{ card.description }}
+              </p>
+
+              @if (card.action) {
+                <a
+                  class="contact-card__action"
+                  [href]="card.action"
+                  [attr.target]="card.external ? '_blank' : null"
+                  [attr.rel]="
+                    card.external
+                      ? 'noopener noreferrer'
+                      : null
+                  "
+                >
+                  {{ card.actionLabel }}
+                  <span aria-hidden="true">→</span>
+                </a>
+              } @else {
+                <span class="contact-card__action contact-card__action--disabled">
+                  {{ card.actionLabel }}
+                </span>
+              }
+
+            </div>
+
+          </article>
+        }
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REDES PROFESIONALES -->
+
+  <section class="social-section">
+    <div class="contact-container">
+
+      <div class="social-section__content">
+
+        <div>
+          <span class="contact-eyebrow">
+            Perfiles profesionales
+          </span>
+
+          <h2>
+            También puede encontrarme aquí
+          </h2>
+
+          <p>
+            Consulte mi experiencia, proyectos y actividad profesional
+            mediante estas plataformas.
+          </p>
+        </div>
+
+        <div class="social-links">
+
+          @for (
+            social of socialLinks;
+            track social.name
+          ) {
+            <a
+              class="social-link"
+              [href]="social.url"
+              [attr.target]="
+                social.url.startsWith('http')
+                  ? '_blank'
+                  : null
+              "
+              [attr.rel]="
+                social.url.startsWith('http')
+                  ? 'noopener noreferrer'
+                  : null
+              "
+            >
+
+              <span class="social-link__icon">
+                {{ social.icon }}
+              </span>
+
+              <div>
+                <strong>
+                  {{ social.name }}
+                </strong>
+
+                <span>
+                  {{ social.username }}
+                </span>
+              </div>
+
+              <span
+                class="social-link__arrow"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+
+            </a>
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUÉ PUEDO APORTAR -->
+
+  <section class="contributions-section">
+    <div class="contact-container">
+
+      <div class="section-heading section-heading--center">
+
+        <div>
+          <span class="contact-eyebrow">
+            Propuesta profesional
+          </span>
+
+          <h2>
+            ¿Qué puedo aportar?
+          </h2>
+        </div>
+
+        <p>
+          Conocimientos técnicos y experiencia práctica orientados al
+          desarrollo, mantenimiento e integración de soluciones.
+        </p>
+
+      </div>
+
+      <div class="contributions-grid">
+
+        @for (
+          contribution of contributions;
+          track contribution.number
+        ) {
+          <article class="contribution-card">
+
+            <span class="contribution-card__number">
+              {{ contribution.number }}
+            </span>
+
+            <h3>
+              {{ contribution.title }}
+            </h3>
+
+            <p>
+              {{ contribution.description }}
+            </p>
+
+            <div class="contribution-card__technologies">
+
+              @for (
+                technology of contribution.technologies;
+                track technology
+              ) {
+                <span>
+                  {{ technology }}
+                </span>
+              }
+
+            </div>
+
+          </article>
+        }
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+
+  <section class="contact-cta">
+    <div class="contact-container">
+
+      <div class="contact-cta__content">
+
+        <div class="contact-cta__message">
+
+          <span class="contact-eyebrow">
+            ¿Tiene una oportunidad o proyecto?
+          </span>
+
+          <h2>
+            Estoy listo para conocer nuevos retos.
+          </h2>
+
+          <p>
+            Puede escribirme para conversar sobre oportunidades de empleo,
+            desarrollo de software, soporte técnico o integración de sistemas.
+          </p>
+
+        </div>
+
+        <div class="contact-cta__actions">
+
+          <a
+            class="button button--light"
+            [href]="
+              'mailto:' +
+              email +
+              '?subject=Contacto%20desde%20el%20portafolio'
+            "
+          >
+            Enviar correo
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <a
+            class="button button--outline-light"
+            routerLink="/proyectos"
+          >
+            Ver proyectos
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>

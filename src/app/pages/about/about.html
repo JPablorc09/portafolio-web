@@ -1,0 +1,185 @@
+<section class="about-hero">
+  <div class="about-hero__glow about-hero__glow--one"></div>
+  <div class="about-hero__glow about-hero__glow--two"></div>
+
+  <div class="container about-hero__container">
+    <div class="about-hero__content">
+      <span class="about-hero__eyebrow">Sobre mí</span>
+
+      <h1>
+        Tecnología, soporte y desarrollo enfocados en resolver problemas reales.
+      </h1>
+
+      <p>
+        Soy Ingeniero de Sistemas con experiencia en soporte técnico,
+        desarrollo de aplicaciones web e integración de sistemas
+        empresariales.
+      </p>
+    </div>
+
+    <div class="about-hero__badge">
+      <span class="about-hero__badge-icon">JP</span>
+
+      <div>
+        <small>Perfil profesional</small>
+        <strong>Desarrollador Full Stack</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-profile section">
+  <div class="container about-profile__grid">
+    <article class="about-profile__content">
+      <div class="section-heading">
+        <span class="section-heading__eyebrow">
+          Mi perfil
+        </span>
+
+        <h2>
+          Desarrollo soluciones que conectan usuarios, procesos y tecnología.
+        </h2>
+      </div>
+
+      <div class="about-profile__text">
+        <p>
+          Durante mi experiencia profesional he trabajado en soporte técnico,
+          desarrollo de aplicaciones internas, manejo de bases de datos,
+          integración de APIs y publicación de sistemas en servidores IIS.
+        </p>
+
+        <p>
+          He desarrollado soluciones con Angular, ASP.NET Core MVC,
+          ASP.NET Core Web API, SQL Server y Entity Framework Core,
+          incluyendo sistemas de incidentes, ventas, inventario,
+          monitoreo e integración con Aranda Service Management.
+        </p>
+
+        <p>
+          Mi enfoque se basa en comprender la necesidad del usuario,
+          analizar el proceso y construir una solución estable,
+          segura y fácil de utilizar.
+        </p>
+      </div>
+
+      <div class="about-profile__actions">
+        <a
+          href="/assets/documents/CV_Juan_Pablo_Rojas_Contreras.pdf"
+          download="CV_Juan_Pablo_Rojas_Contreras.pdf"
+          rel="noopener"
+          class="button button--outline"
+        >
+          Descargar CV
+        </a>
+
+        <a href="mailto:juanparojasc1999@gmail.com"
+           class="button button--outline">
+          Contactarme
+        </a>
+      </div>
+    </article>
+
+    <aside class="about-profile__card card">
+      <div class="about-profile__card-header">
+        <span>Información profesional</span>
+      </div>
+
+      <div class="about-profile__details">
+        @for (detail of professionalDetails; track detail.label) {
+          <div class="about-profile__detail">
+            <small>{{ detail.label }}</small>
+            <strong>{{ detail.value }}</strong>
+          </div>
+        }
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="strengths section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-heading__eyebrow">
+        Mi enfoque profesional
+      </span>
+
+      <h2>
+        Áreas en las que puedo aportar valor
+      </h2>
+
+      <p>
+        Mi experiencia combina desarrollo, soporte, infraestructura
+        e integración de sistemas.
+      </p>
+    </div>
+
+    <div class="strengths__grid">
+      @for (strength of strengths; track strength.title) {
+        <article class="strength-card card">
+          <div class="strength-card__number">
+            0{{ $index + 1 }}
+          </div>
+
+          <h3>{{ strength.title }}</h3>
+
+          <p>{{ strength.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="technologies section">
+  <div class="container technologies__container">
+    <div class="section-heading">
+      <span class="section-heading__eyebrow">
+        Tecnologías
+      </span>
+
+      <h2>
+        Herramientas y conocimientos técnicos
+      </h2>
+
+      <p>
+        Tecnologías que he utilizado durante mi formación,
+        proyectos y experiencia profesional.
+      </p>
+    </div>
+
+    <div class="technologies__list">
+      @for (technology of technologies; track technology.name) {
+        <article class="technology-chip">
+          <span>{{ technology.name }}</span>
+          <small>{{ technology.category }}</small>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="about-cta section">
+  <div class="container">
+    <div class="about-cta__card">
+      <div>
+        <span class="about-cta__eyebrow">
+          Nuevas oportunidades
+        </span>
+
+        <h2>
+          Estoy preparado para seguir aprendiendo y aportar en nuevos proyectos.
+        </h2>
+
+        <p>
+          Busco oportunidades donde pueda aplicar mis conocimientos
+          en desarrollo, soporte técnico, bases de datos e integración
+          de sistemas.
+        </p>
+      </div>
+
+      <a href="mailto:juanparojasc1999@gmail.com"
+         class="button button--primary">
+        Enviar correo
+      </a>
+    </div>
+  </div>
+</section>

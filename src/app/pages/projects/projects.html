@@ -1,0 +1,160 @@
+<main class="projects-page">
+
+  <section class="projects-hero">
+    <div class="projects-container">
+
+      <div class="projects-hero__content">
+        <span class="projects-hero__eyebrow">
+          Portafolio profesional
+        </span>
+
+        <h1 class="projects-hero__title">
+          Proyectos que convierten necesidades en
+          <span>soluciones funcionales</span>
+        </h1>
+
+        <p class="projects-hero__description">
+          Una selección de sistemas web, integraciones empresariales y
+          soluciones de procesamiento de datos desarrolladas con Angular,
+          ASP.NET Core, SQL Server y otras tecnologías.
+        </p>
+
+        <div class="projects-hero__actions">
+          <a
+            class="button button--primary"
+            href="#project-list"
+          >
+            Explorar proyectos
+          </a>
+
+          <a
+            class="button button--secondary"
+            routerLink="/contacto"
+          >
+            Contactarme
+          </a>
+        </div>
+      </div>
+
+      <div class="projects-hero__summary">
+
+        <article class="summary-card">
+          <div class="summary-card__icon" aria-hidden="true">
+            01
+          </div>
+
+          <div>
+            <strong>{{ projects.length }}</strong>
+            <span>Proyectos principales</span>
+          </div>
+        </article>
+
+        <article class="summary-card">
+          <div class="summary-card__icon" aria-hidden="true">
+            FS
+          </div>
+
+          <div>
+            <strong>Full Stack</strong>
+            <span>Frontend, backend y base de datos</span>
+          </div>
+        </article>
+
+        <article class="summary-card">
+          <div class="summary-card__icon" aria-hidden="true">
+            TI
+          </div>
+
+          <div>
+            <strong>Empresarial</strong>
+            <span>Soluciones orientadas a procesos reales</span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section
+    id="project-list"
+    class="projects-section"
+    aria-labelledby="projects-title"
+  >
+    <div class="projects-container">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-heading__eyebrow">
+            Casos de estudio
+          </span>
+
+          <h2 id="projects-title">
+            Proyectos destacados
+          </h2>
+        </div>
+
+        <p>
+          Cada proyecto presenta el problema atendido, la solución
+          implementada, las tecnologías utilizadas y los principales
+          aprendizajes obtenidos durante su desarrollo.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        @for (project of projects; track project.id) {
+          <app-project-card
+            [project]="project"
+          />
+        } @empty {
+          <div class="projects-empty">
+            <span class="projects-empty__icon" aria-hidden="true">
+              &lt;/&gt;
+            </span>
+
+            <h3>No hay proyectos disponibles</h3>
+
+            <p>
+              Los proyectos aparecerán aquí cuando se agreguen al portafolio.
+            </p>
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <section class="projects-cta">
+    <div class="projects-container">
+
+      <div class="projects-cta__content">
+
+        <div class="projects-cta__text">
+          <span class="projects-cta__eyebrow">
+            ¿Tiene un proyecto en mente?
+          </span>
+
+          <h2>
+            Conversemos sobre cómo convertirlo en una solución tecnológica.
+          </h2>
+
+          <p>
+            Estoy interesado en oportunidades relacionadas con desarrollo
+            web, soporte técnico, integración de sistemas y bases de datos.
+          </p>
+        </div>
+
+        <a
+          class="button button--light"
+          routerLink="/contacto"
+        >
+          Iniciar conversación
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>

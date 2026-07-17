@@ -1,1 +1,151 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --background: #080f1e;
+  --surface: #0f172a;
+  --surface-light: #162033;
+  --primary: #38bdf8;
+  --primary-dark: #0284c7;
+  --secondary: #2563eb;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: rgba(148, 163, 184, 0.15);
+  --container: 1180px;
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(37, 99, 235, 0.15),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(56, 189, 248, 0.1),
+      transparent 25%
+    ),
+    var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.15;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+.section-heading__eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin-bottom: 16px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.section-heading p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.button {
+  min-height: 48px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+  color: #ffffff;
+}
+
+.button--outline {
+  border-color: var(--border);
+  background: rgba(15, 23, 42, 0.55);
+  color: var(--text);
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(15, 23, 42, 0.7);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 72px 0;
+  }
+}

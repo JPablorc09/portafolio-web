@@ -1,0 +1,137 @@
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-main">
+
+      <section class="footer-brand">
+        <a
+          class="footer-brand__logo"
+          routerLink="/"
+          aria-label="Ir a la página de inicio"
+        >
+          <span>JP</span>
+
+          <div>
+            <strong>Juan Pablo Rojas</strong>
+            <small>Ingeniero de Sistemas</small>
+          </div>
+        </a>
+
+        <p>
+          Desarrollo de aplicaciones web, integración de sistemas,
+          soporte técnico y soluciones empresariales.
+        </p>
+
+        <div class="footer-availability">
+          <span class="footer-availability__indicator"></span>
+
+          <span>
+            Disponible para oportunidades profesionales
+          </span>
+        </div>
+      </section>
+
+      <section class="footer-column">
+        <h2>Navegación</h2>
+
+        <nav aria-label="Navegación del pie de página">
+          @for (
+            link of navigationLinks;
+            track link.route
+          ) {
+            <a [routerLink]="link.route">
+              {{ link.label }}
+            </a>
+          }
+        </nav>
+      </section>
+
+      <section class="footer-column">
+        <h2>Contacto</h2>
+
+        <div class="footer-contact">
+          <a href="mailto:juanparojasc1999@gmail.com">
+            <span>@</span>
+
+            <div>
+              <small>Correo</small>
+              <strong>juanparojasc1999@gmail.com</strong>
+            </div>
+          </a>
+
+          <div class="footer-contact__item">
+            <span>CR</span>
+
+            <div>
+              <small>Ubicación</small>
+              <strong>Costa Rica</strong>
+            </div>
+          </div>
+
+          <div class="footer-contact__item">
+            <span>TI</span>
+
+            <div>
+              <small>Perfil</small>
+              <strong>Desarrollo y soporte</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="footer-column">
+        <h2>Perfiles</h2>
+
+        <div class="footer-socials">
+          @for (
+            social of socialLinks;
+            track social.label
+          ) {
+            <a
+              [href]="social.url"
+              [attr.target]="
+                social.url.startsWith('http')
+                  ? '_blank'
+                  : null
+              "
+              [attr.rel]="
+                social.url.startsWith('http')
+                  ? 'noopener noreferrer'
+                  : null
+              "
+              [attr.aria-label]="social.label"
+            >
+              <span>{{ social.icon }}</span>
+              {{ social.label }}
+            </a>
+          }
+        </div>
+      </section>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © {{ currentYear }} Juan Pablo Rojas. Todos los derechos reservados.
+      </p>
+
+      <p class="footer-bottom__technology">
+        Desarrollado con Angular y ASP.NET Core
+      </p>
+
+      <button
+        class="footer-top-button"
+        type="button"
+        aria-label="Volver al inicio de la página"
+        (click)="scrollToTop()"
+      >
+        <span aria-hidden="true">↑</span>
+      </button>
+
+    </div>
+
+  </div>
+</footer>

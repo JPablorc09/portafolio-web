@@ -1,0 +1,354 @@
+<main class="education-page">
+
+  <!-- HERO -->
+
+  <section class="education-hero">
+    <div class="education-container">
+
+      <div class="education-hero__content">
+
+        <span class="education-eyebrow">
+          Formación profesional
+        </span>
+
+        <h1>
+          Conocimiento que se convierte en
+          <span>soluciones reales</span>
+        </h1>
+
+        <p>
+          Mi formación combina estudios universitarios, conocimientos
+          técnicos y aprendizaje práctico mediante el desarrollo de
+          aplicaciones, integraciones y soluciones empresariales.
+        </p>
+
+        <div class="education-hero__actions">
+          <a
+            class="button button--primary"
+            href="#academic-education"
+          >
+            Ver formación
+          </a>
+
+          <a
+            class="button button--secondary"
+            routerLink="/proyectos"
+          >
+            Explorar proyectos
+          </a>
+        </div>
+
+      </div>
+
+      <div class="education-hero__summary">
+
+        <article class="summary-card">
+          <span class="summary-card__value">
+            IS
+          </span>
+
+          <div>
+            <strong>Ingeniería de Sistemas</strong>
+            <p>
+              Formación universitaria orientada al desarrollo tecnológico.
+            </p>
+          </div>
+        </article>
+
+        <article class="summary-card">
+          <span class="summary-card__value">
+            {{ educationCount }}
+          </span>
+
+          <div>
+            <strong>Áreas de formación</strong>
+            <p>
+              Universidad, redes, desarrollo e integraciones.
+            </p>
+          </div>
+        </article>
+
+        <article class="summary-card">
+          <span class="summary-card__value">
+            360°
+          </span>
+
+          <div>
+            <strong>Visión integral</strong>
+            <p>
+              Desde los requerimientos hasta la publicación del sistema.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FORMACIÓN PRINCIPAL -->
+
+  <section
+    id="academic-education"
+    class="education-section"
+    aria-labelledby="education-title"
+  >
+    <div class="education-container">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="education-eyebrow">
+            Trayectoria académica
+          </span>
+
+          <h2 id="education-title">
+            Formación y aprendizaje
+          </h2>
+        </div>
+
+        <p>
+          Estudios y procesos de aprendizaje que respaldan mi perfil
+          como profesional de tecnología y desarrollador de software.
+        </p>
+
+      </div>
+
+      <div class="education-timeline">
+
+        @for (
+          education of educationItems;
+          track education.title;
+          let index = $index
+        ) {
+          <article
+            class="education-card"
+            [class.education-card--featured]="education.featured"
+          >
+
+            <div class="education-card__marker">
+              <span>
+                {{ (index + 1).toString().padStart(2, '0') }}
+              </span>
+            </div>
+
+            <div class="education-card__content">
+
+              <header class="education-card__header">
+
+                <div>
+                  <span class="education-card__type">
+                    {{ education.type }}
+                  </span>
+
+                  <h3>
+                    {{ education.title }}
+                  </h3>
+
+                  <p class="education-card__institution">
+                    {{ education.institution }}
+                  </p>
+                </div>
+
+                <div class="education-card__meta">
+                  <span
+                    class="education-status"
+                    [class.education-status--active]="
+                      education.status === 'En desarrollo'
+                    "
+                  >
+                    {{ education.status }}
+                  </span>
+
+                  <span class="education-card__period">
+                    {{ education.period }}
+                  </span>
+                </div>
+
+              </header>
+
+              <p class="education-card__description">
+                {{ education.description }}
+              </p>
+
+              <div class="education-card__highlights">
+
+                @for (
+                  highlight of education.highlights;
+                  track highlight
+                ) {
+                  <div class="education-highlight">
+                    <span aria-hidden="true">✓</span>
+                    <p>{{ highlight }}</p>
+                  </div>
+                }
+
+              </div>
+
+            </div>
+
+          </article>
+        }
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ÁREAS DE CONOCIMIENTO -->
+
+  <section class="learning-section">
+    <div class="education-container">
+
+      <div class="section-heading section-heading--center">
+
+        <div>
+          <span class="education-eyebrow">
+            Conocimientos adquiridos
+          </span>
+
+          <h2>
+            Áreas principales de aprendizaje
+          </h2>
+        </div>
+
+        <p>
+          La formación técnica se complementa con la aplicación de
+          conocimientos en proyectos y escenarios similares a los
+          utilizados en entornos empresariales.
+        </p>
+
+      </div>
+
+      <div class="learning-grid">
+
+        @for (
+          area of learningAreas;
+          track area.number
+        ) {
+          <article class="learning-card">
+
+            <span class="learning-card__number">
+              {{ area.number }}
+            </span>
+
+            <h3>
+              {{ area.title }}
+            </h3>
+
+            <p>
+              {{ area.description }}
+            </p>
+
+            <div class="learning-card__technologies">
+              @for (
+                technology of area.technologies;
+                track technology
+              ) {
+                <span>
+                  {{ technology }}
+                </span>
+              }
+            </div>
+
+          </article>
+        }
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- APRENDIZAJE CONTINUO -->
+
+  <section class="continuous-learning">
+    <div class="education-container">
+
+      <div class="continuous-learning__content">
+
+        <div class="continuous-learning__icon">
+          DEV
+        </div>
+
+        <div>
+          <span class="education-eyebrow">
+            Formación continua
+          </span>
+
+          <h2>
+            Aprender, aplicar y mejorar
+          </h2>
+
+          <p>
+            Complemento mi formación investigando tecnologías, resolviendo
+            problemas técnicos y desarrollando proyectos que requieren
+            integrar interfaces, APIs, bases de datos, infraestructura y
+            servicios empresariales.
+          </p>
+        </div>
+
+        <div class="continuous-learning__principles">
+
+          <div>
+            <strong>Investigar</strong>
+            <span>Comprender el problema y las tecnologías disponibles.</span>
+          </div>
+
+          <div>
+            <strong>Desarrollar</strong>
+            <span>Convertir el conocimiento en una solución funcional.</span>
+          </div>
+
+          <div>
+            <strong>Documentar</strong>
+            <span>Registrar procesos, decisiones y configuraciones.</span>
+          </div>
+
+          <div>
+            <strong>Mejorar</strong>
+            <span>Evaluar resultados y optimizar la implementación.</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+
+  <section class="education-cta">
+    <div class="education-container">
+
+      <div class="education-cta__content">
+
+        <div>
+          <span class="education-eyebrow">
+            Perfil profesional
+          </span>
+
+          <h2>
+            Formación técnica respaldada por proyectos funcionales.
+          </h2>
+
+          <p>
+            Conozca las aplicaciones e integraciones donde he aplicado
+            estos conocimientos para resolver necesidades reales.
+          </p>
+        </div>
+
+        <a
+          class="button button--light"
+          routerLink="/proyectos"
+        >
+          Ver proyectos
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
