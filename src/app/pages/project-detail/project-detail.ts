@@ -63,6 +63,6 @@ export class ProjectDetail implements OnInit {
     const image = event.target as HTMLImageElement;
 
     image.onerror = null;
-    image.src = 'assets/images/projects/project-placeholder.png';
+    image.src = 'src/assets/images/project-placeholder.png';
   }
 }

@@ -166,60 +166,61 @@ export const PROJECTS: Project[] = [
   },
 
   {
-    id: 'ventas',
-    title: 'Sistema de Ventas e Inventario',
-    category: 'Aplicación Full Stack',
-    shortDescription:
-      'Sistema web para gestionar ventas, compras, inventario, productos, clientes y proveedores.',
-    fullDescription:
-      'Aplicación Full Stack desarrollada con Angular y ASP.NET Core Web API. El sistema permite administrar procesos de ventas, compras, inventario, clientes, productos, proveedores y métodos de pago.',
-    image: 'assets/images/projects/ventas/portada.png',
-    technologies: [
-      'Angular',
-      'TypeScript',
-      'ASP.NET Core Web API',
-      'C#',
-      'SQL Server',
-      'JWT',
-      'Bootstrap'
-    ],
-    features: [
-      'Inicio de sesión con JWT.',
-      'Administración de usuarios y roles.',
-      'Gestión de productos y categorías.',
-      'Registro de clientes y proveedores.',
-      'Proceso de compras.',
-      'Proceso de ventas.',
-      'Movimientos de inventario.',
-      'Ajustes de existencias.',
-      'Panel principal con indicadores.'
-    ],
-    architecture: [
-      'Frontend Angular',
-      'ASP.NET Core Web API',
-      'Autenticación JWT',
-      'SQL Server'
-    ],
-    challenges: [
-      'Implementar autenticación JWT.',
-      'Sincronizar frontend y backend.',
-      'Gestionar movimientos de inventario.',
-      'Manejar errores HTTP y autorización.',
-      'Configurar rutas y navegación en Angular.'
-    ],
-    learnings: [
-      'Desarrollo Full Stack.',
-      'Angular y componentes standalone.',
-      'APIs REST con ASP.NET Core.',
-      'Autenticación con JWT.',
-      'Gestión de inventario.'
-    ],
-    gallery: [
-      'assets/images/projects/ventas/login.png',
-      'assets/images/projects/ventas/dashboard.png',
-      'assets/images/projects/ventas/ventas.png'
-    ]
-  },
+  id: 'ventas',
+  title: 'Sistema de Ventas e Inventario',
+  category: 'Aplicación Full Stack',
+  shortDescription:
+    'Sistema web para gestionar ventas, compras, inventario, productos, clientes y proveedores.',
+  fullDescription:
+    'Aplicación Full Stack desarrollada con Angular y ASP.NET Core Web API. El sistema permite administrar procesos de ventas, compras, inventario, clientes, productos, proveedores y métodos de pago.',
+  image: '/assets/images/ventas/ImagenPrincipalVentas.png',
+  technologies: [
+    'Angular',
+    'TypeScript',
+    'ASP.NET Core Web API',
+    'C#',
+    'SQL Server',
+    'JWT',
+    'Bootstrap'
+  ],
+  features: [
+    'Inicio de sesión con JWT.',
+    'Administración de usuarios y roles.',
+    'Gestión de productos y categorías.',
+    'Registro de clientes y proveedores.',
+    'Proceso de compras.',
+    'Proceso de ventas.',
+    'Movimientos de inventario.',
+    'Ajustes de existencias.',
+    'Panel principal con indicadores.'
+  ],
+  architecture: [
+    'Frontend Angular',
+    'ASP.NET Core Web API',
+    'Autenticación JWT',
+    'SQL Server'
+  ],
+  challenges: [
+    'Implementar autenticación JWT.',
+    'Sincronizar frontend y backend.',
+    'Gestionar movimientos de inventario.',
+    'Manejar errores HTTP y autorización.',
+    'Configurar rutas y navegación en Angular.'
+  ],
+  learnings: [
+    'Desarrollo Full Stack.',
+    'Angular y componentes standalone.',
+    'APIs REST con ASP.NET Core.',
+    'Autenticación con JWT.',
+    'Gestión de inventario.'
+  ],
+  gallery: [
+    '/assets/images/ventas/ImagenUsuarios.png',
+    '/assets/images/ventas/ImagenCategoria.png',
+    '/assets/images/ventas/ImagenVendedor.png',
+    '/assets/images/ventas/ImagenCajasArqueo.png'
+  ]
+},
 
   {
     id: 'prtg',
