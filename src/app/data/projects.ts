@@ -9,7 +9,7 @@ export const PROJECTS: Project[] = [
       'Sistema web para gestionar incidentes, mantenimientos, estados, usuarios y permisos.',
     fullDescription:
       'Aplicación desarrollada con ASP.NET Core MVC para centralizar el registro, seguimiento y administración de incidentes técnicos. El sistema permite gestionar usuarios, roles, categorías, servicios, estados, mantenimientos e historial de cambios.',
-    image: 'assets/images/projects/incidentes/portada.png',
+   image: '/assets/images/projects/confidencial.png',
     technologies: [
       'ASP.NET Core MVC',
       'C#',
@@ -48,22 +48,18 @@ export const PROJECTS: Project[] = [
       'Creación de módulos administrativos.',
       'Validación y manejo de errores.'
     ],
-    gallery: [
-      'assets/images/projects/incidentes/login.png',
-      'assets/images/projects/incidentes/dashboard.png',
-      'assets/images/projects/incidentes/incidentes.png'
-    ]
+    gallery: []
   },
 
   {
     id: 'fallapp',
     title: 'FallApp',
-    category: 'Aplicación empresarial',
+    category: 'Aplicación Institucional',
     shortDescription:
       'Portal web para registrar fallas y crear casos automáticamente en Aranda Service Management.',
     fullDescription:
       'FallApp permite que los usuarios registren fallas relacionadas con aplicaciones institucionales. Cada reporte se almacena localmente y posteriormente se envía hacia una API encargada de crear el caso en Aranda Service Management.',
-    image: 'assets/images/projects/fallapp/portada.png',
+   image: '/assets/images/projects/confidencial.png',
     technologies: [
       'ASP.NET Core MVC',
       'C#',
@@ -104,11 +100,7 @@ export const PROJECTS: Project[] = [
       'Publicación en IIS.',
       'Diseño de flujos con tolerancia a fallos.'
     ],
-    gallery: [
-      'assets/images/projects/fallapp/inicio.png',
-      'assets/images/projects/fallapp/reporte.png',
-      'assets/images/projects/fallapp/administracion.png'
-    ]
+    gallery: []
   },
 
   {
@@ -119,7 +111,7 @@ export const PROJECTS: Project[] = [
       'Servicio encargado de crear casos automáticamente en Aranda Service Management v9.',
     fullDescription:
       'Integración desarrollada mediante ASP.NET Core Web API para enviar información desde aplicaciones internas hacia Aranda Service Management. El servicio construye payloads JSON, valida información y procesa las respuestas de la plataforma.',
-    image: 'assets/images/projects/asms/portada.png',
+    image: '/assets/images/projects/confidencial.png',
     technologies: [
       'ASP.NET Core Web API',
       'C#',
@@ -158,11 +150,7 @@ export const PROJECTS: Project[] = [
       'Pruebas de servicios con Swagger.',
       'Diagnóstico de integraciones empresariales.'
     ],
-    gallery: [
-      'assets/images/projects/asms/swagger.png',
-      'assets/images/projects/asms/payload.png',
-      'assets/images/projects/asms/respuesta.png'
-    ]
+    gallery: []
   },
 
   {
@@ -230,7 +218,7 @@ export const PROJECTS: Project[] = [
       'Aplicación para importar, consultar y administrar grandes volúmenes de eventos generados por PRTG.',
     fullDescription:
       'Sistema web desarrollado para procesar archivos CSV provenientes de diferentes servidores PRTG. La solución permite importar registros, consultar eventos, revisar historiales de carga y eliminar información por lote.',
-    image: 'assets/images/projects/prtg/portada.png',
+    image: '/assets/images/fallapp/confidencial.png',
     technologies: [
       'ASP.NET Core MVC',
       'C#',
@@ -271,10 +259,6 @@ export const PROJECTS: Project[] = [
       'Uso de SQL Server Jobs.',
       'Integración con Power BI.'
     ],
-    gallery: [
-      'assets/images/projects/prtg/cargas.png',
-      'assets/images/projects/prtg/eventos.png',
-      'assets/images/projects/prtg/historial.png'
-    ]
+    gallery: []
   }
 ];

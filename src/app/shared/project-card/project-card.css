@@ -191,3 +191,34 @@
     font-size: 1.3rem;
   }
 }
+.project-card__confidential {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 28px;
+  text-align: center;
+  background:
+    linear-gradient(
+      145deg,
+      #0f1c30,
+      #0b1729
+    );
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.project-card__confidential span {
+  margin-bottom: 12px;
+  font-size: 2rem;
+}
+
+.project-card__confidential strong {
+  margin-bottom: 6px;
+  color: #f8fafc;
+}
+
+.project-card__confidential small {
+  color: #94a3b8;
+  line-height: 1.5;
+}

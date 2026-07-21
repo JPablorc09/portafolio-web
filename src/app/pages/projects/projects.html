@@ -1,9 +1,11 @@
 <main class="projects-page">
 
+  <!-- Encabezado principal -->
   <section class="projects-hero">
     <div class="projects-container">
 
       <div class="projects-hero__content">
+
         <span class="projects-hero__eyebrow">
           Portafolio profesional
         </span>
@@ -20,6 +22,7 @@
         </p>
 
         <div class="projects-hero__actions">
+
           <a
             class="button button--primary"
             href="#project-list"
@@ -33,42 +36,75 @@
           >
             Contactarme
           </a>
+
         </div>
+
       </div>
 
+      <!-- Resumen de experiencia -->
       <div class="projects-hero__summary">
 
         <article class="summary-card">
-          <div class="summary-card__icon" aria-hidden="true">
+
+          <div
+            class="summary-card__icon"
+            aria-hidden="true"
+          >
             01
           </div>
 
           <div>
-            <strong>{{ projects.length }}</strong>
-            <span>Proyectos principales</span>
+            <strong>
+              {{ projects.length }}
+            </strong>
+
+            <span>
+              Proyectos principales
+            </span>
           </div>
+
         </article>
 
         <article class="summary-card">
-          <div class="summary-card__icon" aria-hidden="true">
+
+          <div
+            class="summary-card__icon"
+            aria-hidden="true"
+          >
             FS
           </div>
 
           <div>
-            <strong>Full Stack</strong>
-            <span>Frontend, backend y base de datos</span>
+            <strong>
+              Full Stack
+            </strong>
+
+            <span>
+              Frontend, backend y base de datos
+            </span>
           </div>
+
         </article>
 
         <article class="summary-card">
-          <div class="summary-card__icon" aria-hidden="true">
+
+          <div
+            class="summary-card__icon"
+            aria-hidden="true"
+          >
             TI
           </div>
 
           <div>
-            <strong>Empresarial</strong>
-            <span>Soluciones orientadas a procesos reales</span>
+            <strong>
+              Empresarial
+            </strong>
+
+            <span>
+              Soluciones orientadas a procesos reales
+            </span>
           </div>
+
         </article>
 
       </div>
@@ -76,6 +112,7 @@
     </div>
   </section>
 
+  <!-- Listado de proyectos -->
   <section
     id="project-list"
     class="projects-section"
@@ -84,6 +121,7 @@
     <div class="projects-container">
 
       <div class="section-heading">
+
         <div>
           <span class="section-heading__eyebrow">
             Casos de estudio
@@ -99,37 +137,58 @@
           implementada, las tecnologías utilizadas y los principales
           aprendizajes obtenidos durante su desarrollo.
         </p>
+
       </div>
 
       <div class="projects-grid">
+
         @for (project of projects; track project.id) {
+
+          <!--
+            El componente ProjectCard se encarga de mostrar:
+            - La imagen, cuando project.image contiene una ruta.
+            - El aviso de confidencialidad, cuando project.image está vacío.
+          -->
           <app-project-card
             [project]="project"
           />
+
         } @empty {
+
           <div class="projects-empty">
-            <span class="projects-empty__icon" aria-hidden="true">
+
+            <span
+              class="projects-empty__icon"
+              aria-hidden="true"
+            >
               &lt;/&gt;
             </span>
 
-            <h3>No hay proyectos disponibles</h3>
+            <h3>
+              No hay proyectos disponibles
+            </h3>
 
             <p>
               Los proyectos aparecerán aquí cuando se agreguen al portafolio.
             </p>
+
           </div>
+
         }
+
       </div>
 
     </div>
   </section>
 
+  <!-- Llamado a la acción -->
   <section class="projects-cta">
     <div class="projects-container">
 
       <div class="projects-cta__content">
 
         <div class="projects-cta__text">
+
           <span class="projects-cta__eyebrow">
             ¿Tiene un proyecto en mente?
           </span>
@@ -142,6 +201,7 @@
             Estoy interesado en oportunidades relacionadas con desarrollo
             web, soporte técnico, integración de sistemas y bases de datos.
           </p>
+
         </div>
 
         <a

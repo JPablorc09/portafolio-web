@@ -1,6 +1,7 @@
 @if (project) {
   <main class="project-detail">
 
+    <!-- Hero del proyecto -->
     <section class="project-detail__hero">
       <div class="project-detail__container">
 
@@ -39,18 +40,52 @@
             </div>
           </div>
 
-          <div class="project-detail__cover">
-            <img
-              [src]="project.image"
-              [alt]="'Portada del proyecto ' + project.title"
-              (error)="imageError($event)"
-            />
-          </div>
+          <!-- Imagen o aviso de confidencialidad -->
+          @if (project.image) {
+            <div class="project-detail__cover">
+              <img
+                [src]="project.image"
+                [alt]="'Portada del proyecto ' + project.title"
+                (error)="imageError($event)"
+              />
+            </div>
+          } @else {
+            <div class="project-detail__confidential">
+
+              <div
+                class="project-detail__confidential-icon"
+                aria-hidden="true"
+              >
+                🔒
+              </div>
+
+              <span class="project-detail__confidential-label">
+                Proyecto institucional
+              </span>
+
+              <h2>
+                Vista no disponible
+              </h2>
+
+              <p>
+                Por motivos de confidencialidad, seguridad institucional
+                y protección de la información, no se muestran capturas
+                de pantalla de este sistema.
+              </p>
+
+              <small>
+                La información presentada se limita a las tecnologías,
+                funcionalidades y responsabilidades desarrolladas.
+              </small>
+
+            </div>
+          }
 
         </div>
       </div>
     </section>
 
+    <!-- Funcionalidades principales -->
     <section class="project-detail__section">
       <div class="project-detail__container">
 
@@ -62,8 +97,16 @@
         <div class="project-detail__list-grid">
           @for (feature of project.features; track feature) {
             <article class="detail-card">
-              <span class="detail-card__icon">✓</span>
-              <p>{{ feature }}</p>
+              <span
+                class="detail-card__icon"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+
+              <p>
+                {{ feature }}
+              </p>
             </article>
           }
         </div>
@@ -71,6 +114,7 @@
       </div>
     </section>
 
+    <!-- Arquitectura -->
     <section
       class="project-detail__section
              project-detail__section--alternate"
@@ -89,8 +133,13 @@
             let last = $last
           ) {
             <div class="architecture-flow__item">
-              <span>{{ $index + 1 }}</span>
-              <strong>{{ item }}</strong>
+              <span>
+                {{ $index + 1 }}
+              </span>
+
+              <strong>
+                {{ item }}
+              </strong>
             </div>
 
             @if (!last) {
@@ -107,6 +156,7 @@
       </div>
     </section>
 
+    <!-- Retos y aprendizajes -->
     <section class="project-detail__section">
       <div class="project-detail__container">
 
@@ -121,11 +171,21 @@
             <div class="information-list">
               @for (
                 challenge of project.challenges;
-                track challenge
+                track challenge;
+                let challengeIndex = $index
               ) {
                 <div class="information-list__item">
-                  <span aria-hidden="true">01</span>
-                  <p>{{ challenge }}</p>
+                  <span aria-hidden="true">
+                    {{
+                      challengeIndex + 1 < 10
+                        ? '0' + (challengeIndex + 1)
+                        : challengeIndex + 1
+                    }}
+                  </span>
+
+                  <p>
+                    {{ challenge }}
+                  </p>
                 </div>
               }
             </div>
@@ -143,8 +203,13 @@
                 track learning
               ) {
                 <div class="information-list__item">
-                  <span aria-hidden="true">✓</span>
-                  <p>{{ learning }}</p>
+                  <span aria-hidden="true">
+                    ✓
+                  </span>
+
+                  <p>
+                    {{ learning }}
+                  </p>
                 </div>
               }
             </div>
@@ -155,81 +220,97 @@
       </div>
     </section>
 
-    <section
-      class="project-detail__section
-             project-detail__section--gallery"
-    >
+    <!-- Galería: solo se muestra cuando existen imágenes -->
+    @if (project.gallery && project.gallery.length > 0) {
+      <section
+        class="project-detail__section
+               project-detail__section--gallery"
+      >
+        <div class="project-detail__container">
+
+          <div class="project-detail__heading">
+            <span>Vista del sistema</span>
+            <h2>Galería del proyecto</h2>
+          </div>
+
+          <div class="project-gallery">
+            @for (
+              image of project.gallery;
+              track image
+            ) {
+              <figure class="project-gallery__item">
+                <img
+                  [src]="image"
+                  [alt]="'Captura de ' + project.title"
+                  loading="lazy"
+                  (error)="imageError($event)"
+                />
+              </figure>
+            }
+          </div>
+
+        </div>
+      </section>
+    }
+
+    <!-- Navegación entre proyectos -->
+    <section class="project-navigation">
       <div class="project-detail__container">
 
-        <div class="project-detail__heading">
-          <span>Vista del sistema</span>
-          <h2>Galería del proyecto</h2>
-        </div>
+        <div class="project-navigation__grid">
 
-        <div class="project-gallery">
-          @for (
-            image of project.gallery;
-            track image
-          ) {
-            <figure class="project-gallery__item">
-              <img
-                [src]="image"
-                [alt]="'Captura de ' + project.title"
-                loading="lazy"
-                (error)="imageError($event)"
-              />
-            </figure>
+          @if (previousProject) {
+            <a
+              class="project-navigation__card"
+              [routerLink]="[
+                '/proyectos',
+                previousProject.id
+              ]"
+            >
+              <span>
+                ← Proyecto anterior
+              </span>
+
+              <strong>
+                {{ previousProject.title }}
+              </strong>
+            </a>
+          } @else {
+            <div></div>
           }
+
+          <a
+            class="project-navigation__all"
+            routerLink="/proyectos"
+          >
+            Ver todos los proyectos
+          </a>
+
+          @if (nextProject) {
+            <a
+              class="project-navigation__card
+                     project-navigation__card--next"
+              [routerLink]="[
+                '/proyectos',
+                nextProject.id
+              ]"
+            >
+              <span>
+                Siguiente proyecto →
+              </span>
+
+              <strong>
+                {{ nextProject.title }}
+              </strong>
+            </a>
+          } @else {
+            <div></div>
+          }
+
         </div>
 
       </div>
     </section>
-<section class="project-navigation">
-  <div class="project-detail__container">
 
-    <div class="project-navigation__grid">
-
-      @if (previousProject) {
-        <a
-          class="project-navigation__card"
-          [routerLink]="['/proyectos', previousProject.id]"
-        >
-          <span>← Proyecto anterior</span>
-
-          <strong>
-            {{ previousProject.title }}
-          </strong>
-        </a>
-      } @else {
-        <div></div>
-      }
-
-      <a
-        class="project-navigation__all"
-        routerLink="/proyectos"
-      >
-        Ver todos los proyectos
-      </a>
-
-      @if (nextProject) {
-        <a
-          class="project-navigation__card
-                 project-navigation__card--next"
-          [routerLink]="['/proyectos', nextProject.id]"
-        >
-          <span>Siguiente proyecto →</span>
-
-          <strong>
-            {{ nextProject.title }}
-          </strong>
-        </a>
-      } @else {
-        <div></div>
-      }
-
-    </div>
-
-  </div>
-</section>
   </main>
 }

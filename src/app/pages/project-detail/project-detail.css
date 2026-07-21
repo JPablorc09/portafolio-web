@@ -478,3 +478,63 @@
     order: 3;
   }
 }
+
+.project-detail__confidential {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 390px;
+  padding: 45px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(56, 189, 248, 0.12),
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      #0f1c30,
+      #0b1729
+    );
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 24px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.35);
+}
+
+.project-detail__confidential-icon {
+  display: grid;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 22px;
+  place-items: center;
+  font-size: 2rem;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 20px;
+}
+
+.project-detail__confidential h2 {
+  margin: 0 0 14px;
+  font-size: 1.8rem;
+}
+
+.project-detail__confidential p {
+  max-width: 520px;
+  margin: 0;
+  color: #b6c2d2;
+  line-height: 1.75;
+}
+
+.project-detail__confidential span {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 12px;
+  color: #7dd3fc;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: 999px;
+}
