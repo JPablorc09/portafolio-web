@@ -47,53 +47,55 @@ export class Experience {
 
   readonly experiences: ExperienceItem[] = [
 
-    {
-      period: 'Enero 2026 - Julio 2026',
-      position: 'Soporte Técnico y Desarrollo de Sistemas',
-      company: 'Grupo Alega Costa Rica',
-      location: 'Costa Rica',
+  {
+  period: 'Enero 2026 - Julio 2026',
 
-      description:
-        'Responsable del soporte técnico a usuarios, desarrollo de aplicaciones internas, automatización de procesos e integración de sistemas.',
+  position: 'Desarrollador de Software y Soporte Técnico',
 
-      responsibilities: [
+  company: 'Poder Judicial de Costa Rica (Servicios Profesionales)',
 
-        'Atención y resolución de incidentes técnicos.',
+  location: 'Costa Rica',
 
-        'Soporte a usuarios y aplicaciones corporativas.',
+  description:
+    'Prestación de servicios profesionales para el Poder Judicial de Costa Rica, participando en el desarrollo de aplicaciones web, soporte técnico, automatización de procesos e integración de sistemas institucionales.',
 
-        'Desarrollo de aplicaciones con ASP.NET Core MVC.',
+  responsibilities: [
 
-        'Creación y mantenimiento de APIs REST.',
+    'Desarrollo y mantenimiento de aplicaciones web con ASP.NET Core MVC.',
 
-        'Administración de bases de datos SQL Server.',
+    'Diseño e implementación de APIs REST para integración de sistemas.',
 
-        'Publicación de aplicaciones utilizando IIS.',
+    'Soporte técnico a usuarios y aplicaciones institucionales.',
 
-        'Integración con plataformas empresariales.',
+    'Administración y mantenimiento de bases de datos SQL Server.',
 
-        'Documentación técnica y manuales de usuario.',
+    'Publicación y administración de aplicaciones mediante IIS.',
 
-        'Automatización de procesos internos.'
+    'Integración con plataformas y servicios institucionales.',
 
-      ],
+    'Automatización de procesos internos para mejorar la eficiencia operativa.',
 
-      technologies: [
+    'Elaboración de documentación técnica y manuales de usuario.',
 
-        'ASP.NET Core',
-        'C#',
-        'SQL Server',
-        'Entity Framework Core',
-        'REST API',
-        'Swagger',
-        'IIS',
-        'Git'
+    'Resolución de incidencias y mantenimiento correctivo y evolutivo de sistemas.'
 
-      ],
+  ],
 
-      type: 'laboral'
-    },
+  technologies: [
 
+    'ASP.NET Core MVC',
+    'C#',
+    'SQL Server',
+    'Entity Framework Core',
+    'REST API',
+    'Swagger',
+    'IIS',
+    'Git'
+
+  ],
+
+  type: 'laboral'
+},
     {
       period: '2026',
 
