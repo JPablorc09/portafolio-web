@@ -1,56 +1,139 @@
 @if (project) {
+
   <main class="project-detail">
 
-    <!-- Hero del proyecto -->
+
+    <!-- =======================================================
+         HERO
+         ======================================================= -->
+
     <section class="project-detail__hero">
+
       <div class="project-detail__container">
+
 
         <a
           class="project-detail__back"
           routerLink="/proyectos"
         >
-          <span aria-hidden="true">←</span>
+
+          <span aria-hidden="true">
+            ←
+          </span>
+
           Volver a proyectos
+
         </a>
+
 
         <div class="project-detail__hero-grid">
 
+
+          <!-- INFORMACIÓN -->
+
           <div class="project-detail__hero-content">
-            <span class="project-detail__category">
-              {{ project.category }}
-            </span>
+
+
+            <div class="project-detail__meta">
+
+              <span class="project-detail__category">
+                {{ project.category }}
+              </span>
+
+
+              @if (project.professional) {
+
+                <span class="project-detail__professional">
+                  Experiencia profesional
+                </span>
+
+              }
+
+            </div>
+
 
             <h1>
               {{ project.title }}
             </h1>
 
+
             <p>
               {{ project.fullDescription }}
             </p>
 
+
             <div class="project-detail__technologies">
+
               @for (
                 technology of project.technologies;
                 track technology
               ) {
+
                 <span>
                   {{ technology }}
                 </span>
+
               }
+
             </div>
+
           </div>
 
-          <!-- Imagen o aviso de confidencialidad -->
-          @if (project.image) {
-            <div class="project-detail__cover">
+
+          <!-- =================================================
+               PORTADA NORMAL
+               ================================================= -->
+
+          @if (
+            project.image &&
+            !project.confidential
+          ) {
+
+            <button
+              class="project-detail__cover"
+              type="button"
+              (click)="openLightboxByImage(project.image)"
+              [attr.aria-label]="
+                'Ampliar imagen principal de ' +
+                project.title
+              "
+            >
+
               <img
                 [src]="project.image"
-                [alt]="'Portada del proyecto ' + project.title"
+                [alt]="
+                  'Portada del proyecto ' +
+                  project.title
+                "
                 (error)="imageError($event)"
               />
-            </div>
-          } @else {
+
+
+              <span class="project-detail__cover-overlay">
+
+                <span class="project-detail__zoom-icon">
+                  ⛶
+                </span>
+
+                <strong>
+                  Ampliar imagen
+                </strong>
+
+              </span>
+
+            </button>
+
+          }
+
+
+          <!-- =================================================
+               PROYECTO CONFIDENCIAL
+               ================================================= -->
+
+          @else {
+
             <div class="project-detail__confidential">
+
 
               <div
                 class="project-detail__confidential-icon"
@@ -59,80 +142,154 @@
                 🔒
               </div>
 
+
               <span class="project-detail__confidential-label">
                 Proyecto institucional
               </span>
+
 
               <h2>
                 Vista no disponible
               </h2>
 
+
               <p>
-                Por motivos de confidencialidad, seguridad institucional
-                y protección de la información, no se muestran capturas
-                de pantalla de este sistema.
+
+                Por motivos de confidencialidad,
+                seguridad institucional y protección
+                de la información, no se muestran
+                capturas de pantalla de este sistema.
+
               </p>
 
+
               <small>
-                La información presentada se limita a las tecnologías,
-                funcionalidades y responsabilidades desarrolladas.
+
+                La información presentada se limita
+                a las tecnologías, funcionalidades y
+                responsabilidades desarrolladas.
+
               </small>
 
             </div>
+
           }
 
         </div>
+
       </div>
+
     </section>
 
-    <!-- Funcionalidades principales -->
+
+    <!-- =======================================================
+         FUNCIONALIDADES
+         ======================================================= -->
+
     <section class="project-detail__section">
+
       <div class="project-detail__container">
 
+
         <div class="project-detail__heading">
-          <span>Descripción técnica</span>
-          <h2>Funcionalidades principales</h2>
+
+          <span>
+            Descripción técnica
+          </span>
+
+          <h2>
+            Funcionalidades principales
+          </h2>
+
+          <p>
+            Principales características y procesos
+            implementados como parte de la solución.
+          </p>
+
         </div>
 
+
         <div class="project-detail__list-grid">
-          @for (feature of project.features; track feature) {
+
+          @for (
+            feature of project.features;
+            track feature;
+            let featureIndex = $index
+          ) {
+
             <article class="detail-card">
+
+
               <span
                 class="detail-card__icon"
                 aria-hidden="true"
               >
-                ✓
+                {{
+                  featureIndex + 1 < 10
+                    ? '0' + (featureIndex + 1)
+                    : featureIndex + 1
+                }}
               </span>
+
 
               <p>
                 {{ feature }}
               </p>
+
             </article>
+
           }
+
         </div>
 
       </div>
+
     </section>
 
-    <!-- Arquitectura -->
+
+    <!-- =======================================================
+         ARQUITECTURA
+         ======================================================= -->
+
     <section
-      class="project-detail__section
-             project-detail__section--alternate"
+      class="
+        project-detail__section
+        project-detail__section--alternate
+      "
     >
+
       <div class="project-detail__container">
 
+
         <div class="project-detail__heading">
-          <span>Flujo del sistema</span>
-          <h2>Arquitectura de la solución</h2>
+
+          <span>
+            Flujo del sistema
+          </span>
+
+          <h2>
+            Arquitectura de la solución
+          </h2>
+
+          <p>
+            Representación simplificada de los
+            principales componentes y del flujo
+            de información del sistema.
+          </p>
+
         </div>
 
+
         <div class="architecture-flow">
+
           @for (
             item of project.architecture;
             track item;
             let last = $last
           ) {
+
             <div class="architecture-flow__item">
+
               <span>
                 {{ $index + 1 }}
               </span>
@@ -140,69 +297,129 @@
               <strong>
                 {{ item }}
               </strong>
+
             </div>
 
+
             @if (!last) {
+
               <div
                 class="architecture-flow__arrow"
                 aria-hidden="true"
               >
                 →
               </div>
+
             }
+
           }
+
         </div>
 
       </div>
+
     </section>
 
-    <!-- Retos y aprendizajes -->
+
+    <!-- =======================================================
+         RETOS Y APRENDIZAJES
+         ======================================================= -->
+
     <section class="project-detail__section">
+
       <div class="project-detail__container">
+
 
         <div class="project-detail__columns">
 
+
+          <!-- RETOS -->
+
           <div>
+
             <div class="project-detail__heading">
-              <span>Desarrollo</span>
-              <h2>Retos técnicos</h2>
+
+              <span>
+                Desarrollo
+              </span>
+
+              <h2>
+                Retos técnicos
+              </h2>
+
+              <p>
+                Algunos de los principales desafíos
+                encontrados durante el desarrollo.
+              </p>
+
             </div>
 
+
             <div class="information-list">
+
               @for (
                 challenge of project.challenges;
                 track challenge;
                 let challengeIndex = $index
               ) {
+
                 <div class="information-list__item">
+
                   <span aria-hidden="true">
+
                     {{
                       challengeIndex + 1 < 10
                         ? '0' + (challengeIndex + 1)
                         : challengeIndex + 1
                     }}
+
                   </span>
+
 
                   <p>
                     {{ challenge }}
                   </p>
+
                 </div>
+
               }
+
             </div>
+
           </div>
 
+
+          <!-- APRENDIZAJES -->
+
           <div>
+
             <div class="project-detail__heading">
-              <span>Crecimiento profesional</span>
-              <h2>Lo que aprendí</h2>
+
+              <span>
+                Crecimiento profesional
+              </span>
+
+              <h2>
+                Conocimientos aplicados
+              </h2>
+
+              <p>
+                Tecnologías, prácticas y conocimientos
+                reforzados durante la implementación.
+              </p>
+
             </div>
 
+
             <div class="information-list">
+
               @for (
                 learning of project.learnings;
                 track learning
               ) {
+
                 <div class="information-list__item">
+
                   <span aria-hidden="true">
                     ✓
                   </span>
@@ -210,56 +427,179 @@
                   <p>
                     {{ learning }}
                   </p>
+
                 </div>
+
               }
+
             </div>
+
           </div>
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- Galería: solo se muestra cuando existen imágenes -->
-    @if (project.gallery && project.gallery.length > 0) {
+
+    <!-- =======================================================
+         GALERÍA
+         ======================================================= -->
+
+    @if (
+      project.gallery &&
+      project.gallery.length > 0
+    ) {
+
       <section
-        class="project-detail__section
-               project-detail__section--gallery"
+        class="
+          project-detail__section
+          project-detail__section--gallery
+        "
       >
+
         <div class="project-detail__container">
 
-          <div class="project-detail__heading">
-            <span>Vista del sistema</span>
-            <h2>Galería del proyecto</h2>
+
+          <div class="project-gallery__header">
+
+
+            <div class="project-detail__heading">
+
+              <span>
+                Vista del sistema
+              </span>
+
+              <h2>
+                Galería del proyecto
+              </h2>
+
+              <p>
+
+                Seleccione cualquier captura para
+                visualizarla en tamaño completo y
+                apreciar con mayor detalle la interfaz
+                del sistema.
+
+              </p>
+
+            </div>
+
+
+            <div class="project-gallery__count">
+
+              <strong>
+                {{ project.gallery.length }}
+              </strong>
+
+              <span>
+                capturas
+              </span>
+
+            </div>
+
           </div>
 
+
           <div class="project-gallery">
+
             @for (
               image of project.gallery;
-              track image
+              track image;
+              let imageIndex = $index
             ) {
-              <figure class="project-gallery__item">
-                <img
-                  [src]="image"
-                  [alt]="'Captura de ' + project.title"
-                  loading="lazy"
-                  (error)="imageError($event)"
-                />
-              </figure>
+
+              <button
+                class="project-gallery__item"
+                type="button"
+                (click)="openLightboxByImage(image)"
+                [attr.aria-label]="
+                  'Ampliar captura ' +
+                  (imageIndex + 1) +
+                  ' de ' +
+                  project.title
+                "
+              >
+
+                <div class="project-gallery__image-wrapper">
+
+                  <img
+                    [src]="image"
+                    [alt]="
+                      'Captura ' +
+                      (imageIndex + 1) +
+                      ' del proyecto ' +
+                      project.title
+                    "
+                    loading="lazy"
+                    (error)="imageError($event)"
+                  />
+
+
+                  <div class="project-gallery__overlay">
+
+                    <span class="project-gallery__zoom">
+                      ⛶
+                    </span>
+
+                    <span>
+                      Ver en tamaño completo
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                <div class="project-gallery__footer">
+
+                  <span>
+                    Captura
+                    {{
+                      imageIndex + 1 < 10
+                        ? '0' + (imageIndex + 1)
+                        : imageIndex + 1
+                    }}
+                  </span>
+
+
+                  <strong>
+                    Ampliar
+                    <span aria-hidden="true">
+                      ↗
+                    </span>
+                  </strong>
+
+                </div>
+
+              </button>
+
             }
+
           </div>
 
         </div>
+
       </section>
+
     }
 
-    <!-- Navegación entre proyectos -->
+
+    <!-- =======================================================
+         NAVEGACIÓN
+         ======================================================= -->
+
     <section class="project-navigation">
+
       <div class="project-detail__container">
+
 
         <div class="project-navigation__grid">
 
+
           @if (previousProject) {
+
             <a
               class="project-navigation__card"
               [routerLink]="[
@@ -267,6 +607,7 @@
                 previousProject.id
               ]"
             >
+
               <span>
                 ← Proyecto anterior
               </span>
@@ -274,10 +615,15 @@
               <strong>
                 {{ previousProject.title }}
               </strong>
+
             </a>
+
           } @else {
+
             <div></div>
+
           }
+
 
           <a
             class="project-navigation__all"
@@ -286,15 +632,20 @@
             Ver todos los proyectos
           </a>
 
+
           @if (nextProject) {
+
             <a
-              class="project-navigation__card
-                     project-navigation__card--next"
+              class="
+                project-navigation__card
+                project-navigation__card--next
+              "
               [routerLink]="[
                 '/proyectos',
                 nextProject.id
               ]"
             >
+
               <span>
                 Siguiente proyecto →
               </span>
@@ -302,15 +653,175 @@
               <strong>
                 {{ nextProject.title }}
               </strong>
+
             </a>
+
           } @else {
+
             <div></div>
+
           }
 
         </div>
 
       </div>
+
     </section>
 
+
+    <!-- =======================================================
+         LIGHTBOX / VISOR DE IMÁGENES
+         ======================================================= -->
+
+    @if (
+      lightboxOpen &&
+      selectedImage
+    ) {
+
+      <div
+        class="lightbox"
+        role="dialog"
+        aria-modal="true"
+        [attr.aria-label]="
+          'Visor de imágenes de ' +
+          project.title
+        "
+        (click)="closeLightbox()"
+      >
+
+
+        <!-- CABECERA -->
+
+        <div
+          class="lightbox__header"
+          (click)="stopPropagation($event)"
+        >
+
+          <div class="lightbox__project">
+
+            <span>
+              Vista del proyecto
+            </span>
+
+            <strong>
+              {{ project.title }}
+            </strong>
+
+          </div>
+
+
+          <div class="lightbox__header-actions">
+
+            <span class="lightbox__counter">
+
+              {{ selectedImageIndex + 1 }}
+
+              <span>/</span>
+
+              {{ projectImages.length }}
+
+            </span>
+
+
+            <button
+              class="lightbox__close"
+              type="button"
+              aria-label="Cerrar visor"
+              (click)="closeLightbox()"
+            >
+              ×
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- CONTENIDO -->
+
+        <div
+          class="lightbox__content"
+          (click)="stopPropagation($event)"
+        >
+
+
+          @if (projectImages.length > 1) {
+
+            <button
+              class="
+                lightbox__navigation
+                lightbox__navigation--previous
+              "
+              type="button"
+              aria-label="Imagen anterior"
+              (click)="previousImage($event)"
+            >
+              ‹
+            </button>
+
+          }
+
+
+          <div class="lightbox__image-container">
+
+            <img
+              class="lightbox__image"
+              [src]="selectedImage"
+              [alt]="
+                'Imagen ampliada de ' +
+                project.title
+              "
+              (error)="imageError($event)"
+            />
+
+          </div>
+
+
+          @if (projectImages.length > 1) {
+
+            <button
+              class="
+                lightbox__navigation
+                lightbox__navigation--next
+              "
+              type="button"
+              aria-label="Imagen siguiente"
+              (click)="nextImage($event)"
+            >
+              ›
+            </button>
+
+          }
+
+        </div>
+
+
+        <!-- PIE -->
+
+        <div
+          class="lightbox__footer"
+          (click)="stopPropagation($event)"
+        >
+
+          <span>
+            Use
+            <kbd>←</kbd>
+            <kbd>→</kbd>
+            para navegar
+          </span>
+
+
+          <span>
+            <kbd>Esc</kbd>
+            para cerrar
+          </span>
+
+        </div>
+
+      </div>
+
+    }
+
   </main>
+
 }

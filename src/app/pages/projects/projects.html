@@ -1,47 +1,72 @@
 <main class="projects-page">
 
-  <!-- Encabezado principal -->
+
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+
   <section class="projects-hero">
+
     <div class="projects-container">
+
 
       <div class="projects-hero__content">
 
         <span class="projects-hero__eyebrow">
-          Portafolio profesional
+          Portafolio de proyectos
         </span>
 
+
         <h1 class="projects-hero__title">
-          Proyectos que convierten necesidades en
-          <span>soluciones funcionales</span>
+
+          Soluciones construidas para
+
+          <span>
+            resolver necesidades reales
+          </span>
+
         </h1>
 
+
         <p class="projects-hero__description">
-          Una selección de sistemas web, integraciones empresariales y
-          soluciones de procesamiento de datos desarrolladas con Angular,
-          ASP.NET Core, SQL Server y otras tecnologías.
+
+          Una selección de aplicaciones web, sistemas empresariales,
+          integraciones y soluciones desarrolladas utilizando Angular,
+          ASP.NET Core, SQL Server, APIs REST y otras tecnologías.
+
         </p>
+
 
         <div class="projects-hero__actions">
 
           <a
             class="button button--primary"
-            href="#project-list"
+            href="/proyectos#project-list"
           >
             Explorar proyectos
+
+            <span aria-hidden="true">
+              ↓
+            </span>
           </a>
+
 
           <a
             class="button button--secondary"
-            routerLink="/contacto"
+            routerLink="/servicios"
           >
-            Contactarme
+            Ver servicios
           </a>
 
         </div>
 
       </div>
 
-      <!-- Resumen de experiencia -->
+
+      <!-- =====================================================
+           RESUMEN
+           ===================================================== -->
+
       <div class="projects-hero__summary">
 
         <article class="summary-card">
@@ -50,20 +75,24 @@
             class="summary-card__icon"
             aria-hidden="true"
           >
-            01
+            {{ projects.length }}
           </div>
 
+
           <div>
+
             <strong>
-              {{ projects.length }}
+              Proyectos
             </strong>
 
             <span>
-              Proyectos principales
+              Soluciones incluidas en el portafolio
             </span>
+
           </div>
 
         </article>
+
 
         <article class="summary-card">
 
@@ -74,17 +103,21 @@
             FS
           </div>
 
+
           <div>
+
             <strong>
               Full Stack
             </strong>
 
             <span>
-              Frontend, backend y base de datos
+              Frontend, backend y bases de datos
             </span>
+
           </div>
 
         </article>
+
 
         <article class="summary-card">
 
@@ -92,17 +125,20 @@
             class="summary-card__icon"
             aria-hidden="true"
           >
-            TI
+            API
           </div>
 
+
           <div>
+
             <strong>
-              Empresarial
+              Integraciones
             </strong>
 
             <span>
-              Soluciones orientadas a procesos reales
+              APIs y comunicación entre sistemas
             </span>
+
           </div>
 
         </article>
@@ -110,45 +146,282 @@
       </div>
 
     </div>
+
   </section>
 
-  <!-- Listado de proyectos -->
+
+  <!-- =========================================================
+       ÁREAS
+       ========================================================= -->
+
+  <section class="project-types">
+
+    <div class="projects-container">
+
+
+      <div class="project-types__heading">
+
+        <div>
+
+          <span class="section-heading__eyebrow">
+            Áreas de desarrollo
+          </span>
+
+
+          <h2>
+            Diferentes soluciones,
+            un mismo enfoque profesional.
+          </h2>
+
+        </div>
+
+
+        <p>
+
+          Los proyectos reflejan experiencia práctica en
+          distintas áreas del desarrollo de software, desde
+          aplicaciones web completas hasta integraciones y
+          procesamiento de información.
+
+        </p>
+
+      </div>
+
+
+      <div class="project-types__grid">
+
+        @for (
+          type of projectTypes;
+          track type.number
+        ) {
+
+          <article class="project-type-card">
+
+            <span class="project-type-card__number">
+              {{ type.number }}
+            </span>
+
+
+            <h3>
+              {{ type.title }}
+            </h3>
+
+
+            <p>
+              {{ type.description }}
+            </p>
+
+          </article>
+
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       PROYECTOS
+       ========================================================= -->
+
   <section
     id="project-list"
     class="projects-section"
     aria-labelledby="projects-title"
   >
+
     <div class="projects-container">
+
+
+      <!-- =====================================================
+           ENCABEZADO
+           ===================================================== -->
 
       <div class="section-heading">
 
         <div>
+
           <span class="section-heading__eyebrow">
             Casos de estudio
           </span>
 
+
           <h2 id="projects-title">
             Proyectos destacados
           </h2>
+
         </div>
 
+
         <p>
-          Cada proyecto presenta el problema atendido, la solución
-          implementada, las tecnologías utilizadas y los principales
-          aprendizajes obtenidos durante su desarrollo.
+
+          Explore proyectos donde presento soluciones
+          desarrolladas, tecnologías utilizadas y diferentes
+          problemas abordados durante su implementación.
+
         </p>
 
       </div>
 
+
+      <!-- =====================================================
+           FILTROS
+           ===================================================== -->
+
+      <div class="project-filters">
+
+
+        <div class="project-filters__header">
+
+          <div>
+
+            <span class="project-filters__label">
+              Filtrar proyectos
+            </span>
+
+
+            <p>
+              Seleccione una categoría para explorar
+              proyectos relacionados.
+            </p>
+
+          </div>
+
+
+          <div class="project-filters__result">
+
+            <strong>
+              {{ filteredProjects.length }}
+            </strong>
+
+            <span>
+              {{
+                filteredProjects.length === 1
+                  ? 'proyecto'
+                  : 'proyectos'
+              }}
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="project-filters__buttons"
+          role="group"
+          aria-label="Filtros de proyectos"
+        >
+
+          @for (
+            filter of filters;
+            track filter.value
+          ) {
+
+            <button
+              type="button"
+              class="project-filter"
+              [class.project-filter--active]="
+                selectedFilter === filter.value
+              "
+              [attr.aria-pressed]="
+                selectedFilter === filter.value
+              "
+              (click)="selectFilter(filter.value)"
+            >
+
+              <span class="project-filter__name">
+                {{ filter.label }}
+              </span>
+
+
+              <span class="project-filter__count">
+                {{ getFilterCount(filter.value) }}
+              </span>
+
+            </button>
+
+          }
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           TOOLBAR
+           ===================================================== -->
+
+      <div class="projects-toolbar">
+
+        <div class="projects-toolbar__information">
+
+          <span
+            class="projects-toolbar__indicator"
+          ></span>
+
+
+          <p>
+
+            Mostrando
+
+            <strong>
+              {{ filteredProjects.length }}
+            </strong>
+
+            {{
+              filteredProjects.length === 1
+                ? 'proyecto'
+                : 'proyectos'
+            }}
+
+            en
+
+            <strong>
+              {{ selectedFilterLabel }}
+            </strong>
+
+          </p>
+
+        </div>
+
+
+        <div class="projects-toolbar__technologies">
+
+          <span>
+            Angular
+          </span>
+
+          <span>
+            ASP.NET Core
+          </span>
+
+          <span>
+            SQL Server
+          </span>
+
+          <span>
+            REST API
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           GRID
+           ===================================================== -->
+
       <div class="projects-grid">
 
-        @for (project of projects; track project.id) {
+        @for (
+          project of filteredProjects;
+          track project.id
+        ) {
 
-          <!--
-            El componente ProjectCard se encarga de mostrar:
-            - La imagen, cuando project.image contiene una ruta.
-            - El aviso de confidencialidad, cuando project.image está vacío.
-          -->
           <app-project-card
             [project]="project"
           />
@@ -164,13 +437,25 @@
               &lt;/&gt;
             </span>
 
+
             <h3>
-              No hay proyectos disponibles
+              No hay proyectos en esta categoría
             </h3>
 
+
             <p>
-              Los proyectos aparecerán aquí cuando se agreguen al portafolio.
+              Seleccione otro filtro para explorar
+              los demás proyectos disponibles.
             </p>
+
+
+            <button
+              type="button"
+              class="projects-empty__button"
+              (click)="selectFilter('all')"
+            >
+              Ver todos los proyectos
+            </button>
 
           </div>
 
@@ -179,13 +464,82 @@
       </div>
 
     </div>
+
   </section>
 
-  <!-- Llamado a la acción -->
-  <section class="projects-cta">
+
+  <!-- =========================================================
+       SERVICIOS
+       ========================================================= -->
+
+  <section class="projects-services">
+
     <div class="projects-container">
 
+
+      <div class="projects-services__content">
+
+
+        <div class="projects-services__icon">
+          &lt;/&gt;
+        </div>
+
+
+        <div class="projects-services__text">
+
+          <span class="projects-services__eyebrow">
+            ¿Necesita una solución similar?
+          </span>
+
+
+          <h2>
+            También desarrollo soluciones para
+            negocios y empresas.
+          </h2>
+
+
+          <p>
+
+            Páginas web, sistemas personalizados e
+            integraciones adaptadas a las necesidades
+            de cada proyecto.
+
+          </p>
+
+        </div>
+
+
+        <a
+          routerLink="/servicios"
+          class="button button--primary"
+        >
+
+          Explorar servicios
+
+          <span aria-hidden="true">
+            →
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       CTA
+       ========================================================= -->
+
+  <section class="projects-cta">
+
+    <div class="projects-container">
+
+
       <div class="projects-cta__content">
+
 
         <div class="projects-cta__text">
 
@@ -193,28 +547,55 @@
             ¿Tiene un proyecto en mente?
           </span>
 
+
           <h2>
-            Conversemos sobre cómo convertirlo en una solución tecnológica.
+            Convirtamos su idea en una
+            solución tecnológica.
           </h2>
 
+
           <p>
-            Estoy interesado en oportunidades relacionadas con desarrollo
-            web, soporte técnico, integración de sistemas y bases de datos.
+
+            Si necesita una página web, sistema
+            personalizado, integración o solución
+            empresarial, podemos conversar sobre
+            sus necesidades y evaluar la mejor
+            alternativa.
+
           </p>
 
         </div>
 
-        <a
-          class="button button--light"
-          routerLink="/contacto"
-        >
-          Iniciar conversación
-          <span aria-hidden="true">→</span>
-        </a>
+
+        <div class="projects-cta__actions">
+
+          <a
+            class="button button--light"
+            routerLink="/contacto"
+          >
+
+            Solicitar cotización
+
+            <span aria-hidden="true">
+              →
+            </span>
+
+          </a>
+
+
+          <a
+            class="button button--outline-light"
+            routerLink="/servicios"
+          >
+            Ver servicios
+          </a>
+
+        </div>
 
       </div>
 
     </div>
+
   </section>
 
 </main>

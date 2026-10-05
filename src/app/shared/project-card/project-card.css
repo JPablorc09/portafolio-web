@@ -1,228 +1,557 @@
 :host {
+
   display: block;
+
   height: 100%;
+
 }
 
+
+/* ============================================================
+   TARJETA
+   ============================================================ */
+
 .project-card {
+
   display: flex;
+
   flex-direction: column;
+
   height: 100%;
+
   overflow: hidden;
+
   background:
+
     linear-gradient(
       145deg,
       #0f1c30 0%,
       #0b1729 100%
     );
-  border: 1px solid rgba(148, 163, 184, 0.17);
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.17);
+
   border-radius: 22px;
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.24);
+
+  box-shadow:
+    0 16px 42px
+    rgba(0, 0, 0, 0.24);
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
     border-color 0.3s ease;
+
 }
+
 
 .project-card:hover {
-  transform: translateY(-7px);
-  border-color: rgba(56, 189, 248, 0.45);
+
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(56, 189, 248, 0.45);
+
   box-shadow:
-    0 24px 58px rgba(0, 0, 0, 0.34),
-    0 0 0 1px rgba(56, 189, 248, 0.05);
+
+    0 24px 58px
+    rgba(0, 0, 0, 0.34),
+
+    0 0 0 1px
+    rgba(56, 189, 248, 0.05);
+
 }
 
+
+/* ============================================================
+   IMAGEN
+   ============================================================ */
+
 .project-card__image-container {
+
   position: relative;
-  display: block;
-  height: 240px;
+
+  display: flex;
+
+  height: 270px;
+
+  align-items: center;
+
+  justify-content: center;
+
   overflow: hidden;
+
   background:
+
     radial-gradient(
       circle at 75% 25%,
-      rgba(29, 161, 242, 0.22),
+      rgba(29, 161, 242, 0.16),
       transparent 35%
     ),
+
     linear-gradient(
       135deg,
       #0d2039,
       #07111f
     );
-  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+
+  border-bottom:
+    1px solid
+    rgba(148, 163, 184, 0.14);
+
 }
 
+
+/*
+ * IMPORTANTE:
+ *
+ * contain mantiene la proporción original
+ * de la captura.
+ *
+ * No estira la interfaz como object-fit: fill.
+ */
+
 .project-card__image {
+
+  display: block;
+
   width: 100%;
+
   height: 100%;
-  object-fit: fill;
+
+  padding: 12px;
+
+  object-fit: contain;
+
+  object-position: center;
+
   transition:
     transform 0.45s ease,
     opacity 0.3s ease;
-}
-.project-card__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.project-card:hover .project-card__image {
-  transform: scale(1.045);
+
 }
 
+
+.project-card:hover
+.project-card__image {
+
+  transform:
+    scale(1.025);
+
+}
+
+
+/* ============================================================
+   OVERLAY
+   ============================================================ */
+
 .project-card__overlay {
+
   position: absolute;
+
   inset: 0;
+
   display: flex;
+
   align-items: flex-end;
+
   justify-content: flex-end;
-  padding: 22px;
-  color: #ffffff;
-  font-weight: 700;
+
+  padding: 20px;
+
   opacity: 0;
+
   background:
+
     linear-gradient(
       to top,
       rgba(4, 12, 24, 0.9),
-      rgba(4, 12, 24, 0.05)
+      rgba(4, 12, 24, 0.05) 65%
     );
-  transition: opacity 0.3s ease;
+
+  transition:
+    opacity 0.3s ease;
+
 }
 
-.project-card:hover .project-card__overlay {
+
+.project-card:hover
+.project-card__overlay {
+
   opacity: 1;
+
 }
+
+
+.project-card__overlay-button {
+
+  display: inline-flex;
+
+  gap: 8px;
+
+  align-items: center;
+
+  padding:
+    9px 13px;
+
+  color: #ffffff;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  background:
+    rgba(7, 17, 31, 0.82);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.18);
+
+  border-radius: 9px;
+
+  backdrop-filter:
+    blur(8px);
+
+}
+
+
+/* ============================================================
+   BADGE
+   ============================================================ */
+
+.project-card__badge {
+
+  position: absolute;
+
+  top: 16px;
+
+  left: 16px;
+
+  z-index: 2;
+
+  padding:
+    7px 10px;
+
+  color: #bae6fd;
+
+  font-size: 0.65rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+
+  background:
+    rgba(7, 17, 31, 0.9);
+
+  border:
+    1px solid
+    rgba(56, 189, 248, 0.28);
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 7px 20px
+    rgba(0, 0, 0, 0.25);
+
+  backdrop-filter:
+    blur(8px);
+
+}
+
+
+/* ============================================================
+   CONTENIDO
+   ============================================================ */
 
 .project-card__content {
+
   display: flex;
+
   flex: 1;
+
   flex-direction: column;
+
   padding: 28px;
+
 }
+
+
+/* ============================================================
+   CATEGORÍA
+   ============================================================ */
 
 .project-card__category {
+
   display: inline-flex;
+
   align-self: flex-start;
+
   margin-bottom: 15px;
-  padding: 7px 12px;
+
+  padding:
+    7px 12px;
+
   color: #7dd3fc;
-  font-size: 0.73rem;
+
+  font-size: 0.7rem;
+
   font-weight: 800;
+
   letter-spacing: 0.07em;
+
   text-transform: uppercase;
-  background: rgba(29, 161, 242, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.22);
+
+  background:
+    rgba(29, 161, 242, 0.1);
+
+  border:
+    1px solid
+    rgba(56, 189, 248, 0.22);
+
   border-radius: 999px;
+
 }
+
+
+/* ============================================================
+   TÍTULO
+   ============================================================ */
 
 .project-card__title {
-  margin: 0 0 12px;
+
+  margin:
+    0 0 12px;
+
   font-size: 1.45rem;
+
   line-height: 1.25;
+
 }
+
 
 .project-card__title a {
+
   color: #f8fafc;
+
   text-decoration: none;
-  transition: color 0.25s ease;
+
+  transition:
+    color 0.25s ease;
+
 }
+
 
 .project-card__title a:hover {
+
   color: #38bdf8;
+
 }
+
+
+/* ============================================================
+   DESCRIPCIÓN
+   ============================================================ */
 
 .project-card__description {
-  margin: 0 0 22px;
+
+  margin:
+    0 0 22px;
+
   color: #a8b4c7;
-  font-size: 0.98rem;
+
+  font-size: 0.95rem;
+
   line-height: 1.75;
+
 }
+
+
+/* ============================================================
+   TECNOLOGÍAS
+   ============================================================ */
 
 .project-card__technologies {
+
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 8px;
+
   margin-bottom: 26px;
+
 }
+
 
 .project-card__technology {
-  padding: 7px 10px;
+
+  padding:
+    7px 10px;
+
   color: #cbd5e1;
-  font-size: 0.76rem;
+
+  font-size: 0.73rem;
+
   font-weight: 650;
-  background: rgba(148, 163, 184, 0.08);
-  border: 1px solid rgba(148, 163, 184, 0.16);
+
+  background:
+    rgba(148, 163, 184, 0.08);
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.16);
+
   border-radius: 8px;
+
 }
+
 
 .project-card__technology--more {
+
   color: #7dd3fc;
-  background: rgba(29, 161, 242, 0.09);
-  border-color: rgba(56, 189, 248, 0.2);
+
+  background:
+    rgba(29, 161, 242, 0.09);
+
+  border-color:
+    rgba(56, 189, 248, 0.2);
+
 }
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.project-card__footer {
+
+  display: flex;
+
+  align-items: center;
+
+  margin-top: auto;
+
+}
+
 
 .project-card__link {
+
   display: inline-flex;
+
   align-items: center;
+
   gap: 9px;
+
   width: fit-content;
-  margin-top: auto;
+
   color: #38bdf8;
+
   font-weight: 750;
+
   text-decoration: none;
-  transition: color 0.25s ease;
+
+  transition:
+    color 0.25s ease;
+
 }
+
 
 .project-card__link:hover {
+
   color: #7dd3fc;
+
 }
+
 
 .project-card__link span {
-  transition: transform 0.25s ease;
+
+  transition:
+    transform 0.25s ease;
+
 }
+
 
 .project-card__link:hover span {
-  transform: translateX(5px);
+
+  transform:
+    translateX(5px);
+
 }
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 
 @media (max-width: 768px) {
+
   .project-card__image-container {
-    height: 210px;
+
+    height: 230px;
+
   }
+
+
+  .project-card__image {
+
+    padding: 8px;
+
+  }
+
 
   .project-card__content {
+
     padding: 23px;
+
   }
+
 
   .project-card__title {
+
     font-size: 1.3rem;
+
   }
-}
-.project-card__confidential {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
-  padding: 28px;
-  text-align: center;
-  background:
-    linear-gradient(
-      145deg,
-      #0f1c30,
-      #0b1729
-    );
-  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+
+
+  .project-card__overlay {
+
+    opacity: 1;
+
+    background:
+
+      linear-gradient(
+        to top,
+        rgba(4, 12, 24, 0.72),
+        transparent 45%
+      );
+
+  }
+
 }
 
-.project-card__confidential span {
-  margin-bottom: 12px;
-  font-size: 2rem;
-}
 
-.project-card__confidential strong {
-  margin-bottom: 6px;
-  color: #f8fafc;
-}
+@media (max-width: 480px) {
 
-.project-card__confidential small {
-  color: #94a3b8;
-  line-height: 1.5;
+  .project-card__image-container {
+
+    height: 205px;
+
+  }
+
+
+  .project-card__badge {
+
+    top: 11px;
+
+    left: 11px;
+
+    font-size: 0.58rem;
+
+  }
+
 }

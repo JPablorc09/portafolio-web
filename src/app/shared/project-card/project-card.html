@@ -1,10 +1,15 @@
 <article class="project-card">
 
+  <!-- =========================================================
+       IMAGEN
+       ========================================================= -->
+
   <a
     class="project-card__image-container"
     [routerLink]="['/proyectos', project.id]"
     [attr.aria-label]="'Ver proyecto ' + project.title"
   >
+
     <img
       class="project-card__image"
       [src]="project.image"
@@ -13,10 +18,31 @@
       (error)="imageError($event)"
     />
 
+
     <div class="project-card__overlay">
-      <span>Ver proyecto</span>
+
+      <span class="project-card__overlay-button">
+        Ver proyecto
+        <span aria-hidden="true">→</span>
+      </span>
+
     </div>
+
+
+    @if (project.professional) {
+
+      <span class="project-card__badge">
+        Experiencia profesional
+      </span>
+
+    }
+
   </a>
+
+
+  <!-- =========================================================
+       CONTENIDO
+       ========================================================= -->
 
   <div class="project-card__content">
 
@@ -24,46 +50,76 @@
       {{ project.category }}
     </span>
 
+
     <h3 class="project-card__title">
-      <a [routerLink]="['/proyectos', project.id]">
+
+      <a
+        [routerLink]="['/proyectos', project.id]"
+      >
         {{ project.title }}
       </a>
+
     </h3>
+
 
     <p class="project-card__description">
       {{ project.shortDescription }}
     </p>
 
+
+    <!-- TECNOLOGÍAS -->
+
     <div
       class="project-card__technologies"
       aria-label="Tecnologías utilizadas"
     >
+
       @for (
         technology of project.technologies.slice(0, 5);
         track technology
       ) {
+
         <span class="project-card__technology">
           {{ technology }}
         </span>
+
       }
 
+
       @if (project.technologies.length > 5) {
+
         <span
-          class="project-card__technology
-                 project-card__technology--more"
+          class="
+            project-card__technology
+            project-card__technology--more
+          "
         >
           +{{ project.technologies.length - 5 }}
         </span>
+
       }
+
     </div>
 
-    <a
-      class="project-card__link"
-      [routerLink]="['/proyectos', project.id]"
-    >
-      Ver caso de estudio
-      <span aria-hidden="true">→</span>
-    </a>
+
+    <!-- ACCIONES -->
+
+    <div class="project-card__footer">
+
+      <a
+        class="project-card__link"
+        [routerLink]="['/proyectos', project.id]"
+      >
+
+        Ver caso de estudio
+
+        <span aria-hidden="true">
+          →
+        </span>
+
+      </a>
+
+    </div>
 
   </div>
 

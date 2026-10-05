@@ -38,10 +38,16 @@ interface AvailabilityItem {
   styleUrl: './contact.css'
 })
 export class Contact {
-  /*
-   * Reemplace estos enlaces con sus datos reales.
-   */
+
+  // ============================================================
+  // DATOS DE CONTACTO
+  // ============================================================
+
   readonly email = 'juanparojasc1999@gmail.com';
+
+  readonly phone = '6279-4709';
+
+  readonly whatsappNumber = '50662794709';
 
   readonly linkedinUrl =
     'https://www.linkedin.com/in/juan-pablo-rojas-contreras-15ab09345/';
@@ -50,67 +56,107 @@ export class Contact {
     'https://github.com/JPablorc09';
 
   readonly cvUrl =
-    'assets/documents/cv-juan-pablo-rojas.pdf';
+    '/assets/documents/CV_Juan_Pablo_Rojas_Contreras.pdf';
+
+
+  // ============================================================
+  // WHATSAPP
+  // ============================================================
+
+  readonly whatsappMessage =
+    'Hola Juan Pablo. Vi su portafolio y estoy interesado(a) en cotizar un proyecto. Me gustaría recibir más información.';
+
+  readonly whatsappUrl =
+    `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(
+      this.whatsappMessage
+    )}`;
+
+
+  // ============================================================
+  // TARJETAS DE CONTACTO
+  // ============================================================
 
   readonly contactCards: ContactCard[] = [
+
     {
       icon: '@',
       title: 'Correo electrónico',
       value: this.email,
       description:
-        'El medio principal para oportunidades laborales, proyectos y consultas profesionales.',
-      action: `mailto:${this.email}`,
+        'Medio principal para oportunidades laborales, propuestas profesionales y consultas.',
+      action: `mailto:${this.email}?subject=Contacto%20desde%20el%20portafolio`,
       actionLabel: 'Enviar correo'
     },
+
+    {
+      icon: 'WA',
+      title: 'WhatsApp',
+      value: this.phone,
+      description:
+        'Contacto directo para cotizaciones de páginas web, sistemas, integraciones y proyectos.',
+      action: this.whatsappUrl,
+      actionLabel: 'Escribir por WhatsApp',
+      external: true
+    },
+
     {
       icon: 'CR',
       title: 'Ubicación',
       value: 'Costa Rica',
       description:
         'Disponible para oportunidades presenciales, híbridas o remotas.',
-      actionLabel: 'Ubicación'
+      actionLabel: 'Costa Rica'
     },
+
     {
       icon: 'TI',
       title: 'Área profesional',
       value: 'Tecnología y desarrollo',
       description:
-        'Interés en desarrollo web, soporte técnico, integraciones y sistemas empresariales.',
-      actionLabel: 'Perfil profesional'
-    },
-    {
-      icon: 'OK',
-      title: 'Disponibilidad',
-      value: 'Abierto a oportunidades',
-      description:
-        'Disponible para conversar sobre puestos, proyectos y colaboraciones profesionales.',
-      action: `mailto:${this.email}?subject=Oportunidad%20profesional`,
-      actionLabel: 'Contactar'
+        'Desarrollo web, sistemas empresariales, bases de datos, integraciones y soluciones tecnológicas.',
+      action: '/servicios',
+      actionLabel: 'Ver servicios'
     }
+
   ];
 
+
+  // ============================================================
+  // REDES PROFESIONALES
+  // ============================================================
+
   readonly socialLinks: SocialLink[] = [
+
     {
       name: 'LinkedIn',
       username: 'Conectar profesionalmente',
       icon: 'in',
       url: this.linkedinUrl
     },
+
     {
       name: 'GitHub',
       username: 'Ver repositorios y código',
       icon: 'GH',
       url: this.githubUrl
     },
+
     {
       name: 'Correo',
       username: this.email,
       icon: '@',
       url: `mailto:${this.email}`
     }
+
   ];
 
+
+  // ============================================================
+  // APORTE PROFESIONAL
+  // ============================================================
+
   readonly contributions: Contribution[] = [
+
     {
       number: '01',
       title: 'Desarrollo Full Stack',
@@ -123,11 +169,12 @@ export class Contact {
         'SQL Server'
       ]
     },
+
     {
       number: '02',
       title: 'Integración de sistemas',
       description:
-        'Conexión de aplicaciones mediante APIs REST, procesamiento JSON y servicios empresariales.',
+        'Conexión de aplicaciones mediante APIs REST, intercambio de información y servicios empresariales.',
       technologies: [
         'REST API',
         'HttpClient',
@@ -135,18 +182,20 @@ export class Contact {
         'Aranda ASMS'
       ]
     },
+
     {
       number: '03',
-      title: 'Soporte e infraestructura',
+      title: 'Monitoreo y gestión de incidentes',
       description:
-        'Diagnóstico de incidentes, publicación de aplicaciones y atención de necesidades técnicas.',
+        'Monitoreo de infraestructura mediante PRTG, identificación de afectaciones y gestión de reportes e incidencias mediante integraciones con Aranda.',
       technologies: [
-        'Soporte técnico',
-        'IIS',
-        'Windows Server',
-        'PRTG'
+        'PRTG',
+        'Aranda',
+        'Monitoreo',
+        'Gestión de incidentes'
       ]
     },
+
     {
       number: '04',
       title: 'Bases de datos',
@@ -158,32 +207,52 @@ export class Contact {
         'Entity Framework Core'
       ]
     }
+
   ];
 
+
+  // ============================================================
+  // DISPONIBILIDAD
+  // ============================================================
+
   readonly availability: AvailabilityItem[] = [
+
     {
       label: 'Modalidad',
       value: 'Presencial, híbrida o remota'
     },
+
     {
       label: 'Ubicación',
       value: 'Costa Rica'
     },
+
     {
-      label: 'Intereses',
-      value: 'Desarrollo, soporte e integraciones'
+      label: 'Servicios',
+      value: 'Desarrollo web y sistemas'
     },
+
     {
-      label: 'Respuesta',
-      value: 'Por correo electrónico'
+      label: 'Contacto',
+      value: 'Correo o WhatsApp'
     }
+
   ];
 
+
+  // ============================================================
+  // DESCARGAR CV
+  // ============================================================
+
   downloadCv(): void {
+
     const link = document.createElement('a');
 
     link.href = this.cvUrl;
-    link.download = 'CV-Juan-Pablo-Rojas.pdf';
+
+    link.download = 'CV-Juan-Pablo-Rojas-Contreras.pdf';
+
     link.click();
   }
+
 }

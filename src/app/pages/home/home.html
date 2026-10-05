@@ -1,35 +1,69 @@
 <section class="hero">
+
+  <!-- =====================================================
+       EFECTOS DE FONDO
+       ===================================================== -->
   <div class="hero__glow hero__glow--one"></div>
   <div class="hero__glow hero__glow--two"></div>
 
+
   <div class="container hero__container">
+
+    <!-- =====================================================
+         INFORMACIÓN PRINCIPAL
+         ===================================================== -->
     <div class="hero__content">
+
       <div class="hero__status">
         <span></span>
-        Disponible para nuevas oportunidades
+        Disponible para oportunidades y nuevos proyectos
       </div>
 
-      <p class="hero__eyebrow">Ingeniero de Sistemas</p>
+
+      <p class="hero__eyebrow">
+        Ingeniero de Sistemas · Desarrollador Full Stack
+      </p>
+
 
       <h1>
         Hola, soy
         <span>Juan Pablo Rojas</span>
       </h1>
 
+
       <h2>
-        Desarrollo soluciones web que conectan tecnología, procesos y usuarios.
+        Desarrollo soluciones web que conectan tecnología,
+        procesos y usuarios.
       </h2>
 
+
       <p class="hero__description">
-        Tengo experiencia en soporte técnico y desarrollo de aplicaciones
-        utilizando Angular, ASP.NET Core, SQL Server e integración de APIs.
-        Me enfoco en crear sistemas funcionales, seguros y fáciles de utilizar.
+        Desarrollo aplicaciones y soluciones web utilizando Angular,
+        ASP.NET Core, SQL Server e integración de APIs. Mi experiencia
+        combina desarrollo, bases de datos, integraciones, monitoreo y
+        soporte tecnológico, con un enfoque en crear soluciones
+        funcionales, seguras y fáciles de utilizar.
       </p>
 
+
+      <!-- BOTONES PRINCIPALES -->
       <div class="hero__actions">
-        <a routerLink="/proyectos" class="button button--primary">
+
+        <a
+          routerLink="/proyectos"
+          class="button button--primary"
+        >
           Ver mis proyectos
         </a>
+
+
+        <a
+          routerLink="/servicios"
+          class="button button--secondary"
+        >
+          Mis servicios
+        </a>
+
 
         <a
           href="/assets/documents/CV_Juan_Pablo_Rojas_Contreras.pdf"
@@ -39,81 +73,319 @@
         >
           Descargar CV
         </a>
+
       </div>
 
+
+      <!-- TECNOLOGÍAS -->
       <div class="hero__technologies">
+
         @for (technology of technologies; track technology) {
-          <span>{{ technology }}</span>
+
+          <span>
+            {{ technology }}
+          </span>
+
         }
+
       </div>
+
     </div>
 
+
+    <!-- =====================================================
+         TARJETA PROFESIONAL
+         ===================================================== -->
     <aside class="hero__visual">
+
       <div class="profile-card card">
+
         <div class="profile-card__image">
           <span>JP</span>
         </div>
 
+
         <div class="profile-card__body">
-          <small>Perfil profesional</small>
-          <h3>Desarrollo Full Stack</h3>
+
+          <small>
+            Perfil profesional
+          </small>
+
+          <h3>
+            Desarrollo Full Stack
+          </h3>
+
           <p>
-            Aplicaciones empresariales, bases de datos, APIs y soporte técnico.
+            Aplicaciones web, sistemas empresariales,
+            bases de datos, APIs e integraciones.
           </p>
+
         </div>
 
+
+        <!-- BLOQUE DE CÓDIGO -->
         <div class="profile-card__code">
+
           <div>
             <span>const</span>
             <strong>developer</strong> = &#123;
           </div>
+
           <div class="profile-card__indent">
             frontend: <em>'Angular'</em>,
           </div>
+
           <div class="profile-card__indent">
             backend: <em>'ASP.NET Core'</em>,
           </div>
+
           <div class="profile-card__indent">
             database: <em>'SQL Server'</em>
           </div>
-          <div>&#125;;</div>
+
+          <div>
+            &#125;;
+          </div>
+
         </div>
+
       </div>
+
     </aside>
+
   </div>
 
+
+  <!-- =====================================================
+       ESTADÍSTICAS
+       ===================================================== -->
   <div class="container hero__statistics">
+
     @for (statistic of statistics; track statistic.label) {
+
       <article>
-        <strong>{{ statistic.value }}</strong>
-        <span>{{ statistic.label }}</span>
+
+        <strong>
+          {{ statistic.value }}
+        </strong>
+
+        <span>
+          {{ statistic.label }}
+        </span>
+
       </article>
+
     }
+
   </div>
+
 </section>
 
+
+<!-- =========================================================
+     MI ENFOQUE
+     ========================================================= -->
 <section class="introduction section">
+
   <div class="container introduction__grid">
+
     <div class="section-heading">
-      <span class="section-heading__eyebrow">Mi enfoque</span>
+
+      <span class="section-heading__eyebrow">
+        Mi enfoque
+      </span>
 
       <h2>
         Convierto necesidades operativas en soluciones tecnológicas.
       </h2>
+
     </div>
 
+
     <div class="introduction__content">
+
       <p>
-        Mi experiencia combina soporte técnico, programación, bases de datos,
-        redes y administración de aplicaciones. Esto me permite comprender
-        tanto las necesidades del usuario como los aspectos técnicos de una
-        solución.
+        Mi experiencia combina desarrollo de software, bases de datos,
+        integraciones, monitoreo y soporte tecnológico. Esto me permite
+        comprender tanto las necesidades del usuario como los aspectos
+        técnicos necesarios para construir una solución.
       </p>
 
       <a routerLink="/sobre-mi">
+
         Conocer más sobre mi perfil
-        <span aria-hidden="true">→</span>
+
+        <span aria-hidden="true">
+          →
+        </span>
+
       </a>
+
     </div>
+
   </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICIOS
+     ========================================================= -->
+<section class="home-services section">
+
+  <div class="container">
+
+    <!-- ENCABEZADO -->
+    <div class="home-services__header">
+
+      <div class="section-heading">
+
+        <span class="section-heading__eyebrow">
+          Servicios
+        </span>
+
+        <h2>
+          Soluciones para negocios, profesionales y empresas.
+        </h2>
+
+      </div>
+
+
+      <div class="home-services__intro">
+
+        <p>
+          Además del desarrollo de aplicaciones empresariales,
+          también desarrollo soluciones digitales para negocios
+          que buscan mejorar su presencia en Internet o digitalizar
+          sus procesos.
+        </p>
+
+        <a routerLink="/servicios">
+
+          Ver todos los servicios
+
+          <span aria-hidden="true">
+            →
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- TARJETAS -->
+    <div class="home-services__grid">
+
+      @for (service of services; track service.title) {
+
+        <article class="home-service-card">
+
+          <div class="home-service-card__number">
+            {{ service.number }}
+          </div>
+
+
+          <h3>
+            {{ service.title }}
+          </h3>
+
+
+          <p>
+            {{ service.description }}
+          </p>
+
+
+          <div class="home-service-card__technologies">
+
+            @for (
+              technology of service.technologies;
+              track technology
+            ) {
+
+              <span>
+                {{ technology }}
+              </span>
+
+            }
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+
+    <div class="home-services__action">
+
+      <a
+        routerLink="/servicios"
+        class="button button--primary"
+      >
+        Explorar servicios
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA / CONTACTO
+     ========================================================= -->
+<section class="home-cta section">
+
+  <div class="container">
+
+    <div class="home-cta__card">
+
+      <div class="home-cta__content">
+
+        <span class="home-cta__eyebrow">
+          ¿Tiene un proyecto en mente?
+        </span>
+
+
+        <h2>
+          Podemos convertir su idea en una solución digital.
+        </h2>
+
+
+        <p>
+          Si necesita una página web, un sistema personalizado
+          o una integración, cuénteme sobre su proyecto y podemos
+          evaluar la solución que mejor se adapte a sus necesidades.
+        </p>
+
+      </div>
+
+
+      <div class="home-cta__actions">
+
+        <a
+          routerLink="/contacto"
+          class="button button--primary"
+        >
+          Solicitar cotización
+        </a>
+
+
+        <a
+          routerLink="/servicios"
+          class="button button--outline"
+        >
+          Ver servicios
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>

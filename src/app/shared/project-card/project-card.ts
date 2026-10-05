@@ -11,12 +11,21 @@ import { Project } from '../../models/project';
   styleUrl: './project-card.css'
 })
 export class ProjectCard {
-  @Input({ required: true }) project!: Project;
+
+  @Input({ required: true })
+  project!: Project;
+
 
   imageError(event: Event): void {
-    const image = event.target as HTMLImageElement;
+
+    const image =
+      event.target as HTMLImageElement;
 
     image.onerror = null;
-    image.src = 'assets/images/projects/project-placeholder.png';
+
+    image.src =
+      'assets/images/projects/project-placeholder.png';
+
   }
+
 }
