@@ -1,14 +1,23 @@
+
+<!-- ============================================================
+     PORTAFOLIO PROFESIONAL
+     PÁGINA DE PROYECTOS
+     ============================================================ -->
+
 <main class="projects-page">
 
+  <!-- ==========================================================
+       01. HERO PRINCIPAL
+       ========================================================== -->
 
-  <!-- =========================================================
-       HERO
-       ========================================================= -->
+  <section
+    class="projects-hero"
+    aria-labelledby="projects-hero-title"
+  >
 
-  <section class="projects-hero">
+    <div class="projects-container projects-hero__layout">
 
-    <div class="projects-container">
-
+      <!-- CONTENIDO -->
 
       <div class="projects-hero__content">
 
@@ -16,40 +25,40 @@
           Portafolio de proyectos
         </span>
 
-
-        <h1 class="projects-hero__title">
-
+        <h1
+          id="projects-hero-title"
+          class="projects-hero__title"
+        >
           Soluciones construidas para
 
           <span>
-            resolver necesidades reales
+            resolver necesidades reales.
           </span>
-
         </h1>
 
-
         <p class="projects-hero__description">
-
           Una selección de aplicaciones web, sistemas empresariales,
-          integraciones y soluciones desarrolladas utilizando Angular,
-          ASP.NET Core, SQL Server, APIs REST y otras tecnologías.
-
+          integraciones y sitios web comerciales desarrollados
+          con Angular, ASP.NET Core, SQL Server, APIs REST
+          y otras tecnologías.
         </p>
 
+        <!-- BOTONES -->
 
         <div class="projects-hero__actions">
 
-          <a
+          <button
+            type="button"
             class="button button--primary"
-            href="/proyectos#project-list"
+            (click)="scrollToProjects()"
+            aria-label="Explorar la sección de proyectos destacados"
           >
             Explorar proyectos
 
             <span aria-hidden="true">
               ↓
             </span>
-          </a>
-
+          </button>
 
           <a
             class="button button--secondary"
@@ -62,12 +71,12 @@
 
       </div>
 
+      <!-- RESUMEN -->
 
-      <!-- =====================================================
-           RESUMEN
-           ===================================================== -->
-
-      <div class="projects-hero__summary">
+      <div
+        class="projects-hero__summary"
+        aria-label="Resumen del portafolio"
+      >
 
         <article class="summary-card">
 
@@ -78,21 +87,15 @@
             {{ projects.length }}
           </div>
 
-
           <div>
-
-            <strong>
-              Proyectos
-            </strong>
+            <strong>Proyectos</strong>
 
             <span>
               Soluciones incluidas en el portafolio
             </span>
-
           </div>
 
         </article>
-
 
         <article class="summary-card">
 
@@ -103,21 +106,15 @@
             FS
           </div>
 
-
           <div>
-
-            <strong>
-              Full Stack
-            </strong>
+            <strong>Full Stack</strong>
 
             <span>
               Frontend, backend y bases de datos
             </span>
-
           </div>
 
         </article>
-
 
         <article class="summary-card">
 
@@ -128,17 +125,12 @@
             API
           </div>
 
-
           <div>
-
-            <strong>
-              Integraciones
-            </strong>
+            <strong>Integraciones</strong>
 
             <span>
               APIs y comunicación entre sistemas
             </span>
-
           </div>
 
         </article>
@@ -150,14 +142,16 @@
   </section>
 
 
-  <!-- =========================================================
-       ÁREAS
-       ========================================================= -->
+  <!-- ==========================================================
+       02. ÁREAS DE DESARROLLO
+       ========================================================== -->
 
-  <section class="project-types">
+  <section
+    class="project-types"
+    aria-labelledby="project-types-title"
+  >
 
     <div class="projects-container">
-
 
       <div class="project-types__heading">
 
@@ -167,26 +161,25 @@
             Áreas de desarrollo
           </span>
 
-
-          <h2>
+          <h2 id="project-types-title">
             Diferentes soluciones,
-            un mismo enfoque profesional.
+
+            <span>
+              un mismo enfoque profesional.
+            </span>
           </h2>
 
         </div>
 
-
         <p>
-
-          Los proyectos reflejan experiencia práctica en
-          distintas áreas del desarrollo de software, desde
-          aplicaciones web completas hasta integraciones y
-          procesamiento de información.
-
+          Los proyectos reflejan experiencia práctica en distintas
+          áreas del desarrollo de software, desde aplicaciones
+          web completas hasta integraciones y soluciones comerciales.
         </p>
 
       </div>
 
+      <!-- TARJETAS DE ÁREAS -->
 
       <div class="project-types__grid">
 
@@ -201,11 +194,9 @@
               {{ type.number }}
             </span>
 
-
             <h3>
               {{ type.title }}
             </h3>
-
 
             <p>
               {{ type.description }}
@@ -222,9 +213,9 @@
   </section>
 
 
-  <!-- =========================================================
-       PROYECTOS
-       ========================================================= -->
+  <!-- ==========================================================
+       03. PROYECTOS DESTACADOS
+       ========================================================== -->
 
   <section
     id="project-list"
@@ -234,10 +225,7 @@
 
     <div class="projects-container">
 
-
-      <!-- =====================================================
-           ENCABEZADO
-           ===================================================== -->
+      <!-- ENCABEZADO -->
 
       <div class="section-heading">
 
@@ -247,31 +235,26 @@
             Casos de estudio
           </span>
 
-
           <h2 id="projects-title">
             Proyectos destacados
           </h2>
 
         </div>
 
-
         <p>
-
-          Explore proyectos donde presento soluciones
-          desarrolladas, tecnologías utilizadas y diferentes
-          problemas abordados durante su implementación.
-
+          Explore las soluciones desarrolladas,
+          las tecnologías utilizadas y los problemas
+          abordados durante su implementación.
         </p>
 
       </div>
 
 
-      <!-- =====================================================
+      <!-- ======================================================
            FILTROS
-           ===================================================== -->
+           ====================================================== -->
 
       <div class="project-filters">
-
 
         <div class="project-filters__header">
 
@@ -281,7 +264,6 @@
               Filtrar proyectos
             </span>
 
-
             <p>
               Seleccione una categoría para explorar
               proyectos relacionados.
@@ -289,8 +271,13 @@
 
           </div>
 
+          <!-- CONTADOR -->
 
-          <div class="project-filters__result">
+          <div
+            class="project-filters__result"
+            aria-live="polite"
+            aria-atomic="true"
+          >
 
             <strong>
               {{ filteredProjects.length }}
@@ -309,6 +296,8 @@
         </div>
 
 
+        <!-- BOTONES DE FILTRO -->
+
         <div
           class="project-filters__buttons"
           role="group"
@@ -323,19 +312,14 @@
             <button
               type="button"
               class="project-filter"
-              [class.project-filter--active]="
-                selectedFilter === filter.value
-              "
-              [attr.aria-pressed]="
-                selectedFilter === filter.value
-              "
+              [class.project-filter--active]="selectedFilter === filter.value"
+              [attr.aria-pressed]="selectedFilter === filter.value"
               (click)="selectFilter(filter.value)"
             >
 
               <span class="project-filter__name">
                 {{ filter.label }}
               </span>
-
 
               <span class="project-filter__count">
                 {{ getFilterCount(filter.value) }}
@@ -350,9 +334,9 @@
       </div>
 
 
-      <!-- =====================================================
-           TOOLBAR
-           ===================================================== -->
+      <!-- ======================================================
+           BARRA DE INFORMACIÓN
+           ====================================================== -->
 
       <div class="projects-toolbar">
 
@@ -360,8 +344,8 @@
 
           <span
             class="projects-toolbar__indicator"
+            aria-hidden="true"
           ></span>
-
 
           <p>
 
@@ -388,34 +372,31 @@
         </div>
 
 
-        <div class="projects-toolbar__technologies">
+        <!-- TECNOLOGÍAS PRINCIPALES -->
 
-          <span>
-            Angular
-          </span>
+        <div
+          class="projects-toolbar__technologies"
+          aria-label="Tecnologías principales"
+        >
 
-          <span>
-            ASP.NET Core
-          </span>
-
-          <span>
-            SQL Server
-          </span>
-
-          <span>
-            REST API
-          </span>
+          <span>Angular</span>
+          <span>ASP.NET Core</span>
+          <span>SQL Server</span>
+          <span>REST API</span>
 
         </div>
 
       </div>
 
 
-      <!-- =====================================================
-           GRID
-           ===================================================== -->
+      <!-- ======================================================
+           CUADRÍCULA DE PROYECTOS
+           ====================================================== -->
 
-      <div class="projects-grid">
+      <div
+        class="projects-grid"
+        aria-label="Listado de proyectos"
+      >
 
         @for (
           project of filteredProjects;
@@ -428,6 +409,8 @@
 
         } @empty {
 
+          <!-- SIN RESULTADOS -->
+
           <div class="projects-empty">
 
             <span
@@ -437,17 +420,14 @@
               &lt;/&gt;
             </span>
 
-
             <h3>
               No hay proyectos en esta categoría
             </h3>
-
 
             <p>
               Seleccione otro filtro para explorar
               los demás proyectos disponibles.
             </p>
-
 
             <button
               type="button"
@@ -468,22 +448,29 @@
   </section>
 
 
-  <!-- =========================================================
-       SERVICIOS
-       ========================================================= -->
+  <!-- ==========================================================
+       04. SERVICIOS PROFESIONALES
+       ========================================================== -->
 
-  <section class="projects-services">
+  <section
+    class="projects-services"
+    aria-labelledby="projects-services-title"
+  >
 
     <div class="projects-container">
 
-
       <div class="projects-services__content">
 
+        <!-- ICONO -->
 
-        <div class="projects-services__icon">
+        <div
+          class="projects-services__icon"
+          aria-hidden="true"
+        >
           &lt;/&gt;
         </div>
 
+        <!-- TEXTO -->
 
         <div class="projects-services__text">
 
@@ -491,35 +478,30 @@
             ¿Necesita una solución similar?
           </span>
 
-
-          <h2>
-            También desarrollo soluciones para
-            negocios y empresas.
+          <h2 id="projects-services-title">
+            También desarrollo soluciones
+            para negocios y empresas.
           </h2>
 
-
           <p>
-
             Páginas web, sistemas personalizados e
             integraciones adaptadas a las necesidades
             de cada proyecto.
-
           </p>
 
         </div>
 
+        <!-- BOTÓN -->
 
         <a
           routerLink="/servicios"
           class="button button--primary"
         >
-
           Explorar servicios
 
           <span aria-hidden="true">
             →
           </span>
-
         </a>
 
       </div>
@@ -529,17 +511,20 @@
   </section>
 
 
-  <!-- =========================================================
-       CTA
-       ========================================================= -->
+  <!-- ==========================================================
+       05. LLAMADO A LA ACCIÓN FINAL
+       ========================================================== -->
 
-  <section class="projects-cta">
+  <section
+    class="projects-cta"
+    aria-labelledby="projects-cta-title"
+  >
 
     <div class="projects-container">
 
-
       <div class="projects-cta__content">
 
+        <!-- TEXTO -->
 
         <div class="projects-cta__text">
 
@@ -547,25 +532,21 @@
             ¿Tiene un proyecto en mente?
           </span>
 
-
-          <h2>
+          <h2 id="projects-cta-title">
             Convirtamos su idea en una
             solución tecnológica.
           </h2>
 
-
           <p>
-
-            Si necesita una página web, sistema
-            personalizado, integración o solución
-            empresarial, podemos conversar sobre
-            sus necesidades y evaluar la mejor
-            alternativa.
-
+            Si necesita una página web, un sistema
+            personalizado o una integración empresarial,
+            podemos conversar sobre sus necesidades
+            y evaluar alternativas.
           </p>
 
         </div>
 
+        <!-- BOTONES -->
 
         <div class="projects-cta__actions">
 
@@ -573,15 +554,12 @@
             class="button button--light"
             routerLink="/contacto"
           >
-
             Solicitar cotización
 
             <span aria-hidden="true">
               →
             </span>
-
           </a>
-
 
           <a
             class="button button--outline-light"

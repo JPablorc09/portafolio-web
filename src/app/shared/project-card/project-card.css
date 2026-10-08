@@ -1,557 +1,888 @@
+
+/* ============================================================
+   PORTAFOLIO PROFESIONAL
+   PROJECT CARD - DARK PREMIUM DESIGN
+   ============================================================ */
+
+
+/* ============================================================
+   01. VARIABLES Y HOST
+   ============================================================ */
+
 :host {
+  --card-background: #101b30;
+  --card-background-deep: #0b1425;
+  --card-background-soft: #17253c;
+
+  --card-border: rgba(148, 163, 184, 0.18);
+  --card-border-hover: rgba(59, 130, 246, 0.65);
+
+  --card-text: #f8fafc;
+  --card-text-secondary: #b6c4d8;
+  --card-text-muted: #94a3b8;
+
+  --card-primary: #3b82f6;
+  --card-primary-light: #60a5fa;
+  --card-primary-dark: #1d4ed8;
+
+  --card-gold: #f4c979;
 
   display: block;
-
   height: 100%;
-
+  min-width: 0;
 }
 
 
 /* ============================================================
-   TARJETA
+   02. CONTENEDOR PRINCIPAL
    ============================================================ */
 
 .project-card {
+  position: relative;
+  isolation: isolate;
 
   display: flex;
-
   flex-direction: column;
 
+  width: 100%;
   height: 100%;
+  min-width: 0;
 
   overflow: hidden;
 
   background:
-
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(37, 99, 235, 0.12),
+      transparent 58%
+    ),
     linear-gradient(
-      145deg,
-      #0f1c30 0%,
-      #0b1729 100%
+      155deg,
+      #15233a 0%,
+      #101b30 45%,
+      #0b1425 100%
     );
 
-  border:
-    1px solid
-    rgba(148, 163, 184, 0.17);
-
-  border-radius: 22px;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
 
   box-shadow:
-    0 16px 42px
-    rgba(0, 0, 0, 0.24);
+    0 12px 35px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
 
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 
-.project-card:hover {
+/* Línea superior decorativa */
 
-  transform:
-    translateY(-7px);
+.project-card::before {
+  content: "";
 
-  border-color:
-    rgba(56, 189, 248, 0.45);
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
 
-  box-shadow:
+  z-index: 3;
 
-    0 24px 58px
-    rgba(0, 0, 0, 0.34),
+  height: 1px;
 
-    0 0 0 1px
-    rgba(56, 189, 248, 0.05);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(96, 165, 250, 0.5),
+    transparent
+  );
+
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+
+/* Hover de la tarjeta */
+
+@media (hover: hover) {
+
+  .project-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--card-border-hover);
+
+    box-shadow:
+      0 24px 55px rgba(0, 0, 0, 0.3),
+      0 0 32px rgba(37, 99, 235, 0.09),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
 
 }
 
 
 /* ============================================================
-   IMAGEN
+   03. CONTENEDOR DE IMAGEN
    ============================================================ */
 
 .project-card__image-container {
-
   position: relative;
-
-  display: flex;
-
-  height: 270px;
-
-  align-items: center;
-
-  justify-content: center;
-
-  overflow: hidden;
-
-  background:
-
-    radial-gradient(
-      circle at 75% 25%,
-      rgba(29, 161, 242, 0.16),
-      transparent 35%
-    ),
-
-    linear-gradient(
-      135deg,
-      #0d2039,
-      #07111f
-    );
-
-  border-bottom:
-    1px solid
-    rgba(148, 163, 184, 0.14);
-
-}
-
-
-/*
- * IMPORTANTE:
- *
- * contain mantiene la proporción original
- * de la captura.
- *
- * No estira la interfaz como object-fit: fill.
- */
-
-.project-card__image {
 
   display: block;
 
   width: 100%;
+  aspect-ratio: 16 / 10;
 
+  overflow: hidden;
+
+  background: #070f1e;
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+
+  text-decoration: none;
+}
+
+
+/* Imagen */
+
+.project-card__image {
+  display: block;
+
+  width: 100%;
   height: 100%;
 
-  padding: 12px;
-
-  object-fit: contain;
-
+  object-fit: cover;
   object-position: center;
 
   transition:
-    transform 0.45s ease,
-    opacity 0.3s ease;
-
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
 }
 
 
-.project-card:hover
-.project-card__image {
+/* Degradado sobre la imagen */
 
-  transform:
-    scale(1.025);
+.project-card__image-container::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(2, 6, 23, 0.08) 0%,
+    rgba(2, 6, 23, 0.02) 45%,
+    rgba(2, 6, 23, 0.42) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+/* Zoom de imagen */
+
+@media (hover: hover) {
+
+  .project-card:hover .project-card__image {
+    transform: scale(1.065);
+
+    filter:
+      brightness(1.06)
+      saturate(1.06);
+  }
 
 }
 
 
 /* ============================================================
-   OVERLAY
+   04. OVERLAY DE IMAGEN
    ============================================================ */
 
 .project-card__overlay {
-
   position: absolute;
-
   inset: 0;
 
+  z-index: 1;
+
   display: flex;
+  align-items: center;
+  justify-content: center;
 
-  align-items: flex-end;
+  padding: 16px;
 
-  justify-content: flex-end;
-
-  padding: 20px;
+  background: rgba(3, 10, 25, 0.45);
 
   opacity: 0;
 
-  background:
-
-    linear-gradient(
-      to top,
-      rgba(4, 12, 24, 0.9),
-      rgba(4, 12, 24, 0.05) 65%
-    );
+  pointer-events: none;
 
   transition:
     opacity 0.3s ease;
+}
+
+
+/* Mostrar overlay */
+
+@media (hover: hover) {
+
+  .project-card__image-container:hover
+  .project-card__overlay,
+
+  .project-card__image-container:focus-visible
+  .project-card__overlay {
+    opacity: 1;
+  }
 
 }
 
 
-.project-card:hover
-.project-card__overlay {
-
-  opacity: 1;
-
-}
-
+/* Botón visual */
 
 .project-card__overlay-button {
-
   display: inline-flex;
-
-  gap: 8px;
-
   align-items: center;
+  justify-content: center;
 
-  padding:
-    9px 13px;
+  gap: 10px;
+
+  padding: 12px 19px;
 
   color: #ffffff;
 
-  font-size: 0.78rem;
+  background: rgba(15, 23, 42, 0.92);
 
-  font-weight: 800;
+  border: 1px solid rgba(147, 197, 253, 0.4);
+  border-radius: 10px;
 
-  background:
-    rgba(7, 17, 31, 0.82);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25);
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.18);
+  font-size: 0.82rem;
+  font-weight: 750;
+  line-height: 1.4;
 
-  border-radius: 9px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  backdrop-filter:
-    blur(8px);
+  transform: translateY(8px);
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.project-card__overlay-button span {
+  font-size: 1rem;
+}
+
+
+@media (hover: hover) {
+
+  .project-card__image-container:hover
+  .project-card__overlay-button,
+
+  .project-card__image-container:focus-visible
+  .project-card__overlay-button {
+    transform: translateY(0);
+
+    background: rgba(37, 99, 235, 0.95);
+
+    border-color: rgba(191, 219, 254, 0.6);
+  }
 
 }
 
 
 /* ============================================================
-   BADGE
+   05. DISTINTIVOS
    ============================================================ */
 
 .project-card__badge {
-
   position: absolute;
-
-  top: 16px;
-
-  left: 16px;
+  top: 15px;
+  left: 15px;
 
   z-index: 2;
 
-  padding:
-    7px 10px;
-
-  color: #bae6fd;
-
-  font-size: 0.65rem;
-
-  font-weight: 800;
-
-  letter-spacing: 0.04em;
-
-  text-transform: uppercase;
-
-  background:
-    rgba(7, 17, 31, 0.9);
-
-  border:
-    1px solid
-    rgba(56, 189, 248, 0.28);
-
-  border-radius: 8px;
-
-  box-shadow:
-    0 7px 20px
-    rgba(0, 0, 0, 0.25);
-
-  backdrop-filter:
-    blur(8px);
-
-}
-
-
-/* ============================================================
-   CONTENIDO
-   ============================================================ */
-
-.project-card__content {
-
-  display: flex;
-
-  flex: 1;
-
-  flex-direction: column;
-
-  padding: 28px;
-
-}
-
-
-/* ============================================================
-   CATEGORÍA
-   ============================================================ */
-
-.project-card__category {
-
   display: inline-flex;
+  align-items: center;
 
-  align-self: flex-start;
+  gap: 7px;
 
-  margin-bottom: 15px;
+  max-width: calc(100% - 30px);
 
-  padding:
-    7px 12px;
-
-  color: #7dd3fc;
-
-  font-size: 0.7rem;
-
-  font-weight: 800;
-
-  letter-spacing: 0.07em;
-
-  text-transform: uppercase;
-
-  background:
-    rgba(29, 161, 242, 0.1);
-
-  border:
-    1px solid
-    rgba(56, 189, 248, 0.22);
+  padding: 8px 12px;
 
   border-radius: 999px;
 
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.015em;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Experiencia profesional */
+
+.project-card__badge--professional {
+  color: #dbeafe;
+
+  background: rgba(15, 35, 75, 0.94);
+
+  border: 1px solid rgba(96, 165, 250, 0.55);
+}
+
+
+/* Demo comercial */
+
+.project-card__badge--demo {
+  color: #ffe3a4;
+
+  background: rgba(42, 31, 15, 0.94);
+
+  border: 1px solid rgba(244, 201, 121, 0.6);
 }
 
 
 /* ============================================================
-   TÍTULO
+   06. CONTENIDO
    ============================================================ */
 
-.project-card__title {
-
-  margin:
-    0 0 12px;
-
-  font-size: 1.45rem;
-
-  line-height: 1.25;
-
-}
-
-
-.project-card__title a {
-
-  color: #f8fafc;
-
-  text-decoration: none;
-
-  transition:
-    color 0.25s ease;
-
-}
-
-
-.project-card__title a:hover {
-
-  color: #38bdf8;
-
-}
-
-
-/* ============================================================
-   DESCRIPCIÓN
-   ============================================================ */
-
-.project-card__description {
-
-  margin:
-    0 0 22px;
-
-  color: #a8b4c7;
-
-  font-size: 0.95rem;
-
-  line-height: 1.75;
-
-}
-
-
-/* ============================================================
-   TECNOLOGÍAS
-   ============================================================ */
-
-.project-card__technologies {
-
+.project-card__content {
   display: flex;
+  flex-direction: column;
 
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 25px 24px 23px;
+}
+
+
+/* ============================================================
+   07. METADATOS
+   ============================================================ */
+
+.project-card__meta {
+  display: flex;
   flex-wrap: wrap;
-
-  gap: 8px;
-
-  margin-bottom: 26px;
-
-}
-
-
-.project-card__technology {
-
-  padding:
-    7px 10px;
-
-  color: #cbd5e1;
-
-  font-size: 0.73rem;
-
-  font-weight: 650;
-
-  background:
-    rgba(148, 163, 184, 0.08);
-
-  border:
-    1px solid
-    rgba(148, 163, 184, 0.16);
-
-  border-radius: 8px;
-
-}
-
-
-.project-card__technology--more {
-
-  color: #7dd3fc;
-
-  background:
-    rgba(29, 161, 242, 0.09);
-
-  border-color:
-    rgba(56, 189, 248, 0.2);
-
-}
-
-
-/* ============================================================
-   FOOTER
-   ============================================================ */
-
-.project-card__footer {
-
-  display: flex;
-
-  align-items: center;
-
-  margin-top: auto;
-
-}
-
-
-.project-card__link {
-
-  display: inline-flex;
-
   align-items: center;
 
   gap: 9px;
 
-  width: fit-content;
+  margin-bottom: 15px;
+}
 
-  color: #38bdf8;
 
-  font-weight: 750;
+/* Categoría */
+
+.project-card__category {
+  display: inline-flex;
+  align-items: center;
+
+  color: #7db5ff;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+
+
+/* Punto separador */
+
+.project-card__meta-dot {
+  width: 4px;
+  height: 4px;
+
+  flex: 0 0 4px;
+
+  background: #64748b;
+
+  border-radius: 50%;
+}
+
+
+/* Tipo */
+
+.project-card__type {
+  color: #a6b5cb;
+
+  font-size: 0.73rem;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   08. TÍTULO
+   ============================================================ */
+
+.project-card__title {
+  margin: 0 0 13px;
+
+  color: var(--card-text);
+
+  font-size: clamp(1.16rem, 1.6vw, 1.38rem);
+  font-weight: 800;
+
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+
+  overflow-wrap: anywhere;
+}
+
+
+.project-card__title a {
+  color: inherit;
 
   text-decoration: none;
 
   transition:
     color 0.25s ease;
-
 }
 
 
-.project-card__link:hover {
+@media (hover: hover) {
 
-  color: #7dd3fc;
-
-}
-
-
-.project-card__link span {
-
-  transition:
-    transform 0.25s ease;
-
-}
-
-
-.project-card__link:hover span {
-
-  transform:
-    translateX(5px);
+  .project-card__title a:hover {
+    color: #93c5fd;
+  }
 
 }
 
 
 /* ============================================================
-   RESPONSIVE
+   09. DESCRIPCIÓN
    ============================================================ */
 
-@media (max-width: 768px) {
+.project-card__description {
+  margin: 0 0 24px;
 
-  .project-card__image-container {
+  color: var(--card-text-secondary);
 
-    height: 230px;
+  font-size: 0.88rem;
+  font-weight: 400;
 
-  }
+  line-height: 1.75;
 
-
-  .project-card__image {
-
-    padding: 8px;
-
-  }
+  overflow-wrap: anywhere;
+}
 
 
-  .project-card__content {
+/* ============================================================
+   10. TECNOLOGÍAS
+   ============================================================ */
 
-    padding: 23px;
+.project-card__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 
-  }
+  gap: 8px;
+
+  margin-top: auto;
+
+  padding-bottom: 22px;
+}
 
 
-  .project-card__title {
+/* Etiquetas */
 
-    font-size: 1.3rem;
+.project-card__technology {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  }
+  min-height: 29px;
+
+  padding: 6px 10px;
+
+  color: #cbd5e1;
+
+  background: rgba(30, 48, 75, 0.85);
+
+  border: 1px solid rgba(100, 116, 139, 0.34);
+  border-radius: 7px;
+
+  font-size: 0.7rem;
+  font-weight: 650;
+
+  line-height: 1.3;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
 
 
-  .project-card__overlay {
+/* Hover etiquetas */
 
-    opacity: 1;
+@media (hover: hover) {
 
-    background:
+  .project-card__technology:hover {
+    color: #ffffff;
 
-      linear-gradient(
-        to top,
-        rgba(4, 12, 24, 0.72),
-        transparent 45%
-      );
+    background: rgba(37, 99, 235, 0.2);
 
+    border-color: rgba(96, 165, 250, 0.55);
   }
 
 }
 
 
-@media (max-width: 480px) {
+/* Cantidad adicional */
 
-  .project-card__image-container {
+.project-card__technology--more {
+  color: #bfdbfe;
 
-    height: 205px;
+  background: rgba(37, 99, 235, 0.18);
 
+  border-color: rgba(96, 165, 250, 0.45);
+
+  font-weight: 800;
+}
+
+
+/* ============================================================
+   11. PIE DE TARJETA
+   ============================================================ */
+
+.project-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  gap: 10px;
+
+  margin-top: 0;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+
+/* ============================================================
+   12. BOTONES
+   ============================================================ */
+
+.project-card__link,
+.project-card__demo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-width: 0;
+  min-height: 46px;
+
+  padding: 12px 15px;
+
+  border-radius: 9px;
+
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.4;
+
+  text-align: center;
+  text-decoration: none;
+
+  white-space: normal;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Botón principal */
+
+.project-card__link {
+  flex: 1 1 150px;
+
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  border: 1px solid rgba(96, 165, 250, 0.5);
+
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.12);
+}
+
+
+/* Botón demostración */
+
+.project-card__demo {
+  flex: 1 1 125px;
+
+  color: #dbeafe;
+
+  background: rgba(30, 48, 75, 0.65);
+
+  border: 1px solid rgba(96, 165, 250, 0.38);
+}
+
+
+/* Hover botones */
+
+@media (hover: hover) {
+
+  .project-card__link:hover {
+    color: #ffffff;
+
+    background: linear-gradient(
+      135deg,
+      #3b82f6,
+      #2563eb
+    );
+
+    border-color: #93c5fd;
+
+    box-shadow:
+      0 10px 24px rgba(37, 99, 235, 0.3);
+
+    transform: translateY(-2px);
   }
 
 
+  .project-card__demo:hover {
+    color: #ffffff;
+
+    background: rgba(37, 99, 235, 0.22);
+
+    border-color: #60a5fa;
+
+    box-shadow:
+      0 8px 20px rgba(37, 99, 235, 0.13);
+
+    transform: translateY(-2px);
+  }
+
+}
+
+
+/* ============================================================
+   13. ACCESIBILIDAD
+   ============================================================ */
+
+.project-card a:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+
+.project-card__image-container:focus-visible {
+  outline-offset: -4px;
+}
+
+
+/* ============================================================
+   14. PANTALLAS GRANDES
+   ============================================================ */
+
+@media (min-width: 1400px) {
+
+  .project-card__content {
+    padding: 28px;
+  }
+
+  .project-card__title {
+    font-size: 1.4rem;
+  }
+
+}
+
+
+/* ============================================================
+   15. TABLET
+   ============================================================ */
+
+@media (max-width: 1024px) {
+
+  .project-card__content {
+    padding: 22px;
+  }
+
+  .project-card__title {
+    font-size: 1.22rem;
+  }
+
+  .project-card__description {
+    font-size: 0.86rem;
+  }
+
+  .project-card__footer {
+    gap: 9px;
+  }
+
+}
+
+
+/* ============================================================
+   16. MÓVIL
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+  .project-card {
+    border-radius: 16px;
+  }
+
+  .project-card__image-container {
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-card__content {
+    padding: 21px 18px;
+  }
+
   .project-card__badge {
+    top: 12px;
+    left: 12px;
 
-    top: 11px;
+    font-size: 0.65rem;
+  }
 
-    left: 11px;
+  .project-card__meta {
+    margin-bottom: 12px;
+  }
 
-    font-size: 0.58rem;
+  .project-card__category {
+    font-size: 0.66rem;
+  }
 
+  .project-card__title {
+    font-size: 1.2rem;
+  }
+
+  .project-card__description {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .project-card__technologies {
+    gap: 7px;
+    padding-bottom: 19px;
+  }
+
+  .project-card__technology {
+    font-size: 0.68rem;
+  }
+
+  .project-card__footer {
+    padding-top: 16px;
+  }
+
+  .project-card__link,
+  .project-card__demo {
+    min-height: 46px;
+    font-size: 0.76rem;
+  }
+
+}
+
+
+/* ============================================================
+   17. TELÉFONOS PEQUEÑOS
+   ============================================================ */
+
+@media (max-width: 420px) {
+
+  .project-card__footer {
+    flex-direction: column;
+  }
+
+  .project-card__link,
+  .project-card__demo {
+    flex: none;
+    width: 100%;
+  }
+
+  .project-card__content {
+    padding: 19px 16px;
+  }
+
+  .project-card__title {
+    font-size: 1.15rem;
+  }
+
+}
+
+
+/* ============================================================
+   18. DISPOSITIVOS SIN HOVER
+   ============================================================ */
+
+@media (hover: none) {
+
+  .project-card__overlay {
+    opacity: 0;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover .project-card__image {
+    transform: none;
+    filter: none;
+  }
+
+}
+
+
+/* ============================================================
+   19. MOVIMIENTO REDUCIDO
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .project-card,
+  .project-card__image,
+  .project-card__overlay,
+  .project-card__overlay-button,
+  .project-card__title a,
+  .project-card__technology,
+  .project-card__link,
+  .project-card__demo {
+    transition: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover .project-card__image {
+    transform: none;
+  }
+
+  .project-card__overlay-button {
+    transform: none;
   }
 
 }

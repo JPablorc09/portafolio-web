@@ -1,73 +1,93 @@
+
 <article class="project-card">
 
-  <!-- =========================================================
-       IMAGEN
-       ========================================================= -->
+  <!-- ========================================================
+       IMAGEN DEL PROYECTO
+       ======================================================== -->
 
   <a
     class="project-card__image-container"
     [routerLink]="['/proyectos', project.id]"
-    [attr.aria-label]="'Ver proyecto ' + project.title"
+    [attr.aria-label]="'Ver detalles del proyecto ' + project.title"
   >
 
     <img
       class="project-card__image"
       [src]="project.image"
-      [alt]="'Vista previa del proyecto ' + project.title"
+      [alt]="'Vista previa de ' + project.title"
       loading="lazy"
+      decoding="async"
       (error)="imageError($event)"
     />
 
-
-    <div class="project-card__overlay">
-
+    <div
+      class="project-card__overlay"
+      aria-hidden="true"
+    >
       <span class="project-card__overlay-button">
         Ver proyecto
-        <span aria-hidden="true">→</span>
+        <span>↗</span>
       </span>
-
     </div>
 
+    <!-- EXPERIENCIA PROFESIONAL -->
 
     @if (project.professional) {
 
-      <span class="project-card__badge">
+      <span class="project-card__badge project-card__badge--professional">
+        <span aria-hidden="true">✦</span>
         Experiencia profesional
+      </span>
+
+    } @else if (isCommercialDemo) {
+
+      <span class="project-card__badge project-card__badge--demo">
+        <span aria-hidden="true">✦</span>
+        Demo comercial
       </span>
 
     }
 
   </a>
 
-
-  <!-- =========================================================
+  <!-- ========================================================
        CONTENIDO
-       ========================================================= -->
+       ======================================================== -->
 
   <div class="project-card__content">
 
-    <span class="project-card__category">
-      {{ project.category }}
-    </span>
+    <div class="project-card__meta">
 
+      <span class="project-card__category">
+        {{ project.category }}
+      </span>
+
+      <span
+        class="project-card__meta-dot"
+        aria-hidden="true"
+      ></span>
+
+      <span class="project-card__type">
+        {{ isCommercialDemo ? 'Sitio web' : 'Software' }}
+      </span>
+
+    </div>
 
     <h3 class="project-card__title">
 
-      <a
-        [routerLink]="['/proyectos', project.id]"
-      >
+      <a [routerLink]="['/proyectos', project.id]">
         {{ project.title }}
       </a>
 
     </h3>
 
-
     <p class="project-card__description">
       {{ project.shortDescription }}
     </p>
 
-
-    <!-- TECNOLOGÍAS -->
+    <!-- ======================================================
+         TECNOLOGÍAS
+         ====================================================== -->
 
     <div
       class="project-card__technologies"
@@ -75,7 +95,7 @@
     >
 
       @for (
-        technology of project.technologies.slice(0, 5);
+        technology of visibleTechnologies;
         track technology
       ) {
 
@@ -85,24 +105,22 @@
 
       }
 
-
-      @if (project.technologies.length > 5) {
+      @if (remainingTechnologies > 0) {
 
         <span
-          class="
-            project-card__technology
-            project-card__technology--more
-          "
+          class="project-card__technology project-card__technology--more"
+          [attr.aria-label]="remainingTechnologies + ' tecnologías adicionales'"
         >
-          +{{ project.technologies.length - 5 }}
+          +{{ remainingTechnologies }}
         </span>
 
       }
 
     </div>
 
-
-    <!-- ACCIONES -->
+    <!-- ======================================================
+         ACCIONES
+         ====================================================== -->
 
     <div class="project-card__footer">
 
@@ -110,14 +128,24 @@
         class="project-card__link"
         [routerLink]="['/proyectos', project.id]"
       >
-
         Ver caso de estudio
-
-        <span aria-hidden="true">
-          →
-        </span>
-
+        <span aria-hidden="true">→</span>
       </a>
+
+      @if (project.demo) {
+
+        <a
+          class="project-card__demo"
+          [href]="project.demo"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="'Abrir demostración de ' + project.title + ' en una pestaña nueva'"
+        >
+          Ver sitio web
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      }
 
     </div>
 

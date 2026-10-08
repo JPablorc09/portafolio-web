@@ -1,21 +1,9 @@
-import {
-  Component,
-  HostListener,
-  OnDestroy,
-  OnInit
-} from '@angular/core';
-
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-
-import {
-  ActivatedRoute,
-  Router,
-  RouterLink
-} from '@angular/router';
-
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { PROJECTS } from '../../data/projects';
 import { Project } from '../../models/project';
-
 
 @Component({
   selector: 'app-project-detail',
@@ -25,26 +13,14 @@ import { Project } from '../../models/project';
   styleUrl: './project-detail.css'
 })
 export class ProjectDetail implements OnInit, OnDestroy {
-
-  // ============================================================
-  // PROYECTO
-  // ============================================================
-
   project?: Project;
-
   previousProject?: Project;
-
   nextProject?: Project;
-
-
-  // ============================================================
-  // VISOR DE IMÁGENES
-  // ============================================================
-
   lightboxOpen = false;
-
   selectedImageIndex = 0;
-
+  private routeSubscription?: Subscription;
+  private previousOverflow = '';
+  private openingElement: HTMLElement | null = null;
 
   constructor(
     private readonly route: ActivatedRoute,
@@ -52,359 +28,101 @@ export class ProjectDetail implements OnInit, OnDestroy {
     private readonly titleService: Title
   ) {}
 
-
-  // ============================================================
-  // INICIALIZACIÓN
-  // ============================================================
-
   ngOnInit(): void {
-
-    this.route.paramMap.subscribe(params => {
-
-      const projectId =
-        params.get('id');
-
-
-      const projectIndex =
-        PROJECTS.findIndex(
-          project =>
-            project.id === projectId
-        );
-
-
-      if (projectIndex === -1) {
-
-        void this.router.navigate([
-          '/proyectos'
-        ]);
-
+    this.routeSubscription = this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      const index = PROJECTS.findIndex(item => item.id === id);
+      if (index < 0) {
+        void this.router.navigate(['/proyectos']);
         return;
-
       }
-
-
-      this.project =
-        PROJECTS[projectIndex];
-
-
-      this.previousProject =
-        projectIndex > 0
-          ? PROJECTS[projectIndex - 1]
-          : undefined;
-
-
-      this.nextProject =
-        projectIndex < PROJECTS.length - 1
-          ? PROJECTS[projectIndex + 1]
-          : undefined;
-
-
-      this.titleService.setTitle(
-        `${this.project.title} | Juan Pablo Rojas`
-      );
-
-
       this.closeLightbox();
-
-
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-
+      this.project = PROJECTS[index];
+      this.previousProject = index > 0 ? PROJECTS[index - 1] : undefined;
+      this.nextProject = index < PROJECTS.length - 1 ? PROJECTS[index + 1] : undefined;
+      this.titleService.setTitle(`${this.project.title} | Juan Pablo Rojas`);
+      window.scrollTo({ top: 0, behavior: 'auto' });
     });
-
   }
-
-
-  // ============================================================
-  // DESTRUCCIÓN
-  // ============================================================
 
   ngOnDestroy(): void {
-
-    this.enablePageScroll();
-
+    this.routeSubscription?.unsubscribe();
+    this.closeLightbox();
   }
-
-
-  // ============================================================
-  // IMÁGENES DISPONIBLES PARA EL VISOR
-  // ============================================================
 
   get projectImages(): string[] {
-
-    if (!this.project) {
-      return [];
-    }
-
-
+    if (!this.project) return [];
     const images: string[] = [];
-
-
-    /*
-     * La portada se agrega solamente
-     * cuando el proyecto no es confidencial.
-     */
-
-    if (
-      this.project.image &&
-      !this.project.confidential
-    ) {
-
-      images.push(
-        this.project.image
-      );
-
+    if (this.project.image && !this.project.confidential) images.push(this.project.image);
+    for (const image of this.project.gallery ?? []) {
+      if (image && !images.includes(image)) images.push(image);
     }
-
-
-    /*
-     * Agregamos las imágenes de galería
-     * evitando duplicados.
-     */
-
-    for (
-      const image of this.project.gallery ?? []
-    ) {
-
-      if (
-        image &&
-        !images.includes(image)
-      ) {
-
-        images.push(image);
-
-      }
-
-    }
-
-
     return images;
-
   }
-
-
-  // ============================================================
-  // IMAGEN ACTUAL
-  // ============================================================
 
   get selectedImage(): string {
-
-    return (
-      this.projectImages[
-        this.selectedImageIndex
-      ] ?? ''
-    );
-
+    return this.projectImages[this.selectedImageIndex] ?? '';
   }
 
-
-  // ============================================================
-  // ABRIR LIGHTBOX
-  // ============================================================
-
-  openLightboxByImage(
-    image: string
-  ): void {
-
-    const index =
-      this.projectImages.indexOf(image);
-
-
-    if (index === -1) {
-      return;
-    }
-
-
-    this.selectedImageIndex =
-      index;
-
-
-    this.lightboxOpen =
-      true;
-
-
-    this.disablePageScroll();
-
+  openLightboxByImage(image: string, trigger?: HTMLElement): void {
+    const index = this.projectImages.indexOf(image);
+    if (index < 0) return;
+    this.openingElement = trigger ?? (document.activeElement as HTMLElement);
+    this.selectedImageIndex = index;
+    this.previousOverflow = document.body.style.overflow;
+    this.lightboxOpen = true;
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.querySelector<HTMLElement>('.project-lightbox__close')?.focus(), 0);
   }
-
-
-  // ============================================================
-  // CERRAR LIGHTBOX
-  // ============================================================
 
   closeLightbox(): void {
-
-    this.lightboxOpen =
-      false;
-
-
-    this.enablePageScroll();
-
+    if (!this.lightboxOpen) return;
+    this.lightboxOpen = false;
+    document.body.style.overflow = this.previousOverflow;
+    const trigger = this.openingElement;
+    this.openingElement = null;
+    setTimeout(() => trigger?.focus(), 0);
   }
 
-
-  // ============================================================
-  // IMAGEN ANTERIOR
-  // ============================================================
-
-  previousImage(
-    event?: Event
-  ): void {
-
+  previousImage(event?: Event): void {
     event?.stopPropagation();
-
-
-    const images =
-      this.projectImages;
-
-
-    if (
-      images.length <= 1
-    ) {
-      return;
-    }
-
-
-    this.selectedImageIndex =
-      this.selectedImageIndex === 0
-        ? images.length - 1
-        : this.selectedImageIndex - 1;
-
+    const count = this.projectImages.length;
+    if (count > 1) this.selectedImageIndex = (this.selectedImageIndex - 1 + count) % count;
   }
 
-
-  // ============================================================
-  // IMAGEN SIGUIENTE
-  // ============================================================
-
-  nextImage(
-    event?: Event
-  ): void {
-
+  nextImage(event?: Event): void {
     event?.stopPropagation();
-
-
-    const images =
-      this.projectImages;
-
-
-    if (
-      images.length <= 1
-    ) {
-      return;
-    }
-
-
-    this.selectedImageIndex =
-      this.selectedImageIndex ===
-      images.length - 1
-        ? 0
-        : this.selectedImageIndex + 1;
-
+    const count = this.projectImages.length;
+    if (count > 1) this.selectedImageIndex = (this.selectedImageIndex + 1) % count;
   }
 
-
-  // ============================================================
-  // CLIC DENTRO DEL MODAL
-  // ============================================================
-
-  stopPropagation(
-    event: Event
-  ): void {
-
+  stopPropagation(event: Event): void {
     event.stopPropagation();
-
   }
 
-
-  // ============================================================
-  // TECLADO
-  // ============================================================
-
-  @HostListener(
-    'document:keydown',
-    ['$event']
-  )
-  handleKeyboard(
-    event: KeyboardEvent
-  ): void {
-
-    if (!this.lightboxOpen) {
-      return;
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboard(event: KeyboardEvent): void {
+    if (!this.lightboxOpen) return;
+    if (event.key === 'Escape') this.closeLightbox();
+    if (event.key === 'ArrowLeft') this.previousImage();
+    if (event.key === 'ArrowRight') this.nextImage();
+    if (event.key === 'Tab') {
+      const modal = document.querySelector<HTMLElement>('.project-lightbox');
+      const focusables = modal?.querySelectorAll<HTMLElement>('button:not([disabled]), a[href]');
+      if (!modal || !focusables?.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault(); last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault(); first.focus();
+      }
     }
-
-
-    if (event.key === 'Escape') {
-
-      this.closeLightbox();
-
-      return;
-
-    }
-
-
-    if (event.key === 'ArrowLeft') {
-
-      this.previousImage();
-
-      return;
-
-    }
-
-
-    if (event.key === 'ArrowRight') {
-
-      this.nextImage();
-
-    }
-
   }
 
-
-  // ============================================================
-  // BLOQUEAR SCROLL
-  // ============================================================
-
-  private disablePageScroll(): void {
-
-    document.body.style.overflow =
-      'hidden';
-
+  imageError(event: Event): void {
+    const img = event.target as HTMLImageElement;
+    img.onerror = null;
+    img.src = '/assets/images/projects/project-placeholder.png';
   }
-
-
-  // ============================================================
-  // RESTAURAR SCROLL
-  // ============================================================
-
-  private enablePageScroll(): void {
-
-    document.body.style.overflow =
-      '';
-
-  }
-
-
-  // ============================================================
-  // ERROR DE IMAGEN
-  // ============================================================
-
-  imageError(
-    event: Event
-  ): void {
-
-    const image =
-      event.target as HTMLImageElement;
-
-
-    image.onerror = null;
-
-
-    image.src =
-      '/assets/images/projects/project-placeholder.png';
-
-  }
-
 }

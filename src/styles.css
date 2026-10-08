@@ -149,3 +149,16 @@ img {
     padding: 72px 0;
   }
 }
+/* ============================================================
+   SCROLL SUAVE GLOBAL
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
