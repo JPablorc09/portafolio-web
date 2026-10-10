@@ -1,140 +1,719 @@
+
 <main class="detail-page">
+
   @if (project; as item) {
+
     <div class="detail-container">
-      <nav class="detail-breadcrumb" aria-label="Ruta de navegación">
-        <a routerLink="/proyectos">Proyectos</a>
+
+      <!-- =====================================================
+           NAVEGACIÓN / BREADCRUMB
+      ====================================================== -->
+      <nav
+        class="detail-breadcrumb"
+        aria-label="Ruta de navegación"
+      >
+        <a routerLink="/proyectos">
+          Proyectos
+        </a>
+
         <span aria-hidden="true">/</span>
-        <span aria-current="page">{{ item.title }}</span>
+
+        <span aria-current="page">
+          {{ item.title }}
+        </span>
       </nav>
 
+      <!-- =====================================================
+           ENCABEZADO DEL PROYECTO
+      ====================================================== -->
       <header class="detail-hero">
+
         <div class="detail-hero__text">
-          <span class="detail-eyebrow">{{ item.category }}</span>
-          <h1>{{ item.title }}</h1>
-          <p>{{ item.shortDescription }}</p>
+
+          <!-- Categoría -->
+          <span class="detail-eyebrow">
+            {{ item.category }}
+          </span>
+
+          <!-- Nombre -->
+          <h1>
+            {{ item.title }}
+          </h1>
+
+          <!-- Descripción corta -->
+          <p>
+            {{ item.shortDescription }}
+          </p>
+
+          <!-- ================================================
+               ACCIONES
+          ================================================= -->
           <div class="detail-actions">
-            @if (item.demo) {
-              <a class="detail-button detail-button--primary" [href]="item.demo" target="_blank" rel="noopener noreferrer">
-                Ver demostración <span aria-hidden="true">↗</span>
+
+            <!-- Demostración publicada -->
+            @if (item.demo && !item.confidential) {
+
+              <a
+                class="detail-button detail-button--primary"
+                [href]="item.demo"
+                target="_blank"
+                rel="noopener noreferrer"
+                [attr.aria-label]="
+                  'Abrir demostración de ' +
+                  item.title +
+                  ' en una nueva pestaña'
+                "
+              >
+                <span>
+                  Ver página web
+                </span>
+
+                <span aria-hidden="true">
+                  ↗
+                </span>
               </a>
+
             }
+
+            <!-- Repositorio de GitHub -->
             @if (item.github && !item.confidential) {
-              <a class="detail-button detail-button--secondary" [href]="item.github" target="_blank" rel="noopener noreferrer">
-                Ver código en GitHub <span aria-hidden="true">↗</span>
+
+              <a
+                class="detail-button detail-button--secondary"
+                [href]="item.github"
+                target="_blank"
+                rel="noopener noreferrer"
+                [attr.aria-label]="
+                  'Abrir repositorio de ' +
+                  item.title +
+                  ' en GitHub'
+                "
+              >
+                <span>
+                  Ver código en GitHub
+                </span>
+
+                <span aria-hidden="true">
+                  ↗
+                </span>
               </a>
+
             }
-            <a class="detail-button detail-button--secondary" routerLink="/proyectos">Todos los proyectos</a>
+
+            <!-- Volver a proyectos -->
+            <a
+              class="detail-button detail-button--secondary"
+              routerLink="/proyectos"
+            >
+              Todos los proyectos
+            </a>
+
           </div>
+
+          <!-- ================================================
+               AVISO PARA PROYECTOS COMERCIALES DEMOSTRATIVOS
+          ================================================= -->
           @if (item.type === 'web-comercial') {
-            <p class="detail-disclaimer">Proyecto demostrativo: no representa un negocio real ni procesa reservas reales.</p>
+
+            <p class="detail-disclaimer">
+
+              <strong>Proyecto demostrativo.</strong>
+
+              Este sitio fue desarrollado para mostrar
+              funcionalidades y posibilidades de una página
+              web comercial. No representa un negocio real.
+
+              @if (item.id === 'brasa-oliva') {
+
+                Los pedidos y las solicitudes de reservación
+                no se almacenan ni se procesan mediante
+                un sistema de gestión real.
+
+              } @else if (item.id === 'urbancut') {
+
+                Las solicitudes de citas no se registran
+                como reservas reales ni se consulta
+                disponibilidad en tiempo real.
+
+              }
+
+            </p>
+
           }
+
         </div>
+
+        <!-- ================================================
+             IMAGEN PRINCIPAL
+        ================================================= -->
         @if (item.image && !item.confidential) {
-          <button type="button" class="detail-cover" (click)="openLightboxByImage(item.image, coverButton)" #coverButton [attr.aria-label]="'Ampliar imagen principal de ' + item.title">
-            <img [src]="item.image" [alt]="'Vista principal del proyecto ' + item.title" (error)="imageError($event)" />
-            <span>Ampliar imagen ↗</span>
+
+          <button
+            type="button"
+            class="detail-cover"
+            #coverButton
+            (click)="
+              openLightboxByImage(
+                item.image,
+                coverButton
+              )
+            "
+            [attr.aria-label]="
+              'Ampliar imagen principal de ' +
+              item.title
+            "
+          >
+
+            <img
+              [src]="item.image"
+              [alt]="
+                'Vista principal del proyecto ' +
+                item.title
+              "
+              loading="eager"
+              decoding="async"
+              (error)="imageError($event)"
+            />
+
+            <span>
+              Ampliar imagen
+              <span aria-hidden="true">↗</span>
+            </span>
+
           </button>
+
         }
+
       </header>
 
+      <!-- =====================================================
+           CONTENIDO PRINCIPAL Y FICHA TÉCNICA
+      ====================================================== -->
       <div class="detail-layout">
+
         <div class="detail-main">
-          <section class="detail-section" aria-labelledby="description-title">
-            <span class="detail-section__number">01 / Descripción</span>
-            <h2 id="description-title">Acerca del proyecto</h2>
-            <p class="detail-description">{{ item.fullDescription }}</p>
+
+          <!-- ================================================
+               01. DESCRIPCIÓN
+          ================================================= -->
+          <section
+            class="detail-section"
+            aria-labelledby="description-title"
+          >
+
+            <span class="detail-section__number">
+              01 / Descripción
+            </span>
+
+            <h2 id="description-title">
+              Acerca del proyecto
+            </h2>
+
+            <p class="detail-description">
+              {{ item.fullDescription }}
+            </p>
+
           </section>
 
-          @if (item.features.length) {
-            <section class="detail-section" aria-labelledby="features-title">
-              <span class="detail-section__number">02 / Funcionalidades</span>
-              <h2 id="features-title">Funcionalidades principales</h2>
+          <!-- ================================================
+               02. FUNCIONALIDADES
+          ================================================= -->
+          @if (item.features.length > 0) {
+
+            <section
+              class="detail-section"
+              aria-labelledby="features-title"
+            >
+
+              <span class="detail-section__number">
+                02 / Funcionalidades
+              </span>
+
+              <h2 id="features-title">
+                Funcionalidades principales
+              </h2>
+
               <ul class="detail-list">
-                @for (feature of item.features; track feature) { <li>{{ feature }}</li> }
+
+                @for (
+                  feature of item.features;
+                  track $index
+                ) {
+
+                  <li>
+                    {{ feature }}
+                  </li>
+
+                }
+
               </ul>
+
             </section>
+
           }
 
-          @if (item.architecture.length) {
-            <section class="detail-section" aria-labelledby="architecture-title">
-              <span class="detail-section__number">03 / Arquitectura</span>
-              <h2 id="architecture-title">Arquitectura y desarrollo</h2>
+          <!-- ================================================
+               03. ARQUITECTURA
+          ================================================= -->
+          @if (item.architecture.length > 0) {
+
+            <section
+              class="detail-section"
+              aria-labelledby="architecture-title"
+            >
+
+              <span class="detail-section__number">
+                03 / Arquitectura
+              </span>
+
+              <h2 id="architecture-title">
+                Arquitectura y desarrollo
+              </h2>
+
               <ul class="detail-list">
-                @for (entry of item.architecture; track entry) { <li>{{ entry }}</li> }
+
+                @for (
+                  entry of item.architecture;
+                  track $index
+                ) {
+
+                  <li>
+                    {{ entry }}
+                  </li>
+
+                }
+
               </ul>
+
             </section>
+
           }
 
-          @if (item.challenges.length) {
-            <section class="detail-section" aria-labelledby="challenges-title">
-              <span class="detail-section__number">04 / Retos</span>
-              <h2 id="challenges-title">Desafíos técnicos</h2>
+          <!-- ================================================
+               04. DESAFÍOS
+          ================================================= -->
+          @if (item.challenges.length > 0) {
+
+            <section
+              class="detail-section"
+              aria-labelledby="challenges-title"
+            >
+
+              <span class="detail-section__number">
+                04 / Retos
+              </span>
+
+              <h2 id="challenges-title">
+                Desafíos técnicos
+              </h2>
+
               <ul class="detail-list">
-                @for (challenge of item.challenges; track challenge) { <li>{{ challenge }}</li> }
+
+                @for (
+                  challenge of item.challenges;
+                  track $index
+                ) {
+
+                  <li>
+                    {{ challenge }}
+                  </li>
+
+                }
+
               </ul>
+
             </section>
+
           }
 
-          @if (item.learnings.length) {
-            <section class="detail-section" aria-labelledby="learnings-title">
-              <span class="detail-section__number">05 / Aprendizajes</span>
-              <h2 id="learnings-title">Aprendizajes</h2>
+          <!-- ================================================
+               05. APRENDIZAJES
+          ================================================= -->
+          @if (item.learnings.length > 0) {
+
+            <section
+              class="detail-section"
+              aria-labelledby="learnings-title"
+            >
+
+              <span class="detail-section__number">
+                05 / Aprendizajes
+              </span>
+
+              <h2 id="learnings-title">
+                Aprendizajes
+              </h2>
+
               <ul class="detail-list">
-                @for (learning of item.learnings; track learning) { <li>{{ learning }}</li> }
+
+                @for (
+                  learning of item.learnings;
+                  track $index
+                ) {
+
+                  <li>
+                    {{ learning }}
+                  </li>
+
+                }
+
               </ul>
+
             </section>
+
           }
+
         </div>
 
-        <aside class="detail-sidebar" aria-label="Ficha técnica del proyecto">
+        <!-- =================================================
+             BARRA LATERAL / FICHA TÉCNICA
+        ================================================== -->
+        <aside
+          class="detail-sidebar"
+          aria-label="Ficha técnica del proyecto"
+        >
+
           <div class="detail-sidebar__card">
-            <h2>Ficha del proyecto</h2>
-            <div class="detail-sidebar__row"><span>Categoría</span><strong>{{ item.category }}</strong></div>
-            <div class="detail-sidebar__row"><span>Tipo</span><strong>{{ item.type === 'web-comercial' ? 'Web comercial' : item.type }}</strong></div>
-            <h3>Tecnologías</h3>
-            <div class="detail-tags">
-              @for (tech of item.technologies; track tech) { <span>{{ tech }}</span> }
+
+            <h2>
+              Ficha del proyecto
+            </h2>
+
+            <!-- Categoría -->
+            <div class="detail-sidebar__row">
+
+              <span>
+                Categoría
+              </span>
+
+              <strong>
+                {{ item.category }}
+              </strong>
+
             </div>
-            @if (item.confidential) {
-              <p class="detail-confidential">Algunos materiales no se muestran por confidencialidad.</p>
+
+            <!-- Tipo -->
+            <div class="detail-sidebar__row">
+
+              <span>
+                Tipo
+              </span>
+
+              <strong>
+
+                @switch (item.type) {
+
+                  @case ('web-comercial') {
+                    Sitio web comercial
+                  }
+
+                  @case ('empresarial') {
+                    Aplicación empresarial
+                  }
+
+                  @case ('full-stack') {
+                    Aplicación Full Stack
+                  }
+
+                  @case ('integracion') {
+                    Integración de sistemas
+                  }
+
+                  @case ('datos') {
+                    Procesamiento de datos
+                  }
+
+                  @default {
+                    {{ item.type }}
+                  }
+
+                }
+
+              </strong>
+
+            </div>
+
+            <!-- Tecnologías -->
+            @if (item.technologies.length > 0) {
+
+              <h3>
+                Tecnologías
+              </h3>
+
+              <div class="detail-tags">
+
+                @for (
+                  tech of item.technologies;
+                  track tech
+                ) {
+
+                  <span>
+                    {{ tech }}
+                  </span>
+
+                }
+
+              </div>
+
             }
+
+            <!-- Aviso de confidencialidad -->
+            @if (item.confidential) {
+
+              <p class="detail-confidential">
+
+                Este proyecto incluye información
+                relacionada con un entorno profesional.
+
+                Por motivos de confidencialidad,
+                algunas capturas, archivos y detalles
+                internos no están disponibles
+                públicamente.
+
+              </p>
+
+            }
+
+            <!-- Aviso de proyecto demostrativo -->
+            @if (
+              item.type === 'web-comercial' &&
+              !item.confidential
+            ) {
+
+              <p class="detail-disclaimer">
+
+                Demostración comercial desarrollada
+                con fines de portafolio.
+
+              </p>
+
+            }
+
           </div>
+
         </aside>
+
       </div>
 
-      @if (projectImages.length > 0) {
-        <section class="detail-section detail-gallery" aria-labelledby="gallery-title">
-          <span class="detail-section__number">06 / Galería</span>
-          <h2 id="gallery-title">Galería del proyecto</h2>
+      <!-- =====================================================
+           06. GALERÍA DE IMÁGENES
+      ====================================================== -->
+      @if (
+        !item.confidential &&
+        projectImages.length > 0
+      ) {
+
+        <section
+          class="detail-section detail-gallery"
+          aria-labelledby="gallery-title"
+        >
+
+          <span class="detail-section__number">
+            06 / Galería
+          </span>
+
+          <h2 id="gallery-title">
+            Galería del proyecto
+          </h2>
+
           <div class="detail-gallery__grid">
-            @for (image of projectImages; track image; let i = $index) {
-              <button type="button" class="detail-gallery__item" #galleryButton (click)="openLightboxByImage(image, galleryButton)" [attr.aria-label]="'Ampliar imagen ' + (i + 1) + ' de ' + item.title">
-                <img [src]="image" [alt]="'Captura ' + (i + 1) + ' de ' + item.title" loading="lazy" (error)="imageError($event)" />
-                <span>Ver imagen ↗</span>
+
+            @for (
+              image of projectImages;
+              track image;
+              let i = $index
+            ) {
+
+              <button
+                type="button"
+                class="detail-gallery__item"
+                #galleryButton
+                (click)="
+                  openLightboxByImage(
+                    image,
+                    galleryButton
+                  )
+                "
+                [attr.aria-label]="
+                  'Ampliar imagen ' +
+                  (i + 1) +
+                  ' de ' +
+                  item.title
+                "
+              >
+
+                <img
+                  [src]="image"
+                  [alt]="
+                    'Captura ' +
+                    (i + 1) +
+                    ' del proyecto ' +
+                    item.title
+                  "
+                  loading="lazy"
+                  decoding="async"
+                  (error)="imageError($event)"
+                />
+
+                <span>
+                  Ver imagen
+                  <span aria-hidden="true">↗</span>
+                </span>
+
               </button>
+
             }
+
           </div>
+
         </section>
+
       }
 
-      <nav class="detail-project-nav" aria-label="Navegación entre proyectos">
+      <!-- =====================================================
+           NAVEGACIÓN ENTRE PROYECTOS
+      ====================================================== -->
+      <nav
+        class="detail-project-nav"
+        aria-label="Navegación entre proyectos"
+      >
+
+        <!-- Proyecto anterior -->
         @if (previousProject; as previous) {
-          <a [routerLink]="['/proyectos', previous.id]"><span>← Proyecto anterior</span><strong>{{ previous.title }}</strong></a>
-        } @else { <span></span> }
-        @if (nextProject; as next) {
-          <a [routerLink]="['/proyectos', next.id]"><span>Siguiente proyecto →</span><strong>{{ next.title }}</strong></a>
+
+          <a
+            [routerLink]="[
+              '/proyectos',
+              previous.id
+            ]"
+          >
+
+            <span>
+              ← Proyecto anterior
+            </span>
+
+            <strong>
+              {{ previous.title }}
+            </strong>
+
+          </a>
+
+        } @else {
+
+          <span aria-hidden="true"></span>
+
         }
+
+        <!-- Proyecto siguiente -->
+        @if (nextProject; as next) {
+
+          <a
+            [routerLink]="[
+              '/proyectos',
+              next.id
+            ]"
+          >
+
+            <span>
+              Siguiente proyecto →
+            </span>
+
+            <strong>
+              {{ next.title }}
+            </strong>
+
+          </a>
+
+        }
+
       </nav>
+
     </div>
+
   }
 
-  @if (lightboxOpen) {
-    <div class="project-lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes del proyecto" (click)="closeLightbox()">
-      <button class="project-lightbox__close" type="button" aria-label="Cerrar imagen" (click)="closeLightbox()">×</button>
-      <div class="project-lightbox__counter" aria-live="polite">{{ selectedImageIndex + 1 }} / {{ projectImages.length }}</div>
-      <button class="project-lightbox__arrow" type="button" aria-label="Imagen anterior" (click)="previousImage($event)">←</button>
-      <div class="project-lightbox__image" (click)="stopPropagation($event)"><img [src]="selectedImage" alt="Imagen ampliada del proyecto" /></div>
-      <button class="project-lightbox__arrow" type="button" aria-label="Imagen siguiente" (click)="nextImage($event)">→</button>
+  <!-- =========================================================
+       LIGHTBOX / VISOR DE IMÁGENES
+  ========================================================== -->
+  @if (lightboxOpen && projectImages.length > 0) {
+
+    <div
+      class="project-lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Visor de imágenes del proyecto"
+      (click)="closeLightbox()"
+    >
+
+      <!-- Cerrar -->
+      <button
+        class="project-lightbox__close"
+        type="button"
+        aria-label="Cerrar imagen"
+        (click)="closeLightbox()"
+      >
+        ×
+      </button>
+
+      <!-- Contador -->
+      <div
+        class="project-lightbox__counter"
+        aria-live="polite"
+      >
+        {{ selectedImageIndex + 1 }}
+        /
+        {{ projectImages.length }}
+      </div>
+
+      <!-- Imagen anterior -->
+      @if (projectImages.length > 1) {
+
+        <button
+          class="project-lightbox__arrow"
+          type="button"
+          aria-label="Imagen anterior"
+          (click)="previousImage($event)"
+        >
+          ←
+        </button>
+
+      }
+
+      <!-- Imagen ampliada -->
+      <div
+        class="project-lightbox__image"
+        (click)="stopPropagation($event)"
+      >
+
+        <img
+          [src]="selectedImage"
+          [alt]="
+            'Imagen ampliada ' +
+            (selectedImageIndex + 1) +
+            ' de ' +
+            (project?.title ?? 'proyecto')
+          "
+          (error)="imageError($event)"
+        />
+
+      </div>
+
+      <!-- Imagen siguiente -->
+      @if (projectImages.length > 1) {
+
+        <button
+          class="project-lightbox__arrow"
+          type="button"
+          aria-label="Imagen siguiente"
+          (click)="nextImage($event)"
+        >
+          →
+        </button>
+
+      }
+
     </div>
+
   }
+
 </main>
