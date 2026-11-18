@@ -1,0 +1,409 @@
+{
+  "date": "2026-10-26T22:40:30.398Z",
+  "checks": [
+    {
+      "route": "/",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "scrollWidth": 360,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 375,
+      "scrollWidth": 360,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 375,
+      "scrollWidth": 360,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 375,
+      "scrollWidth": 360,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 375,
+      "scrollWidth": 360,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 375,
+      "scrollWidth": 360,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/servicios",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/servicios",
+      "width": 375,
+      "scrollWidth": 360,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/servicios",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/servicios",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/servicios",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/servicios",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/contacto",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/contacto",
+      "width": 375,
+      "scrollWidth": 360,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/contacto",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/contacto",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/contacto",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/contacto",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    }
+  ],
+  "planChecks": [
+    {
+      "url": "/contacto?plan=emprendedor#cotizar",
+      "plan": "Plan de interésEmprendedorDesde ₡75.000 · pago único",
+      "whatsapp": "https://wa.me/50662794709?text=Hola%20Juan%20Pablo.%20Me%20interesa%20consultar%20el%20plan%20Emprendedor.%20Me%20gustar%C3%ADa%20conversar%20sobre%20el%20alcance%20y%20recibir%20una%20cotizaci%C3%B3n%20para%20mi%20proyecto.",
+      "email": "mailto:juanparojasc1999@gmail.com?subject=Consulta%20del%20plan%20Emprendedor&body=Hola%20Juan%20Pablo.%20Me%20interesa%20consultar%20el%20plan%20Emprendedor.%20Me%20gustar%C3%ADa%20conversar%20sobre%20el%20alcance%20y%20recibir%20una%20cotizaci%C3%B3n%20para%20mi%20proyecto.",
+      "top": 0.25
+    },
+    {
+      "url": "/contacto?plan=profesional#cotizar",
+      "plan": "Plan de interésProfesionalDesde ₡120.000 · pago único",
+      "whatsapp": "https://wa.me/50662794709?text=Hola%20Juan%20Pablo.%20Me%20interesa%20consultar%20el%20plan%20Profesional.%20Me%20gustar%C3%ADa%20conversar%20sobre%20el%20alcance%20y%20recibir%20una%20cotizaci%C3%B3n%20para%20mi%20proyecto.",
+      "email": "mailto:juanparojasc1999@gmail.com?subject=Consulta%20del%20plan%20Profesional&body=Hola%20Juan%20Pablo.%20Me%20interesa%20consultar%20el%20plan%20Profesional.%20Me%20gustar%C3%ADa%20conversar%20sobre%20el%20alcance%20y%20recibir%20una%20cotizaci%C3%B3n%20para%20mi%20proyecto.",
+      "top": 0.25
+    },
+    {
+      "url": "/contacto?plan=personalizado#cotizar",
+      "plan": "Plan de interésPersonalizadoDesde ₡180.000 · según proyecto",
+      "whatsapp": "https://wa.me/50662794709?text=Hola%20Juan%20Pablo.%20Me%20interesa%20consultar%20el%20plan%20Personalizado.%20Me%20gustar%C3%ADa%20conversar%20sobre%20el%20alcance%20y%20recibir%20una%20cotizaci%C3%B3n%20para%20mi%20proyecto.",
+      "email": "mailto:juanparojasc1999@gmail.com?subject=Consulta%20del%20plan%20Personalizado&body=Hola%20Juan%20Pablo.%20Me%20interesa%20consultar%20el%20plan%20Personalizado.%20Me%20gustar%C3%ADa%20conversar%20sobre%20el%20alcance%20y%20recibir%20una%20cotizaci%C3%B3n%20para%20mi%20proyecto.",
+      "top": 0.25
+    }
+  ],
+  "keyboardPlanNavigation": true,
+  "resetPlan": true,
+  "unknownPlanIgnored": true,
+  "contacts": {
+    "employment": "mailto:juanparojasc1999@gmail.com?subject=Oportunidad%20laboral%20-%20Juan%20Pablo%20Rojas%20Contreras",
+    "quote": "mailto:juanparojasc1999@gmail.com?subject=Cotizaci%C3%B3n%20de%20proyecto&body=Hola%20Juan%20Pablo.%20Vi%20su%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto.%20Quisiera%20conversar%20sobre%20las%20necesidades%20de%20mi%20negocio.",
+    "email": "juanparojasc1999@gmail.com",
+    "external": [
+      {
+        "href": "https://wa.me/50662794709?text=Hola%20Juan%20Pablo.%20Vi%20su%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto.%20Quisiera%20conversar%20sobre%20las%20necesidades%20de%20mi%20negocio.",
+        "rel": "noopener noreferrer",
+        "label": "Escribir por WhatsApp (abre en otra pestaña)↗"
+      },
+      {
+        "href": "https://wa.me/50662794709?text=Hola%20Juan%20Pablo.%20Vi%20su%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto.%20Quisiera%20conversar%20sobre%20las%20necesidades%20de%20mi%20negocio.",
+        "rel": "noopener noreferrer",
+        "label": "+506 6279-4709(abre en otra pestaña)↗"
+      },
+      {
+        "href": "https://www.linkedin.com/in/juan-pablo-rojas-contreras-15ab09345/",
+        "rel": "noopener noreferrer",
+        "label": "LinkedInPerfil y trayectoria profesional(abre en otra pestaña)↗"
+      },
+      {
+        "href": "https://github.com/JPablorc09",
+        "rel": "noopener noreferrer",
+        "label": "GitHubProyectos y repositorios públicos(abre en otra pestaña)↗"
+      }
+    ],
+    "forms": 0
+  },
+  "textZoom200Percent": [
+    {
+      "route": "/servicios",
+      "width": 1440,
+      "scrollWidth": 1425
+    },
+    {
+      "route": "/contacto",
+      "width": 1440,
+      "scrollWidth": 1425
+    }
+  ],
+  "cvStatus": 200,
+  "consoleErrors": []
+}

@@ -1,154 +1,98 @@
-
-<article class="project-card">
-
-  <!-- ========================================================
-       IMAGEN DEL PROYECTO
-       ======================================================== -->
-
+<article class="project-card" [class.project-card--ai]="project.aiAssisted">
   <a
-    class="project-card__image-container"
+    class="project-card__preview"
     [routerLink]="['/proyectos', project.id]"
-    [attr.aria-label]="'Ver detalles del proyecto ' + project.title"
+    [attr.aria-label]="'Ver caso de estudio de ' + project.title"
   >
-
-    <img
-      class="project-card__image"
-      [src]="project.image"
-      [alt]="'Vista previa de ' + project.title"
-      loading="lazy"
-      decoding="async"
-      (error)="imageError($event)"
-    />
-
-    <div
-      class="project-card__overlay"
-      aria-hidden="true"
-    >
-      <span class="project-card__overlay-button">
-        Ver proyecto
-        <span>↗</span>
-      </span>
-    </div>
-
-    <!-- EXPERIENCIA PROFESIONAL -->
-
-    @if (project.professional) {
-
-      <span class="project-card__badge project-card__badge--professional">
-        <span aria-hidden="true">✦</span>
-        Experiencia profesional
-      </span>
-
-    } @else if (isCommercialDemo) {
-
-      <span class="project-card__badge project-card__badge--demo">
-        <span aria-hidden="true">✦</span>
-        Demo comercial
-      </span>
-
-    }
-
-  </a>
-
-  <!-- ========================================================
-       CONTENIDO
-       ======================================================== -->
-
-  <div class="project-card__content">
-
-    <div class="project-card__meta">
-
-      <span class="project-card__category">
-        {{ project.category }}
-      </span>
-
-      <span
-        class="project-card__meta-dot"
-        aria-hidden="true"
-      ></span>
-
-      <span class="project-card__type">
-        {{ isCommercialDemo ? 'Sitio web' : 'Software' }}
-      </span>
-
-    </div>
-
-    <h3 class="project-card__title">
-
-      <a [routerLink]="['/proyectos', project.id]">
-        {{ project.title }}
-      </a>
-
-    </h3>
-
-    <p class="project-card__description">
-      {{ project.shortDescription }}
-    </p>
-
-    <!-- ======================================================
-         TECNOLOGÍAS
-         ====================================================== -->
-
-    <div
-      class="project-card__technologies"
-      aria-label="Tecnologías utilizadas"
-    >
-
-      @for (
-        technology of visibleTechnologies;
-        track technology
-      ) {
-
-        <span class="project-card__technology">
-          {{ technology }}
-        </span>
-
-      }
-
-      @if (remainingTechnologies > 0) {
-
-        <span
-          class="project-card__technology project-card__technology--more"
-          [attr.aria-label]="remainingTechnologies + ' tecnologías adicionales'"
-        >
-          +{{ remainingTechnologies }}
-        </span>
-
-      }
-
-    </div>
-
-    <!-- ======================================================
-         ACCIONES
-         ====================================================== -->
-
-    <div class="project-card__footer">
-
-      <a
-        class="project-card__link"
-        [routerLink]="['/proyectos', project.id]"
+    @if (restricted) {
+      <div
+        class="project-card__restricted"
+        role="img"
+        aria-label="Mockup genérico de confidencialidad. No es una captura real del sistema."
       >
-        Ver caso de estudio
-        <span aria-hidden="true">→</span>
-      </a>
-
-      @if (project.demo) {
-
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <rect x="5" y="10" width="14" height="11" rx="2" />
+          <path d="M8 10V6a4 4 0 0 1 8 0v4" />
+        </svg>
+        <strong>Proyecto institucional</strong><span>Acceso restringido</span
+        ><small>Mockup genérico · No es una captura real.</small>
+      </div>
+    } @else if (imageFailed() || project.imageKind === 'placeholder') {
+      <div
+        class="project-card__restricted"
+        role="img"
+        aria-label="Ilustración genérica. Sin captura disponible."
+      >
+        <span class="project-card__code" aria-hidden="true">&lt;/&gt;</span
+        ><strong>Sin captura disponible</strong
+        ><small>Ilustración genérica · No es una captura real.</small>
+      </div>
+    } @else {
+      <img
+        class="project-card__image"
+        [src]="imageAsset(project.image).src"
+        [attr.srcset]="imageAsset(project.image).srcset"
+        [sizes]="imageSizes"
+        [attr.width]="imageAsset(project.image).width"
+        [attr.height]="imageAsset(project.image).height"
+        [alt]="previewAlt"
+        [attr.loading]="priority ? 'eager' : 'lazy'"
+        [attr.fetchpriority]="priority ? 'high' : 'auto'"
+        decoding="async"
+        (error)="imageError($event)"
+      />
+    }
+  </a>
+  <div class="project-card__body">
+    <p class="project-card__context">{{ contextLabels[project.context] }}</p>
+    <p class="project-card__status">{{ statusLabels[project.status] }}</p>
+    @if (project.aiAssisted) { <p class="project-ai-badge">Desarrollo asistido por IA</p> }
+    <h3>{{ project.title }}</h3>
+    <p class="project-card__category">{{ project.category }}</p>
+    @if (project.statusNote) { <p class="project-card__notice">{{ project.statusNote }}</p> }
+    <p class="project-card__description">{{ project.shortDescription }}</p>
+    @if (project.imageKind === 'promotional' && !restricted) {
+      <p class="project-card__notice">Material promocional · No es una captura real.</p>
+    }
+    <div class="technology-list project-card__technologies" aria-label="Tecnologías del proyecto">
+      @for (technology of visibleTechnologies; track technology) {
+        <span class="technology-tag">{{ technology }}</span>
+      }
+      @if (remainingTechnologies > 0) {
+        <span
+          class="technology-tag"
+          [attr.aria-label]="
+            remainingTechnologies + ' tecnologías adicionales en la ficha completa'
+          "
+          >+{{ remainingTechnologies }}</span
+        >
+      }
+    </div>
+    <div class="project-card__footer">
+      <a
+        class="text-link"
+        [routerLink]="['/proyectos', project.id]"
+        [attr.aria-label]="'Ver caso de estudio de ' + project.title"
+        >Ver caso de estudio <span aria-hidden="true">↗</span></a
+      >
+      @if (project.demo && !restricted) {
         <a
-          class="project-card__demo"
+          class="text-link"
           [href]="project.demo"
           target="_blank"
           rel="noopener noreferrer"
-          [attr.aria-label]="'Abrir demostración de ' + project.title + ' en una pestaña nueva'"
+          [attr.aria-label]="'Visitar sistema de ' + project.title + ' en una pestaña nueva'"
+          >{{ project.demoLabel || 'Abrir demo' }} <span aria-hidden="true">↗</span></a
         >
-          Ver sitio web
-          <span aria-hidden="true">↗</span>
-        </a>
-
       }
-
     </div>
-
   </div>
-
 </article>

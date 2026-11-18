@@ -1,719 +1,346 @@
-
-<main class="detail-page">
-
+<div class="detail-page container">
   @if (project; as item) {
-
-    <div class="detail-container">
-
-      <!-- =====================================================
-           NAVEGACIÓN / BREADCRUMB
-      ====================================================== -->
-      <nav
-        class="detail-breadcrumb"
-        aria-label="Ruta de navegación"
-      >
-        <a routerLink="/proyectos">
-          Proyectos
-        </a>
-
-        <span aria-hidden="true">/</span>
-
-        <span aria-current="page">
-          {{ item.title }}
-        </span>
-      </nav>
-
-      <!-- =====================================================
-           ENCABEZADO DEL PROYECTO
-      ====================================================== -->
-      <header class="detail-hero">
-
-        <div class="detail-hero__text">
-
-          <!-- Categoría -->
-          <span class="detail-eyebrow">
-            {{ item.category }}
-          </span>
-
-          <!-- Nombre -->
-          <h1>
-            {{ item.title }}
-          </h1>
-
-          <!-- Descripción corta -->
-          <p>
-            {{ item.shortDescription }}
-          </p>
-
-          <!-- ================================================
-               ACCIONES
-          ================================================= -->
-          <div class="detail-actions">
-
-            <!-- Demostración publicada -->
-            @if (item.demo && !item.confidential) {
-
+    <div class="detail-content" [attr.inert]="lightboxOpen ? '' : null">
+      <header class="detail-header">
+        <nav class="detail-breadcrumb" aria-label="Ruta de navegación">
+          <a routerLink="/proyectos">Proyectos</a><span aria-hidden="true">/</span
+          ><span aria-current="page">{{ item.title }}</span>
+        </nav>
+        <div class="detail-meta">
+          <span>{{ contextLabels[item.context] }}</span
+          ><span>{{ statusLabels[item.status] }}</span>
+        </div>
+        <h1>{{ item.title }}</h1>
+        @if (item.aiAssisted) { <p class="profile-learning-status">Desarrollo asistido por IA</p> }
+        @if (item.statusNote) { <p>{{ item.statusNote }}</p> }
+        <p>{{ item.shortDescription }}</p>
+        @if (!restricted && (item.demo || item.github)) {
+          <div class="detail-header__actions">
+            @if (item.demo) {
               <a
-                class="detail-button detail-button--primary"
+                class="button button--primary"
                 [href]="item.demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                [attr.aria-label]="
-                  'Abrir demostración de ' +
-                  item.title +
-                  ' en una nueva pestaña'
-                "
+                [attr.aria-label]="'Visitar sistema de ' + item.title + ' en una pestaña nueva'"
+                >{{ item.demoLabel || 'Abrir demostración' }} <span aria-hidden="true">↗</span></a
               >
-                <span>
-                  Ver página web
-                </span>
-
-                <span aria-hidden="true">
-                  ↗
-                </span>
-              </a>
-
             }
-
-            <!-- Repositorio de GitHub -->
-            @if (item.github && !item.confidential) {
-
+            @if (item.github) {
               <a
-                class="detail-button detail-button--secondary"
+                class="button button--outline"
                 [href]="item.github"
                 target="_blank"
                 rel="noopener noreferrer"
-                [attr.aria-label]="
-                  'Abrir repositorio de ' +
-                  item.title +
-                  ' en GitHub'
-                "
+                [attr.aria-label]="'Abrir repositorio de ' + item.title + ' en una pestaña nueva'"
+                >Repositorio público <span aria-hidden="true">↗</span></a
               >
-                <span>
-                  Ver código en GitHub
-                </span>
-
-                <span aria-hidden="true">
-                  ↗
-                </span>
-              </a>
-
             }
-
-            <!-- Volver a proyectos -->
-            <a
-              class="detail-button detail-button--secondary"
-              routerLink="/proyectos"
-            >
-              Todos los proyectos
-            </a>
-
           </div>
-
-          <!-- ================================================
-               AVISO PARA PROYECTOS COMERCIALES DEMOSTRATIVOS
-          ================================================= -->
-          @if (item.type === 'web-comercial') {
-
-            <p class="detail-disclaimer">
-
-              <strong>Proyecto demostrativo.</strong>
-
-              Este sitio fue desarrollado para mostrar
-              funcionalidades y posibilidades de una página
-              web comercial. No representa un negocio real.
-
-              @if (item.id === 'brasa-oliva') {
-
-                Los pedidos y las solicitudes de reservación
-                no se almacenan ni se procesan mediante
-                un sistema de gestión real.
-
-              } @else if (item.id === 'urbancut') {
-
-                Las solicitudes de citas no se registran
-                como reservas reales ni se consulta
-                disponibilidad en tiempo real.
-
-              }
-
-            </p>
-
-          }
-
-        </div>
-
-        <!-- ================================================
-             IMAGEN PRINCIPAL
-        ================================================= -->
-        @if (item.image && !item.confidential) {
-
-          <button
-            type="button"
-            class="detail-cover"
-            #coverButton
-            (click)="
-              openLightboxByImage(
-                item.image,
-                coverButton
-              )
-            "
-            [attr.aria-label]="
-              'Ampliar imagen principal de ' +
-              item.title
-            "
-          >
-
-            <img
-              [src]="item.image"
-              [alt]="
-                'Vista principal del proyecto ' +
-                item.title
-              "
-              loading="eager"
-              decoding="async"
-              (error)="imageError($event)"
-            />
-
-            <span>
-              Ampliar imagen
-              <span aria-hidden="true">↗</span>
-            </span>
-
-          </button>
-
         }
-
       </header>
 
-      <!-- =====================================================
-           CONTENIDO PRINCIPAL Y FICHA TÉCNICA
-      ====================================================== -->
       <div class="detail-layout">
-
         <div class="detail-main">
-
-          <!-- ================================================
-               01. DESCRIPCIÓN
-          ================================================= -->
-          <section
-            class="detail-section"
-            aria-labelledby="description-title"
-          >
-
-            <span class="detail-section__number">
-              01 / Descripción
-            </span>
-
-            <h2 id="description-title">
-              Acerca del proyecto
-            </h2>
-
-            <p class="detail-description">
-              {{ item.fullDescription }}
+          @if (restricted) {
+            <figure class="detail-confidential-cover">
+              <div
+                class="detail-confidential-visual"
+                role="img"
+                aria-label="Representación genérica de un proyecto institucional; no es una captura real."
+              >
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <rect x="5" y="10" width="14" height="11" rx="2" />
+                  <path d="M8 10V6a4 4 0 0 1 8 0v4" />
+                </svg>
+                <strong>Información institucional protegida</strong><span>Acceso restringido</span>
+              </div>
+              <figcaption>Mockup genérico · No representa la interfaz real del sistema.</figcaption>
+            </figure>
+          } @else if (item.imageKind === 'promotional') {
+            <figure class="detail-promotional-cover">
+              <img
+                [src]="imageAsset(item.image).src"
+                [attr.data-original-src]="item.image"
+                [attr.srcset]="imageAsset(item.image).srcset"
+                [sizes]="coverImageSizes"
+                [attr.width]="imageAsset(item.image).width"
+                [attr.height]="imageAsset(item.image).height"
+                fetchpriority="high"
+                [alt]="'Material promocional de ' + item.title + '; no es una captura real.'"
+                decoding="async"
+                (error)="imageError($event)"
+              />
+              <figcaption>
+                Material promocional · No es una captura real de la aplicación.
+              </figcaption>
+            </figure>
+          } @else if (item.imageKind === 'capture' && item.image) {
+            <button
+              #coverButton
+              type="button"
+              class="detail-cover"
+              [attr.aria-label]="'Ampliar captura principal de ' + item.title"
+              (click)="openLightboxByImage(item.image, coverButton)"
+            >
+              <img
+                [src]="imageAsset(item.image).src"
+                [attr.data-original-src]="item.image"
+                [attr.srcset]="imageAsset(item.image).srcset"
+                [sizes]="coverImageSizes"
+                [attr.width]="imageAsset(item.image).width"
+                [attr.height]="imageAsset(item.image).height"
+                fetchpriority="high"
+                [alt]="'Captura principal de ' + item.title"
+                loading="eager"
+                decoding="async"
+                (error)="imageError($event)"
+              />
+              <span>Ampliar captura <span aria-hidden="true">↗</span></span>
+            </button>
+          } @else {
+            <p class="detail-notice">
+              Sin capturas reales disponibles. Las ilustraciones del catálogo son genéricas.
             </p>
+          }
 
+          @if (item.context === 'demo') {
+            <p class="detail-notice">
+              <strong>Proyecto demostrativo.</strong> Representa un negocio ficticio. Las
+              solicitudes no equivalen a pedidos o reservas confirmados y no se gestionan con un
+              backend real.
+            </p>
+          }
+
+          <section class="detail-section" aria-labelledby="problem-title">
+            <h2 id="problem-title">Necesidad que aborda</h2>
+            <p>{{ item.problem }}</p>
           </section>
-
-          <!-- ================================================
-               02. FUNCIONALIDADES
-          ================================================= -->
+          <section class="detail-section" aria-labelledby="description-title">
+            <h2 id="description-title">La solución</h2>
+            <p>{{ item.fullDescription }}</p>
+          </section>
+          @if (item.methodology?.length && !restricted) {
+            <section class="detail-section" aria-labelledby="methodology-title">
+              <h2 id="methodology-title">Metodología de desarrollo</h2>
+              @for (paragraph of item.methodology; track $index) { <p>{{ paragraph }}</p> }
+            </section>
+          }
           @if (item.features.length > 0) {
-
-            <section
-              class="detail-section"
-              aria-labelledby="features-title"
-            >
-
-              <span class="detail-section__number">
-                02 / Funcionalidades
-              </span>
-
-              <h2 id="features-title">
-                Funcionalidades principales
-              </h2>
-
+            <section class="detail-section" aria-labelledby="features-title">
+              <h2 id="features-title">{{ item.featuresHeading }}</h2>
               <ul class="detail-list">
-
-                @for (
-                  feature of item.features;
-                  track $index
-                ) {
-
-                  <li>
-                    {{ feature }}
-                  </li>
-
+                @for (feature of item.features; track $index) {
+                  <li>{{ feature }}</li>
                 }
-
               </ul>
-
             </section>
-
           }
-
-          <!-- ================================================
-               03. ARQUITECTURA
-          ================================================= -->
-          @if (item.architecture.length > 0) {
-
-            <section
-              class="detail-section"
-              aria-labelledby="architecture-title"
-            >
-
-              <span class="detail-section__number">
-                03 / Arquitectura
-              </span>
-
-              <h2 id="architecture-title">
-                Arquitectura y desarrollo
-              </h2>
-
+          @if (item.pendingFeatures.length > 0) {
+            <section class="detail-section detail-pending" aria-labelledby="pending-title">
+              <h2 id="pending-title">Pendiente de validación</h2>
+              <p>Estos puntos no se presentan como capacidades verificadas.</p>
               <ul class="detail-list">
-
-                @for (
-                  entry of item.architecture;
-                  track $index
-                ) {
-
-                  <li>
-                    {{ entry }}
-                  </li>
-
+                @for (feature of item.pendingFeatures; track $index) {
+                  <li>{{ feature }}</li>
                 }
-
               </ul>
-
             </section>
-
           }
-
-          <!-- ================================================
-               04. DESAFÍOS
-          ================================================= -->
+          @if (item.architecture.length > 0 && !restricted) {
+            <section class="detail-section" aria-labelledby="architecture-title">
+              <h2 id="architecture-title">Organización técnica</h2>
+              <ul class="detail-list">
+                @for (entry of item.architecture; track $index) {
+                  <li>{{ entry }}</li>
+                }
+              </ul>
+            </section>
+          }
           @if (item.challenges.length > 0) {
-
-            <section
-              class="detail-section"
-              aria-labelledby="challenges-title"
-            >
-
-              <span class="detail-section__number">
-                04 / Retos
-              </span>
-
-              <h2 id="challenges-title">
-                Desafíos técnicos
-              </h2>
-
+            <section class="detail-section" aria-labelledby="challenges-title">
+              <h2 id="challenges-title">Retos técnicos</h2>
               <ul class="detail-list">
-
-                @for (
-                  challenge of item.challenges;
-                  track $index
-                ) {
-
-                  <li>
-                    {{ challenge }}
-                  </li>
-
+                @for (challenge of item.challenges; track $index) {
+                  <li>{{ challenge }}</li>
                 }
-
               </ul>
-
             </section>
-
           }
-
-          <!-- ================================================
-               05. APRENDIZAJES
-          ================================================= -->
           @if (item.learnings.length > 0) {
-
-            <section
-              class="detail-section"
-              aria-labelledby="learnings-title"
-            >
-
-              <span class="detail-section__number">
-                05 / Aprendizajes
-              </span>
-
-              <h2 id="learnings-title">
-                Aprendizajes
-              </h2>
-
+            <section class="detail-section" aria-labelledby="learnings-title">
+              <h2 id="learnings-title">Aprendizajes</h2>
               <ul class="detail-list">
-
-                @for (
-                  learning of item.learnings;
-                  track $index
-                ) {
-
-                  <li>
-                    {{ learning }}
-                  </li>
-
+                @for (learning of item.learnings; track $index) {
+                  <li>{{ learning }}</li>
                 }
-
               </ul>
-
             </section>
-
           }
-
+          <section class="detail-section detail-verification" aria-labelledby="verification-title">
+            <h2 id="verification-title">Alcance de la información</h2>
+            <p>{{ item.verificationNote }}</p>
+          </section>
         </div>
 
-        <!-- =================================================
-             BARRA LATERAL / FICHA TÉCNICA
-        ================================================== -->
-        <aside
-          class="detail-sidebar"
-          aria-label="Ficha técnica del proyecto"
-        >
-
-          <div class="detail-sidebar__card">
-
-            <h2>
-              Ficha del proyecto
-            </h2>
-
-            <!-- Categoría -->
-            <div class="detail-sidebar__row">
-
-              <span>
-                Categoría
-              </span>
-
-              <strong>
-                {{ item.category }}
-              </strong>
-
+        <aside class="detail-sidebar" aria-labelledby="project-facts-title">
+          <h2 id="project-facts-title">Ficha del proyecto</h2>
+          <dl>
+            <div>
+              <dt>Contexto</dt>
+              <dd>{{ contextLabels[item.context] }}</dd>
             </div>
-
-            <!-- Tipo -->
-            <div class="detail-sidebar__row">
-
-              <span>
-                Tipo
-              </span>
-
-              <strong>
-
-                @switch (item.type) {
-
-                  @case ('web-comercial') {
-                    Sitio web comercial
-                  }
-
-                  @case ('empresarial') {
-                    Aplicación empresarial
-                  }
-
-                  @case ('full-stack') {
-                    Aplicación Full Stack
-                  }
-
-                  @case ('integracion') {
-                    Integración de sistemas
-                  }
-
-                  @case ('datos') {
-                    Procesamiento de datos
-                  }
-
-                  @default {
-                    {{ item.type }}
-                  }
-
-                }
-
-              </strong>
-
+            <div>
+              <dt>Estado</dt>
+              <dd>{{ statusLabels[item.status] }}</dd>
             </div>
-
-            <!-- Tecnologías -->
-            @if (item.technologies.length > 0) {
-
-              <h3>
-                Tecnologías
-              </h3>
-
-              <div class="detail-tags">
-
-                @for (
-                  tech of item.technologies;
-                  track tech
-                ) {
-
-                  <span>
-                    {{ tech }}
-                  </span>
-
-                }
-
-              </div>
-
+            <div>
+              <dt>Categoría</dt>
+              <dd>{{ item.category }}</dd>
+            </div>
+          </dl>
+          <h3>Tecnologías</h3>
+          <div class="technology-list">
+            @for (technology of item.technologies; track technology) {
+              <span class="technology-tag">{{ technology }}</span>
             }
-
-            <!-- Aviso de confidencialidad -->
-            @if (item.confidential) {
-
-              <p class="detail-confidential">
-
-                Este proyecto incluye información
-                relacionada con un entorno profesional.
-
-                Por motivos de confidencialidad,
-                algunas capturas, archivos y detalles
-                internos no están disponibles
-                públicamente.
-
-              </p>
-
-            }
-
-            <!-- Aviso de proyecto demostrativo -->
-            @if (
-              item.type === 'web-comercial' &&
-              !item.confidential
-            ) {
-
-              <p class="detail-disclaimer">
-
-                Demostración comercial desarrollada
-                con fines de portafolio.
-
-              </p>
-
-            }
-
           </div>
-
+          @if (restricted) {
+            <p class="detail-sidebar__notice">
+              Se publica únicamente un resumen general de la participación profesional. No se
+              comparten capturas reales, datos internos, código propietario, configuraciones ni
+              credenciales.
+            </p>
+          }
+          <div class="detail-actions">
+            <a class="text-link" routerLink="/proyectos"
+              >Todos los proyectos <span aria-hidden="true">↗</span></a
+            >
+            <a class="text-link" routerLink="/contacto"
+              >Conversemos sobre su proyecto <span aria-hidden="true">↗</span></a
+            >
+          </div>
         </aside>
-
       </div>
 
-      <!-- =====================================================
-           06. GALERÍA DE IMÁGENES
-      ====================================================== -->
-      @if (
-        !item.confidential &&
-        projectImages.length > 0
-      ) {
-
-        <section
-          class="detail-section detail-gallery"
-          aria-labelledby="gallery-title"
-        >
-
-          <span class="detail-section__number">
-            06 / Galería
-          </span>
-
-          <h2 id="gallery-title">
-            Galería del proyecto
-          </h2>
-
+      @if (!restricted && projectImages.length > 0) {
+        <section class="detail-gallery" aria-labelledby="gallery-title">
+          <div class="detail-gallery__heading">
+            <div>
+              <span class="section-heading__eyebrow">Capturas del proyecto</span>
+              <h2 id="gallery-title">Galería</h2>
+            </div>
+            <p>Seleccione una imagen para verla completa.</p>
+          </div>
           <div class="detail-gallery__grid">
-
-            @for (
-              image of projectImages;
-              track image;
-              let i = $index
-            ) {
-
+            @for (image of projectImages; track image; let i = $index) {
               <button
+                #galleryButton
                 type="button"
                 class="detail-gallery__item"
-                #galleryButton
-                (click)="
-                  openLightboxByImage(
-                    image,
-                    galleryButton
-                  )
-                "
-                [attr.aria-label]="
-                  'Ampliar imagen ' +
-                  (i + 1) +
-                  ' de ' +
-                  item.title
-                "
+                [attr.aria-label]="'Ampliar: ' + imageTitle(image)"
+                (click)="openLightboxByImage(image, galleryButton)"
               >
-
                 <img
-                  [src]="image"
-                  [alt]="
-                    'Captura ' +
-                    (i + 1) +
-                    ' del proyecto ' +
-                    item.title
-                  "
+                  [src]="imageAsset(image).src"
+                  [attr.data-original-src]="image"
+                  [attr.srcset]="imageAsset(image).srcset"
+                  [sizes]="galleryImageSizes"
+                  [attr.width]="imageAsset(image).width"
+                  [attr.height]="imageAsset(image).height"
+                  [alt]="imageTitle(image)"
                   loading="lazy"
                   decoding="async"
                   (error)="imageError($event)"
-                />
-
-                <span>
-                  Ver imagen
-                  <span aria-hidden="true">↗</span>
-                </span>
-
+                /><span>{{ imageTitle(image) }} <span aria-hidden="true">↗</span></span>
               </button>
-
             }
-
           </div>
-
         </section>
-
       }
 
-      <!-- =====================================================
-           NAVEGACIÓN ENTRE PROYECTOS
-      ====================================================== -->
-      <nav
-        class="detail-project-nav"
-        aria-label="Navegación entre proyectos"
-      >
-
-        <!-- Proyecto anterior -->
+      <nav class="detail-project-nav" aria-label="Navegación entre proyectos">
         @if (previousProject; as previous) {
-
-          <a
-            [routerLink]="[
-              '/proyectos',
-              previous.id
-            ]"
+          <a [routerLink]="['/proyectos', previous.id]"
+            ><span>← Proyecto anterior</span><strong>{{ previous.title }}</strong></a
           >
-
-            <span>
-              ← Proyecto anterior
-            </span>
-
-            <strong>
-              {{ previous.title }}
-            </strong>
-
-          </a>
-
         } @else {
-
           <span aria-hidden="true"></span>
-
         }
-
-        <!-- Proyecto siguiente -->
         @if (nextProject; as next) {
-
-          <a
-            [routerLink]="[
-              '/proyectos',
-              next.id
-            ]"
+          <a [routerLink]="['/proyectos', next.id]"
+            ><span>Siguiente proyecto →</span><strong>{{ next.title }}</strong></a
           >
-
-            <span>
-              Siguiente proyecto →
-            </span>
-
-            <strong>
-              {{ next.title }}
-            </strong>
-
-          </a>
-
         }
-
       </nav>
-
     </div>
 
-  }
-
-  <!-- =========================================================
-       LIGHTBOX / VISOR DE IMÁGENES
-  ========================================================== -->
-  @if (lightboxOpen && projectImages.length > 0) {
-
-    <div
-      class="project-lightbox"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Visor de imágenes del proyecto"
-      (click)="closeLightbox()"
-    >
-
-      <!-- Cerrar -->
-      <button
-        class="project-lightbox__close"
-        type="button"
-        aria-label="Cerrar imagen"
+    @if (lightboxOpen && projectImages.length > 0) {
+      <div
+        class="project-lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-lightbox-title"
+        aria-describedby="project-lightbox-help"
         (click)="closeLightbox()"
       >
-        ×
-      </button>
-
-      <!-- Contador -->
-      <div
-        class="project-lightbox__counter"
-        aria-live="polite"
-      >
-        {{ selectedImageIndex + 1 }}
-        /
-        {{ projectImages.length }}
+        <h2 id="project-lightbox-title" class="sr-only">Galería de {{ item.title }}</h2>
+        <p id="project-lightbox-help" class="sr-only">
+          Use las flechas para cambiar de imagen. Escape cierra el visor.
+        </p>
+        <div class="project-lightbox__panel" (click)="stopPropagation($event)">
+          <p class="project-lightbox__counter" aria-live="polite" aria-atomic="true">
+            {{ imageTitle(selectedImage) }} · {{ selectedImageIndex + 1 }} de {{ totalImages }}
+          </p>
+          <button
+            type="button"
+            class="project-lightbox__close"
+            aria-label="Cerrar imagen"
+            (click)="closeLightbox()"
+          >
+            Cerrar <span aria-hidden="true">×</span>
+          </button>
+          @if (totalImages > 1) {
+            <button
+              type="button"
+              class="project-lightbox__arrow project-lightbox__arrow--previous"
+              aria-label="Imagen anterior"
+              (click)="previousImage($event)"
+            >
+              ←
+            </button>
+          }
+          <figure class="project-lightbox__image">
+            <img
+              [src]="imageAsset(selectedImage).src"
+              [attr.data-original-src]="selectedImage"
+              [attr.width]="imageAsset(selectedImage).width"
+              [attr.height]="imageAsset(selectedImage).height"
+              decoding="async"
+              [alt]="imageTitle(selectedImage)"
+              (error)="imageError($event)"
+            />
+          </figure>
+          @if (totalImages > 1) {
+            <button
+              type="button"
+              class="project-lightbox__arrow project-lightbox__arrow--next"
+              aria-label="Imagen siguiente"
+              (click)="nextImage($event)"
+            >
+              →
+            </button>
+          }
+        </div>
       </div>
-
-      <!-- Imagen anterior -->
-      @if (projectImages.length > 1) {
-
-        <button
-          class="project-lightbox__arrow"
-          type="button"
-          aria-label="Imagen anterior"
-          (click)="previousImage($event)"
-        >
-          ←
-        </button>
-
-      }
-
-      <!-- Imagen ampliada -->
-      <div
-        class="project-lightbox__image"
-        (click)="stopPropagation($event)"
-      >
-
-        <img
-          [src]="selectedImage"
-          [alt]="
-            'Imagen ampliada ' +
-            (selectedImageIndex + 1) +
-            ' de ' +
-            (project?.title ?? 'proyecto')
-          "
-          (error)="imageError($event)"
-        />
-
-      </div>
-
-      <!-- Imagen siguiente -->
-      @if (projectImages.length > 1) {
-
-        <button
-          class="project-lightbox__arrow"
-          type="button"
-          aria-label="Imagen siguiente"
-          (click)="nextImage($event)"
-        >
-          →
-        </button>
-
-      }
-
-    </div>
-
+    }
   }
-
-</main>
+</div>

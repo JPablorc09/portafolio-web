@@ -1,0 +1,50 @@
+[
+  {
+    "route": "/vender",
+    "title": "Vender",
+    "text": "VendeTico\n\nOPERACIÓN\n\nVender\nCaja\nClientes\n\nGESTIÓN\n\nResumen\nProductos\nInventario\nProveedores\nEquipo\nMi negocio\nMi plan\n\nPLATAFORMA\n\nPagos SINPE\nJ\[correo omitido]\nDueño\nSalir\nColapsar\nVender\nMinisúper Ejemplo\nCaja 1 abierta\nJ\nLe quedan 14 días de prueba gratuita\nVer planes\nProductos\nBuscar producto por nombre o código de barras\nF2\nCámara\nAR\nArroz 1 kg\n₡1 500,00\n9 disp.\nAZ\nAzúcar 2 kg\n₡1 950,00\nQuedan 2\nCM\nCafé molido 250 g\n₡2 800,00\n5 disp.\nFN\nFrijoles negros 800 g\n₡1 850,00\n12 disp.\nHC\nHuevos (cartón de 15)\n₡2 950,00\n8 disp.\nLE\nLeche entera 1 L\n₡950,00\n20 disp.\nPC\nPan cuadrado\n₡1 650,00\n5 disp.\nRE\nRefresco 600 ml\n₡900,00\n24 disp.\nVenta actual\n0 artículos\n\nEscanee o toque un producto\n\nAparecerá aquí con su cantidad y el total.\n\nTotal\n₡0,00\nCobrar\nF9",
+    "overflow": false
+  },
+  {
+    "route": "/resumen",
+    "title": "Resumen",
+    "text": "VendeTico\n\nOPERACIÓN\n\nVender\nCaja\nClientes\n\nGESTIÓN\n\nResumen\nProductos\nInventario\nProveedores\nEquipo\nMi negocio\nMi plan\n\nPLATAFORMA\n\nPagos SINPE\nJ\[correo omitido]\nDueño\nSalir\nColapsar\nResumen\nMinisúper Ejemplo\nCaja 1 abierta\nJ\nLe quedan 14 días de prueba gratuita\nVer planes\nResumen del negocio\n\nMinisúper Ejemplo · 18 nov 2026\n\nHoy\n7 días\n30 días\nFechas\nVentas\n₡0,00\n0 ventas\nGanancia estimada\n₡0,00\ngastos de caja ₡0,00\nTicket promedio\n₡0,00\npor venta\nFiado por cobrar\n₡0,00\n0 clientes\nPor pagar a proveedores\n₡0,00\n0 proveedores\nVentas por día\n7 días · ₡4 300,00\n₡1,3 K\n₡2,5 K\n₡3,8 K\n₡5 K\nJue\nVie\nSáb\nDom\nLun\nMar\nMié\nVentas por día\nFecha\tMonto\tVentas\n2026-11-12\t₡0,00\t0\n2026-11-13\t₡0,00\t0\n2026-11-14\t₡0,00\t0\n2026-11-15\t₡0,00\t0\n2026-11-16\t₡4 300,00\t2\n2026-11-17\t₡0,00\t0\n2026-11-18\t₡0,00\t0\nCómo le pagaron\nSin ventas en el período.\nMás vendidos\nSin ventas en el período.\nPor agotarse\n1\nAzúcar 2 kg\nQuedan 2\nArmar pedido\n\nLa ganancia es ESTIMADA: ventas sin IVA menos costo de lo vendido y gastos de caja (los pagos a proveedores no se restan otra vez: ya están en el costo). No incluye gastos registrados fuera del sistema.",
+    "overflow": false
+  },
+  {
+    "route": "/productos",
+    "title": "Productos",
+    "text": "VendeTico\n\nOPERACIÓN\n\nVender\nCaja\nClientes\n\nGESTIÓN\n\nResumen\nProductos\nInventario\nProveedores\nEquipo\nMi negocio\nMi plan\n\nPLATAFORMA\n\nPagos SINPE\nJ\[correo omitido]\nDueño\nSalir\nColapsar\nProductos\nMinisúper Ejemplo\nCaja 1 abierta\nJ\nLe quedan 14 días de prueba gratuita\nVer planes\nProductos\nCategorías\n+ Nuevo producto\nProductos\n8\nPor agotarse\n1\nBuscar producto\nTodas\n8\nGeneral\n0\nSin categoría\n8\nArroz 1 kg\n₡1 500,00 · margen 32,2 %\nQuedan 9\nAzúcar 2 kg\n₡1 950,00 · margen 21,8 %\nQuedan 2\nCafé molido 250 g\n₡2 800,00 · margen 27,4 %\nQuedan 5\nFrijoles negros 800 g\n₡1 850,00 · margen 26,7 %\nQuedan 12\nHuevos (cartón de 15)\n₡2 950,00 · margen 19,6 %\nQuedan 8\nLeche entera 1 L\n₡950,00 · margen 22,7 %\nQuedan 20\nPan cuadrado\n₡1 650,00 · margen 24,7 %\nQuedan 5\nRefresco 600 ml\n₡900,00 · margen 30,9 %\nQuedan 24",
+    "overflow": false
+  },
+  {
+    "route": "/inventario",
+    "title": "Inventario",
+    "text": "VendeTico\n\nOPERACIÓN\n\nVender\nCaja\nClientes\n\nGESTIÓN\n\nResumen\nProductos\nInventario\nProveedores\nEquipo\nMi negocio\nMi plan\n\nPLATAFORMA\n\nPagos SINPE\nJ\[correo omitido]\nDueño\nSalir\nColapsar\nInventario\nMinisúper Ejemplo\nCaja 1 abierta\nJ\nLe quedan 14 días de prueba gratuita\nVer planes\nInventario\n\nCuánta mercadería tiene, qué se está acabando y cada entrada o salida.\n\nProductos\nRegistrar compra\nValor del inventario\n₡82 700,00\na costo, sin IVA\nCon existencias\n8\nproductos\nPor agotarse\n1\nen o bajo el mínimo\nAgotados\n0\nsin unidades\nExistencias\nMovimientos\nBuscar producto\nTodos\nPor agotarse\nAgotados\nAzúcar 2 kg\nSin categoría · mínimo 3 · ₡2 700,00\n2\nUnid\nPor agotarse\nEntrada\nContar\nArroz 1 kg\nSin categoría · mínimo 3 · ₡8 100,00\n9\nUnid\nBien\nEntrada\nContar\nCafé molido 250 g\nSin categoría · mínimo 2 · ₡9 000,00\n5\nUnid\nBien\nEntrada\nContar\nFrijoles negros 800 g\nSin categoría · mínimo 3 · ₡14 400,00\n12\nUnid\nBien\nEntrada\nContar\nHuevos (cartón de 15)\nSin categoría · mínimo 2 · ₡16 800,00\n8\nUnid\nBien\nEntrada\nContar\nLeche entera 1 L\nSin categoría · mínimo 6 · ₡13 000,00\n20\nUnid\nBien\nEntrada\nContar\nPan cuadrado\nSin categoría · mínimo 2 · ₡5 500,00\n5\nUnid\nBien\nEntrada\nContar\nRefresco 600 ml\nSin categoría · mínimo 6 · ₡13 200,00\n24\nUnid\nBien\nEntrada\nContar\n¿Cuándo uso “Entrada” y cuándo “Contar”?",
+    "overflow": false
+  },
+  {
+    "route": "/clientes",
+    "title": "Clientes",
+    "text": "VendeTico\n\nOPERACIÓN\n\nVender\nCaja\nClientes\n\nGESTIÓN\n\nResumen\nProductos\nInventario\nProveedores\nEquipo\nMi negocio\nMi plan\n\nPLATAFORMA\n\nPagos SINPE\nJ\[correo omitido]\nDueño\nSalir\nColapsar\nClientes\nMinisúper Ejemplo\nCaja 1 abierta\nJ\nLe quedan 14 días de prueba gratuita\nVer planes\nClientes\n+ Nuevo cliente\nFiado por cobrar\n₡0,00\nLe deben\n0 clientes\nBuscar cliente\nCliente Ejemplo\n8000-0000 · límite ₡20 000,00\nAl día",
+    "overflow": false
+  },
+  {
+    "route": "/proveedores",
+    "title": "Proveedores",
+    "text": "VendeTico\n\nOPERACIÓN\n\nVender\nCaja\nClientes\n\nGESTIÓN\n\nResumen\nProductos\nInventario\nProveedores\nEquipo\nMi negocio\nMi plan\n\nPLATAFORMA\n\nPagos SINPE\nJ\[correo omitido]\nDueño\nSalir\nColapsar\nProveedores\nMinisúper Ejemplo\nCaja 1 abierta\nJ\nLe quedan 14 días de prueba gratuita\nVer planes\nProveedores\n+ Nuevo\nPor pagar\n₡0,00\nLes debo a\n0\n+ Registrar compra\nLista de pedido\nCompras por trimestre\nBuscar proveedor\nTodavía no hay proveedores. Toque “+ Nuevo” para agregar el primero.",
+    "overflow": false
+  },
+  {
+    "route": "/caja",
+    "title": "Caja",
+    "text": "VendeTico\n\nOPERACIÓN\n\nVender\nCaja\nClientes\n\nGESTIÓN\n\nResumen\nProductos\nInventario\nProveedores\nEquipo\nMi negocio\nMi plan\n\nPLATAFORMA\n\nPagos SINPE\nJ\[correo omitido]\nDueño\nSalir\nColapsar\nCaja\nMinisúper Ejemplo\nCaja 1 abierta\nJ\nLe quedan 14 días de prueba gratuita\nVer planes\nCaja 1 abierta\n\nDesde 17/11 2:23 p. m. · Fondo inicial ₡20 000,00\n\nAbrir\nVender y anotar entradas o salidas\nCerrar al terminar\n\nVentas del turno: ₡0,00 (0)\n\nVer cuánto debería haber ahora (solo dueño/administrador)\nEntradas y salidas de dinero\n¿Cuándo las uso?\n\nÚselas cuando entra o sale dinero de la gaveta que no es una venta. Así el cierre cuadra.\n\nSalida\nSaco dinero de la gaveta\nEntrada\nMeto dinero a la gaveta\nCerrar caja\n\nAl terminar el turno. Le guiamos paso a paso: usted cuenta lo que hay y el sistema lo compara al final.\n\nToma unos 5 minutos.\nVa a necesitar: el dinero de la gaveta, la app del banco (para SINPE) y el datáfono (si cobra con tarjeta).\nHasta el último paso puede volver atrás y corregir.\nEmpezar cierre de caja",
+    "overflow": false
+  },
+  {
+    "route": "/compras/reporte",
+    "title": "Compras por trimestre",
+    "text": "VendeTico\n\nOPERACIÓN\n\nVender\nCaja\nClientes\n\nGESTIÓN\n\nResumen\nProductos\nInventario\nProveedores\nEquipo\nMi negocio\nMi plan\n\nPLATAFORMA\n\nPagos SINPE\nJ\[correo omitido]\nDueño\nSalir\nColapsar\nCompras por trimestre\nMinisúper Ejemplo\nCaja 1 abierta\nJ\nLe quedan 14 días de prueba gratuita\nVer planes\nCompras por trimestre\n\nTotal de compras a proveedores para su declaración. Entréguele el archivo a su contador.\n\nProveedores\nExportar a Excel (CSV)\nAño\n2026\n2025\n2024\nT1\nEnero – Marzo\nT2\nAbril – Junio\nT3\nJulio – Setiembre\nT4\nOctubre – Diciembre\nFechas\nOtro rango\nTotal de compras · T4 2026 (Octubre – Diciembre)\n₡0,00\ncon IVA incluido · 0 compra(s)\nSubtotal sin IVA\n₡0,00\nIVA pagado en compras\n₡0,00\nDetalle de compras\n\nNo hay compras registradas en este período.\n\n¿Qué compras aparecen aquí?",
+    "overflow": false
+  }
+]

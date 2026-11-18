@@ -1,0 +1,401 @@
+{
+  "responsive": [
+    {
+      "route": "/",
+      "width": 320,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 320,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 390,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 768,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 1024,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 1440,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/brasa-oliva",
+      "width": 320,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/brasa-oliva",
+      "width": 390,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/brasa-oliva",
+      "width": 768,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/brasa-oliva",
+      "width": 1024,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/brasa-oliva",
+      "width": 1440,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/urbancut",
+      "width": 320,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/urbancut",
+      "width": 390,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/urbancut",
+      "width": 768,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/urbancut",
+      "width": 1024,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/urbancut",
+      "width": 1440,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/incidentes",
+      "width": 320,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/incidentes",
+      "width": 390,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/incidentes",
+      "width": 768,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/incidentes",
+      "width": 1024,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/incidentes",
+      "width": 1440,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/fallapp",
+      "width": 320,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/fallapp",
+      "width": 390,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/fallapp",
+      "width": 768,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/fallapp",
+      "width": 1024,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/fallapp",
+      "width": 1440,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/asms",
+      "width": 320,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/asms",
+      "width": 390,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/asms",
+      "width": 768,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/asms",
+      "width": 1024,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/asms",
+      "width": 1440,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/ventas",
+      "width": 320,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/ventas",
+      "width": 390,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/ventas",
+      "width": 768,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/ventas",
+      "width": 1024,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/ventas",
+      "width": 1440,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/prtg",
+      "width": 320,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/prtg",
+      "width": 390,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/prtg",
+      "width": 768,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/prtg",
+      "width": 1024,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/prtg",
+      "width": 1440,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/escaneatodo",
+      "width": 320,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/escaneatodo",
+      "width": 390,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/escaneatodo",
+      "width": 768,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/escaneatodo",
+      "width": 1024,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/escaneatodo",
+      "width": 1440,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/radiomusicalapp",
+      "width": 320,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/radiomusicalapp",
+      "width": 390,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/radiomusicalapp",
+      "width": 768,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/radiomusicalapp",
+      "width": 1024,
+      "overflow": false,
+      "mains": 1
+    },
+    {
+      "route": "/proyectos/radiomusicalapp",
+      "width": 1440,
+      "overflow": false,
+      "mains": 1
+    }
+  ],
+  "routes": [
+    "/",
+    "/proyectos",
+    "/proyectos/brasa-oliva",
+    "/proyectos/urbancut",
+    "/proyectos/incidentes",
+    "/proyectos/fallapp",
+    "/proyectos/asms",
+    "/proyectos/ventas",
+    "/proyectos/prtg",
+    "/proyectos/escaneatodo",
+    "/proyectos/radiomusicalapp"
+  ],
+  "errors": [],
+  "resourceErrors": [],
+  "images": [
+    "/assets/images/ventas/ImagenPrincipalVentas.png",
+    "/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+    "/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+    "/assets/images/projects/urbancut/portada.png",
+    "/assets/images/ventas/ImagenPrincipalVentas.png",
+    "/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+    "/assets/images/projects/radiomusicalapp/RadioMusicalApp_GraficoFunciones_1024x500.png",
+    "/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+    "/assets/images/projects/urbancut/portada.png",
+    "/assets/images/ventas/ImagenPrincipalVentas.png",
+    "/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+    "/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181832.png",
+    "/assets/images/projects/radiomusicalapp/RadioMusicalApp_GraficoFunciones_1024x500.png",
+    "/assets/images/ventas/ImagenPrincipalVentas.png",
+    "/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+    "/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+    "/assets/images/projects/urbancut/portada.png",
+    "/assets/images/ventas/ImagenPrincipalVentas.png",
+    "/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+    "/assets/images/projects/radiomusicalapp/RadioMusicalApp_GraficoFunciones_1024x500.png",
+    "/assets/images/ventas/ImagenPrincipalVentas.png",
+    "/assets/images/ventas/ImagenUsuarios.png",
+    "/assets/images/projects/radiomusicalapp/RadioMusicalApp_GraficoFunciones_1024x500.png",
+    "/assets/images/ventas/ImagenPrincipalVentas.png",
+    "/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+    "/assets/images/ventas/ImagenPrincipalVentas.png",
+    "/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+    "/assets/images/projects/radiomusicalapp/RadioMusicalApp_GraficoFunciones_1024x500.png",
+    "/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+    "/assets/images/projects/urbancut/portada.png",
+    "/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+    "/assets/images/projects/urbancut/portada.png",
+    "/assets/images/ventas/ImagenPrincipalVentas.png",
+    "/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+    "/assets/images/projects/radiomusicalapp/RadioMusicalApp_GraficoFunciones_1024x500.png",
+    "/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+    "/assets/images/projects/urbancut/portada.png",
+    "/assets/images/ventas/ImagenPrincipalVentas.png",
+    "/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+    "/assets/images/projects/radiomusicalapp/RadioMusicalApp_GraficoFunciones_1024x500.png"
+  ],
+  "checks": {
+    "featuredProjects": "passed",
+    "filters": "passed",
+    "galleryKeyboardAndFocus": "passed",
+    "institutionalProtection": "passed",
+    "promotionalLabel": "passed",
+    "imageFallback": "passed",
+    "removedIds": "passed",
+    "cv": "passed"
+  }
+}

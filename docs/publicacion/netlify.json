@@ -1,0 +1,27 @@
+{
+  "siteId": "6f9153a2-3a6d-408f-a8ef-b3530078c7fc",
+  "siteName": "portafolioprofesionaljuanpablorojasc",
+  "productionUrl": "https://portafolioprofesionaljuanpablorojasc.netlify.app",
+  "previousDeployId": "6aca79a77b99140008644f73",
+  "previousPublishedAt": "2026-10-10T17:45:40.639Z",
+  "gitConnected": true,
+  "nonGitProductionRestricted": false,
+  "productionLocked": false,
+  "previewDeployId": "6ae0f13b344667e673eaa940",
+  "previewUrl": "https://6ae0f13b344667e673eaa940--portafolioprofesionaljuanpablorojasc.netlify.app",
+  "previewCreatedAt": "2026-10-27T18:48:22.185Z",
+  "productionDeployId": "6ae0f13b344667e673eaa940",
+  "productionPublishedAt": "2026-10-27T18:51:40.801Z",
+  "previewVerifiedAt": "2026-10-27T18:48:46.218Z",
+  "productionApiConfirmed": true,
+  "productionVerifiedAt": "2026-10-27T18:52:31.984Z",
+  "productionVerification": {
+    "pages": 17,
+    "notFound": 4,
+    "responsiveChecks": 68,
+    "verifiedImages": 13,
+    "cvSha256": "90afb7f14c0b121bc5caa67333ae468275a909e728f00c0c00ea4f28ded781ad",
+    "unexpectedConsoleErrors": 0
+  },
+  "gitPushed": false
+}

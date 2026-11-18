@@ -1,0 +1,62 @@
+{
+  "/assets/images/vendetico/vendetico-principal.webp": {
+    "src": "/assets/images/vendetico/vendetico-principal-full.webp",
+    "width": 1440,
+    "height": 900,
+    "srcset": "/assets/images/vendetico/vendetico-principal.webp 1440w, /assets/images/vendetico/vendetico-principal-480.webp 480w, /assets/images/vendetico/vendetico-principal-960.webp 960w"
+  },
+  "/assets/images/vendetico/vendetico-dashboard.webp": {
+    "src": "/assets/images/vendetico/vendetico-dashboard-full.webp",
+    "width": 1440,
+    "height": 900,
+    "srcset": "/assets/images/vendetico/vendetico-dashboard.webp 1440w, /assets/images/vendetico/vendetico-dashboard-480.webp 480w, /assets/images/vendetico/vendetico-dashboard-960.webp 960w"
+  },
+  "/assets/images/vendetico/vendetico-productos.webp": {
+    "src": "/assets/images/vendetico/vendetico-productos-full.webp",
+    "width": 1440,
+    "height": 900,
+    "srcset": "/assets/images/vendetico/vendetico-productos.webp 1440w, /assets/images/vendetico/vendetico-productos-480.webp 480w, /assets/images/vendetico/vendetico-productos-960.webp 960w"
+  },
+  "/assets/images/vendetico/vendetico-inventario.webp": {
+    "src": "/assets/images/vendetico/vendetico-inventario-full.webp",
+    "width": 1440,
+    "height": 900,
+    "srcset": "/assets/images/vendetico/vendetico-inventario.webp 1440w, /assets/images/vendetico/vendetico-inventario-480.webp 480w, /assets/images/vendetico/vendetico-inventario-960.webp 960w"
+  },
+  "/assets/images/vendetico/vendetico-clientes.webp": {
+    "src": "/assets/images/vendetico/vendetico-clientes-full.webp",
+    "width": 1440,
+    "height": 900,
+    "srcset": "/assets/images/vendetico/vendetico-clientes.webp 1440w, /assets/images/vendetico/vendetico-clientes-480.webp 480w, /assets/images/vendetico/vendetico-clientes-960.webp 960w"
+  },
+  "/assets/images/vendetico/vendetico-caja.webp": {
+    "src": "/assets/images/vendetico/vendetico-caja-full.webp",
+    "width": 1440,
+    "height": 900,
+    "srcset": "/assets/images/vendetico/vendetico-caja.webp 1440w, /assets/images/vendetico/vendetico-caja-480.webp 480w, /assets/images/vendetico/vendetico-caja-960.webp 960w"
+  },
+  "/assets/images/vendetico/vendetico-reportes.webp": {
+    "src": "/assets/images/vendetico/vendetico-reportes-full.webp",
+    "width": 1440,
+    "height": 900,
+    "srcset": "/assets/images/vendetico/vendetico-reportes.webp 1440w, /assets/images/vendetico/vendetico-reportes-480.webp 480w, /assets/images/vendetico/vendetico-reportes-960.webp 960w"
+  },
+  "/assets/images/vendetico/vendetico-login.webp": {
+    "src": "/assets/images/vendetico/vendetico-login-full.webp",
+    "width": 1440,
+    "height": 900,
+    "srcset": "/assets/images/vendetico/vendetico-login.webp 1440w, /assets/images/vendetico/vendetico-login-480.webp 480w, /assets/images/vendetico/vendetico-login-960.webp 960w"
+  },
+  "/assets/images/vendetico/vendetico-mobile.webp": {
+    "src": "/assets/images/vendetico/vendetico-mobile-full.webp",
+    "width": 390,
+    "height": 844,
+    "srcset": "/assets/images/vendetico/vendetico-mobile.webp 390w"
+  },
+  "/assets/images/vendetico/vendetico-resumen-mobile.webp": {
+    "src": "/assets/images/vendetico/vendetico-resumen-mobile-full.webp",
+    "width": 390,
+    "height": 844,
+    "srcset": "/assets/images/vendetico/vendetico-resumen-mobile.webp 390w"
+  }
+}

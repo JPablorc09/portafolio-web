@@ -1,74 +1,39 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { PROJECTS } from '../../data/projects';
+import { PROFESSIONAL_CONTACT } from '../../data/professional-contact';
+import { Project } from '../../models/project';
+import { ProjectCard } from '../../shared/project-card/project-card';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, ProjectCard],
   templateUrl: './home.html',
-  styleUrls: ['./home.css'],
+  styleUrl: './home.css',
 })
 export class Home {
-
-  readonly technologies = [
-    'Angular',
-    'TypeScript',
-    'ASP.NET Core',
-    'C#',
-    'SQL Server',
-    'REST API',
-    'IIS',
-    'Git'
-  ];
-
-  readonly statistics = [
-    {
-      value: '+5',
-      label: 'Proyectos desarrollados'
-    },
-    {
-      value: '+1 año',
-      label: 'Experiencia profesional'
-    },
-    {
-      value: 'Full Stack',
-      label: 'Desarrollo web'
-    }
-  ];
-
+  readonly contact = PROFESSIONAL_CONTACT;
+  readonly projectCount = PROJECTS.length;
+  readonly featuredProjects = ['vendetico', 'escaneatodo', 'incidentes']
+    .map(id => PROJECTS.find(project => project.id === id))
+    .filter((project): project is Project => !!project);
+  readonly technologies = ['C#', 'ASP.NET Core', 'Angular', 'SQL Server', 'APIs REST'];
   readonly services = [
     {
-      number: '01',
       title: 'Páginas web',
-      description:
-        'Sitios modernos, profesionales y adaptados a celulares, tablets y computadoras.',
-      technologies: [
-        'Responsive',
-        'WhatsApp',
-        'SEO'
-      ]
+      description: 'Presencia profesional, catálogos y contacto para negocios, comercios y profesionales.',
+      technologies: ['Responsive', 'WhatsApp', 'SEO técnico'],
     },
     {
-      number: '02',
       title: 'Sistemas web',
-      description:
-        'Aplicaciones personalizadas para administrar información y digitalizar procesos.',
-      technologies: [
-        'Angular',
-        'ASP.NET Core',
-        'SQL Server'
-      ]
+      description: 'Aplicaciones para administrar información y digitalizar procesos según el alcance del negocio.',
+      technologies: ['Angular', 'ASP.NET Core', 'SQL Server'],
     },
     {
-      number: '03',
       title: 'APIs e integraciones',
-      description:
-        'Integración entre aplicaciones, servicios y plataformas para automatizar procesos.',
-      technologies: [
-        'REST API',
-        '.NET',
-        'Integraciones'
-      ]
-    }
+      description: 'Servicios para conectar aplicaciones, intercambiar información y automatizar tareas.',
+      technologies: ['APIs REST', '.NET', 'Integraciones'],
+    },
   ];
 }

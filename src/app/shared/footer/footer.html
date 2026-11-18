@@ -1,137 +1,46 @@
 <footer class="footer">
   <div class="footer-container">
-
     <div class="footer-main">
-
-      <section class="footer-brand">
-        <a
-          class="footer-brand__logo"
-          routerLink="/"
-          aria-label="Ir a la página de inicio"
-        >
-          <span>JP</span>
-
-          <div>
-            <strong>Juan Pablo Rojas</strong>
-            <small>Ingeniero de Sistemas</small>
-          </div>
-        </a>
-
-        <p>
-          Desarrollo de aplicaciones web, integración de sistemas,
-          soporte técnico y soluciones empresariales.
-        </p>
-
-        <div class="footer-availability">
-          <span class="footer-availability__indicator"></span>
-
+      <section class="footer-brand" aria-labelledby="footer-name">
+        <a class="footer-brand__logo" routerLink="/" aria-label="Juan Pablo Rojas Contreras: ir al inicio">
+          <span aria-hidden="true">JP</span>
           <span>
-            Disponible para oportunidades profesionales
+            <strong id="footer-name">Juan Pablo Rojas Contreras</strong>
+            <small>Desarrollador Full Stack .NET y Angular</small>
           </span>
-        </div>
+        </a>
+        <p>Desarrollo de aplicaciones web, integración de sistemas y soluciones empresariales.</p>
+        <p class="footer-availability"><span aria-hidden="true"></span> Disponible para oportunidades profesionales</p>
+        <a class="footer-cv" [href]="contact.cv" download="CV_Juan_Pablo_Rojas_Contreras.pdf">Descargar CV <span aria-hidden="true">↓</span></a>
       </section>
 
-      <section class="footer-column">
-        <h2>Navegación</h2>
-
-        <nav aria-label="Navegación del pie de página">
-          @for (
-            link of navigationLinks;
-            track link.route
-          ) {
-            <a [routerLink]="link.route">
-              {{ link.label }}
-            </a>
+      <section class="footer-column" aria-labelledby="footer-navigation-title">
+        <h2 id="footer-navigation-title">Explorar</h2>
+        <nav class="footer-navigation" aria-label="Navegación del pie de página">
+          @for (link of navigationLinks; track link.route) {
+            <a [routerLink]="link.route" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">{{ link.label }}</a>
           }
         </nav>
       </section>
 
-      <section class="footer-column">
-        <h2>Contacto</h2>
-
-        <div class="footer-contact">
-          <a href="mailto:juanparojasc1999@gmail.com">
-            <span>@</span>
-
-            <div>
-              <small>Correo</small>
-              <strong>juanparojasc1999@gmail.com</strong>
-            </div>
-          </a>
-
-          <div class="footer-contact__item">
-            <span>CR</span>
-
-            <div>
-              <small>Ubicación</small>
-              <strong>Costa Rica</strong>
-            </div>
-          </div>
-
-          <div class="footer-contact__item">
-            <span>TI</span>
-
-            <div>
-              <small>Perfil</small>
-              <strong>Desarrollo y soporte</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="footer-column">
-        <h2>Perfiles</h2>
-
+      <section class="footer-column" aria-labelledby="footer-contact-title">
+        <h2 id="footer-contact-title">Conversemos</h2>
+        <p>Oportunidades laborales y cotizaciones.</p>
+        <a class="footer-email" [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+        <a class="footer-contact-link" [href]="contact.whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span><span class="sr-only"> (abre en una pestaña nueva)</span></a>
         <div class="footer-socials">
-          @for (
-            social of socialLinks;
-            track social.label
-          ) {
-            <a
-              [href]="social.url"
-              [attr.target]="
-                social.url.startsWith('http')
-                  ? '_blank'
-                  : null
-              "
-              [attr.rel]="
-                social.url.startsWith('http')
-                  ? 'noopener noreferrer'
-                  : null
-              "
-              [attr.aria-label]="social.label"
-            >
-              <span>{{ social.icon }}</span>
-              {{ social.label }}
-            </a>
+          @for (social of socialLinks; track social.label) {
+            <a [href]="social.url" target="_blank" rel="noopener noreferrer">{{ social.label }} <span aria-hidden="true">↗</span><span class="sr-only"> (abre en una pestaña nueva)</span></a>
           }
         </div>
+        <p class="footer-location">Costa Rica</p>
       </section>
-
     </div>
-
-    <div class="footer-divider"></div>
 
     <div class="footer-bottom">
-
-      <p>
-        © {{ currentYear }} Juan Pablo Rojas. Todos los derechos reservados.
-      </p>
-
-      <p class="footer-bottom__technology">
-        Desarrollado con Angular
-      </p>
-
-      <button
-        class="footer-top-button"
-        type="button"
-        aria-label="Volver al inicio de la página"
-        (click)="scrollToTop()"
-      >
-        <span aria-hidden="true">↑</span>
-      </button>
-
+      <p>© {{ currentYear }} Juan Pablo Rojas Contreras.</p>
+      <p>Desarrollado con Angular.</p>
+      <button class="footer-top-button" type="button" (click)="scrollToTop()">Volver arriba <span aria-hidden="true">↑</span></button>
     </div>
-
   </div>
 </footer>

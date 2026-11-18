@@ -1,391 +1,79 @@
-<section class="hero">
-
-  <!-- =====================================================
-       EFECTOS DE FONDO
-       ===================================================== -->
-  <div class="hero__glow hero__glow--one"></div>
-  <div class="hero__glow hero__glow--two"></div>
-
-
-  <div class="container hero__container">
-
-    <!-- =====================================================
-         INFORMACIÓN PRINCIPAL
-         ===================================================== -->
-    <div class="hero__content">
-
-      <div class="hero__status">
-        <span></span>
-        Disponible para oportunidades y nuevos proyectos
+<div class="home-page">
+  <div class="container">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="home-hero__content">
+        <p class="home-availability"><span aria-hidden="true"></span>Disponible para oportunidades y proyectos</p>
+        <p class="home-identity">Juan Pablo Rojas Contreras · Costa Rica</p>
+        <h1 id="home-title">Desarrollo Full Stack.<br><span>.NET y Angular.</span></h1>
+        <p class="home-lead">Construyo aplicaciones web, integro sistemas y trabajo con bases de datos. Soy Bachiller en Ingeniería de Sistemas por la Universidad Americana (UAM), graduado en 2024.</p>
+        <div class="home-actions">
+          <a routerLink="/proyectos" class="button button--primary">Ver proyectos <span aria-hidden="true">↗</span></a>
+          <a [href]="contact.cv" download="CV_Juan_Pablo_Rojas_Contreras.pdf" class="button button--outline">Descargar CV <span aria-hidden="true">↓</span></a>
+          <a routerLink="/contacto" class="text-link">Contactar <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
+      <aside class="home-summary" aria-labelledby="home-summary-title">
+        <span class="section-heading__eyebrow">Enfoque profesional</span>
+        <h2 id="home-summary-title">Sistemas empresariales.<br>Integraciones. Soluciones web.</h2>
+        <dl>
+          <div><dt>Desarrollo, datos y APIs</dt><dd>.NET · Angular · SQL Server</dd></div>
+          <div><dt>Experiencia profesional</dt><dd>Grupo Alega Costa Rica<span>Servicios para el Poder Judicial<br>Agosto de 2025 – julio de 2026</span></dd></div>
+          <div><dt>Aprendizaje continuo</dt><dd>Codex y desarrollo asistido por IA<span>Actualmente en formación y práctica</span></dd></div>
+        </dl>
+      </aside>
+    </section>
 
-
-      <p class="hero__eyebrow">
-        Ingeniero de Sistemas · Desarrollador Full Stack
-      </p>
-
-
-      <h1>
-        Hola, soy
-        <span>Juan Pablo Rojas</span>
-      </h1>
-
-
-      <h2>
-        Desarrollo soluciones web que conectan tecnología,
-        procesos y usuarios.
-      </h2>
-
-
-      <p class="hero__description">
-        Desarrollo aplicaciones y soluciones web utilizando Angular,
-        ASP.NET Core, SQL Server e integración de APIs. Mi experiencia
-        combina desarrollo, bases de datos, integraciones, monitoreo y
-        soporte tecnológico, con un enfoque en crear soluciones
-        funcionales, seguras y fáciles de utilizar.
-      </p>
-
-
-      <!-- BOTONES PRINCIPALES -->
-      <div class="hero__actions">
-
-        <a
-          routerLink="/proyectos"
-          class="button button--primary"
-        >
-          Ver mis proyectos
-        </a>
-
-
-        <a
-          routerLink="/servicios"
-          class="button button--secondary"
-        >
-          Mis servicios
-        </a>
-
-
-        <a
-          href="/assets/documents/CV_Juan_Pablo_Rojas_Contreras.pdf"
-          download="CV_Juan_Pablo_Rojas_Contreras.pdf"
-          rel="noopener"
-          class="button button--outline"
-        >
-          Descargar CV
-        </a>
-
+    <section class="home-section" aria-labelledby="featured-title">
+      <div class="home-section__heading">
+        <div><span class="section-heading__eyebrow">Trabajo seleccionado</span><h2 id="featured-title">Proyectos con contexto.</h2><p>Qué construí, qué necesidad aborda y en qué estado se encuentra.</p></div>
+        <a routerLink="/proyectos" class="text-link">Ver los {{ projectCount }} proyectos <span aria-hidden="true">↗</span></a>
       </div>
-
-
-      <!-- TECNOLOGÍAS -->
-      <div class="hero__technologies">
-
-        @for (technology of technologies; track technology) {
-
-          <span>
-            {{ technology }}
-          </span>
-
+      <ul class="project-grid" aria-label="Proyectos destacados">
+        @for (project of featuredProjects; track project.id) {
+          <li><app-project-card [project]="project" /></li>
         }
+      </ul>
+    </section>
 
+    <section class="home-section" aria-labelledby="home-experience-title">
+      <div class="home-section__heading">
+        <div><span class="section-heading__eyebrow">Experiencia profesional</span><h2 id="home-experience-title">Software aplicado a procesos.</h2></div>
+        <a routerLink="/experiencia" class="text-link">Ver experiencia <span aria-hidden="true">↗</span></a>
       </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         TARJETA PROFESIONAL
-         ===================================================== -->
-    <aside class="hero__visual">
-
-      <div class="profile-card card">
-
-        <div class="profile-card__image">
-          <span>JP</span>
+      <div class="home-experience">
+        <p class="home-experience__period">Agosto 2025 — julio 2026<span>Servicios profesionales</span></p>
+        <div>
+          <h3>Desarrollo e integración de sistemas</h3>
+          <p><strong>Grupo Alega Costa Rica</strong> · Empresa contratante<br>Servicios prestados para el Poder Judicial de Costa Rica.</p>
+          <p>Desarrollo y mantenimiento de aplicaciones con C# y ASP.NET Core, SQL Server e integración de APIs. Trabajo con información de monitoreo, sistemas de reportes y publicación en IIS.</p>
+          <div class="technology-list" aria-label="Tecnologías del perfil">
+            @for (technology of technologies; track technology) { <span class="technology-tag">{{ technology }}</span> }
+          </div>
         </div>
-
-
-        <div class="profile-card__body">
-
-          <small>
-            Perfil profesional
-          </small>
-
-          <h3>
-            Desarrollo Full Stack
-          </h3>
-
-          <p>
-            Aplicaciones web, sistemas empresariales,
-            bases de datos, APIs e integraciones.
-          </p>
-
-        </div>
-
-
-        <!-- BLOQUE DE CÓDIGO -->
-        <div class="profile-card__code">
-
-          <div>
-            <span>const</span>
-            <strong>developer</strong> = &#123;
-          </div>
-
-          <div class="profile-card__indent">
-            frontend: <em>'Angular'</em>,
-          </div>
-
-          <div class="profile-card__indent">
-            backend: <em>'ASP.NET Core'</em>,
-          </div>
-
-          <div class="profile-card__indent">
-            database: <em>'SQL Server'</em>
-          </div>
-
-          <div>
-            &#125;;
-          </div>
-
-        </div>
-
       </div>
+      <a routerLink="/sobre-mi" class="text-link home-profile-link">Conocer mi perfil <span aria-hidden="true">↗</span></a>
+    </section>
 
-    </aside>
-
-  </div>
-
-
-  <!-- =====================================================
-       ESTADÍSTICAS
-       ===================================================== -->
-  <div class="container hero__statistics">
-
-    @for (statistic of statistics; track statistic.label) {
-
-      <article>
-
-        <strong>
-          {{ statistic.value }}
-        </strong>
-
-        <span>
-          {{ statistic.label }}
-        </span>
-
-      </article>
-
-    }
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     MI ENFOQUE
-     ========================================================= -->
-<section class="introduction section">
-
-  <div class="container introduction__grid">
-
-    <div class="section-heading">
-
-      <span class="section-heading__eyebrow">
-        Mi enfoque
-      </span>
-
-      <h2>
-        Convierto necesidades operativas en soluciones tecnológicas.
-      </h2>
-
-    </div>
-
-
-    <div class="introduction__content">
-
-      <p>
-        Mi experiencia combina desarrollo de software, bases de datos,
-        integraciones, monitoreo y soporte tecnológico. Esto me permite
-        comprender tanto las necesidades del usuario como los aspectos
-        técnicos necesarios para construir una solución.
-      </p>
-
-      <a routerLink="/sobre-mi">
-
-        Conocer más sobre mi perfil
-
-        <span aria-hidden="true">
-          →
-        </span>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     SERVICIOS
-     ========================================================= -->
-<section class="home-services section">
-
-  <div class="container">
-
-    <!-- ENCABEZADO -->
-    <div class="home-services__header">
-
-      <div class="section-heading">
-
-        <span class="section-heading__eyebrow">
-          Servicios
-        </span>
-
-        <h2>
-          Soluciones para negocios, profesionales y empresas.
-        </h2>
-
+    <section class="home-section" aria-labelledby="home-services-title">
+      <div class="home-section__heading">
+        <div><span class="section-heading__eyebrow">Soluciones para negocios</span><h2 id="home-services-title">De la necesidad a la aplicación.</h2></div>
+        <a routerLink="/servicios" class="text-link">Ver servicios <span aria-hidden="true">↗</span></a>
       </div>
-
-
-      <div class="home-services__intro">
-
-        <p>
-          Además del desarrollo de aplicaciones empresariales,
-          también desarrollo soluciones digitales para negocios
-          que buscan mejorar su presencia en Internet o digitalizar
-          sus procesos.
-        </p>
-
-        <a routerLink="/servicios">
-
-          Ver todos los servicios
-
-          <span aria-hidden="true">
-            →
-          </span>
-
-        </a>
-
+      <div class="home-services">
+        @for (service of services; track service.title) {
+          <article><h3>{{ service.title }}</h3><p>{{ service.description }}</p><div class="technology-list">@for (technology of service.technologies; track technology) { <span class="technology-tag">{{ technology }}</span> }</div></article>
+        }
       </div>
+    </section>
 
-    </div>
+    <section class="home-section home-learning" aria-labelledby="home-learning-title">
+      <div><span class="section-heading__eyebrow">Aprendizaje continuo</span><h2 id="home-learning-title">Desarrollo asistido por IA</h2><p class="home-learning__status">Actualmente en formación y práctica.</p><p>Aprendo a utilizar Codex para analizar proyectos, planificar funcionalidades, programar y revisar código, con pruebas y validación humana.</p></div>
+      <a routerLink="/habilidades" fragment="desarrollo-asistido-ia" class="text-link">Ver mi aprendizaje en IA <span aria-hidden="true">↗</span></a>
+    </section>
 
-
-    <!-- TARJETAS -->
-    <div class="home-services__grid">
-
-      @for (service of services; track service.title) {
-
-        <article class="home-service-card">
-
-          <div class="home-service-card__number">
-            {{ service.number }}
-          </div>
-
-
-          <h3>
-            {{ service.title }}
-          </h3>
-
-
-          <p>
-            {{ service.description }}
-          </p>
-
-
-          <div class="home-service-card__technologies">
-
-            @for (
-              technology of service.technologies;
-              track technology
-            ) {
-
-              <span>
-                {{ technology }}
-              </span>
-
-            }
-
-          </div>
-
-        </article>
-
-      }
-
-    </div>
-
-
-    <div class="home-services__action">
-
-      <a
-        routerLink="/servicios"
-        class="button button--primary"
-      >
-        Explorar servicios
-      </a>
-
-    </div>
-
+    <section class="home-section home-contact" aria-labelledby="home-contact-title">
+      <div><span class="section-heading__eyebrow">¿Tiene un proyecto en mente?</span><h2 id="home-contact-title">Conversemos sobre su próxima solución.</h2><p>Podemos evaluar una página web, un sistema personalizado o una integración según sus necesidades.</p></div>
+      <a routerLink="/contacto" class="button button--primary">Solicitar cotización <span aria-hidden="true">↗</span></a>
+    </section>
   </div>
-
-</section>
-
-
-<!-- =========================================================
-     CTA / CONTACTO
-     ========================================================= -->
-<section class="home-cta section">
-
-  <div class="container">
-
-    <div class="home-cta__card">
-
-      <div class="home-cta__content">
-
-        <span class="home-cta__eyebrow">
-          ¿Tiene un proyecto en mente?
-        </span>
-
-
-        <h2>
-          Podemos convertir su idea en una solución digital.
-        </h2>
-
-
-        <p>
-          Si necesita una página web, un sistema personalizado
-          o una integración, cuénteme sobre su proyecto y podemos
-          evaluar la solución que mejor se adapte a sus necesidades.
-        </p>
-
-      </div>
-
-
-      <div class="home-cta__actions">
-
-        <a
-          routerLink="/contacto"
-          class="button button--primary"
-        >
-          Solicitar cotización
-        </a>
-
-
-        <a
-          routerLink="/servicios"
-          class="button button--outline"
-        >
-          Ver servicios
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+</div>

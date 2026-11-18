@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-27",
+  "command": "npm audit --json",
+  "reportedVulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "dependencyChangesInStageG": false,
+  "credentialPatternScan": {
+    "directories": [
+      "src",
+      "public",
+      "scripts"
+    ],
+    "result": "No matching filenames",
+    "scope": "Private-key headers, AWS access-key IDs and GitHub/OpenAI key prefixes; heuristic, not exhaustive"
+  },
+  "cvSha256": "90afb7f14c0b121bc5caa67333ae468275a909e728f00c0c00ea4f28ded781ad"
+}

@@ -1,0 +1,1313 @@
+{
+  "date": "2026-10-27T17:38:54.482Z",
+  "label": "antes",
+  "conditions": {
+    "viewport": "390x1100",
+    "cpuSlowdown": 4,
+    "latencyMs": 80,
+    "downloadBytesPerSecond": 500000,
+    "cache": "disabled",
+    "samplesPerRoute": 3,
+    "observationWindowMs": 8000,
+    "server": "local Express, uncompressed assets",
+    "deviceScaleFactor": 1
+  },
+  "summary": [
+    {
+      "route": "/",
+      "lcpMedianMs": 236,
+      "fcpMedianMs": 236,
+      "clsMax": 0.027357328925619834,
+      "localImageBytesMedian": 428520
+    },
+    {
+      "route": "/proyectos",
+      "lcpMedianMs": 4104,
+      "fcpMedianMs": 236,
+      "clsMax": 0.015258160399449038,
+      "localImageBytesMedian": 1594061
+    },
+    {
+      "route": "/proyectos/ventas",
+      "lcpMedianMs": 1620,
+      "fcpMedianMs": 232,
+      "clsMax": 0.01591633994490358,
+      "localImageBytesMedian": 259122
+    }
+  ],
+  "runs": [
+    {
+      "route": "/",
+      "run": 1,
+      "lcp": {
+        "ms": 1016,
+        "tag": "P",
+        "text": "Construyo aplicaciones web, integro sistemas y trabajo con bases de datos. Soy Bachiller en Ingeniería de Sist",
+        "url": ""
+      },
+      "cls": 0.02691752727272727,
+      "fcp": 1016,
+      "domReady": 3402.2999999970198,
+      "resources": [
+        {
+          "url": "http://localhost:4198/styles-W7PKOY2K.css",
+          "bytes": 13199,
+          "transfer": 13499,
+          "type": "link",
+          "duration": 120.6000000089407
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+          "bytes": 48256,
+          "transfer": 48556,
+          "type": "css",
+          "duration": 271.5
+        },
+        {
+          "url": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "bytes": 259122,
+          "transfer": 259422,
+          "type": "img",
+          "duration": 1510.4000000059605
+        },
+        {
+          "url": "http://localhost:4198/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+          "bytes": 169398,
+          "transfer": 169698,
+          "type": "img",
+          "duration": 1164.6000000089407
+        },
+        {
+          "url": "http://localhost:4198/chunk-2AKV6OCP.js",
+          "bytes": 827,
+          "transfer": 1127,
+          "type": "script",
+          "duration": 98.6000000089407
+        },
+        {
+          "url": "http://localhost:4198/chunk-DRMG6FJL.js",
+          "bytes": 287,
+          "transfer": 587,
+          "type": "script",
+          "duration": 98
+        },
+        {
+          "url": "http://localhost:4198/chunk-3QD2RHH5.js",
+          "bytes": 270109,
+          "transfer": 270409,
+          "type": "script",
+          "duration": 1462.0999999940395
+        },
+        {
+          "url": "http://localhost:4198/chunk-7CGTOI24.js",
+          "bytes": 618,
+          "transfer": 918,
+          "type": "script",
+          "duration": 102.29999999701977
+        },
+        {
+          "url": "http://localhost:4198/main-6INOI2UI.js",
+          "bytes": 25043,
+          "transfer": 25343,
+          "type": "script",
+          "duration": 330.59999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-T5L64EUW.js",
+          "bytes": 12040,
+          "transfer": 12340,
+          "type": "script",
+          "duration": 234.79999999701977
+        },
+        {
+          "url": "http://localhost:4198/chunk-CVAQ75Z6.js",
+          "bytes": 6693,
+          "transfer": 6993,
+          "type": "script",
+          "duration": 169.59999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-IZTRONLI.js",
+          "bytes": 418,
+          "transfer": 718,
+          "type": "script",
+          "duration": 106
+        },
+        {
+          "url": "http://localhost:4198/chunk-W6M5NZN6.js",
+          "bytes": 17379,
+          "transfer": 17679,
+          "type": "script",
+          "duration": 261
+        },
+        {
+          "url": "http://localhost:4198/portfolio.ico",
+          "bytes": 1724,
+          "transfer": 2024,
+          "type": "other",
+          "duration": 99.1000000089407
+        },
+        {
+          "url": "http://localhost:4198/favicon.svg",
+          "bytes": 344,
+          "transfer": 644,
+          "type": "other",
+          "duration": 92.79999999701977
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "complete": true,
+          "width": 1918
+        },
+        {
+          "src": "http://localhost:4198/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+          "complete": true,
+          "width": 1909
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "run": 2,
+      "lcp": {
+        "ms": 228,
+        "tag": "P",
+        "text": "Construyo aplicaciones web, integro sistemas y trabajo con bases de datos. Soy Bachiller en Ingeniería de Sist",
+        "url": ""
+      },
+      "cls": 0.02691752727272727,
+      "fcp": 228,
+      "domReady": 2165.1000000089407,
+      "resources": [
+        {
+          "url": "http://localhost:4198/styles-W7PKOY2K.css",
+          "bytes": 13199,
+          "transfer": 13499,
+          "type": "link",
+          "duration": 139.90000000596046
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+          "bytes": 48256,
+          "transfer": 48556,
+          "type": "css",
+          "duration": 322.59999999403954
+        },
+        {
+          "url": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "bytes": 259122,
+          "transfer": 259422,
+          "type": "img",
+          "duration": 1707.9000000059605
+        },
+        {
+          "url": "http://localhost:4198/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+          "bytes": 169398,
+          "transfer": 169698,
+          "type": "img",
+          "duration": 1344.199999988079
+        },
+        {
+          "url": "http://localhost:4198/chunk-2AKV6OCP.js",
+          "bytes": 827,
+          "transfer": 1127,
+          "type": "script",
+          "duration": 126.29999999701977
+        },
+        {
+          "url": "http://localhost:4198/chunk-DRMG6FJL.js",
+          "bytes": 287,
+          "transfer": 587,
+          "type": "script",
+          "duration": 125.1000000089407
+        },
+        {
+          "url": "http://localhost:4198/chunk-3QD2RHH5.js",
+          "bytes": 270109,
+          "transfer": 270409,
+          "type": "script",
+          "duration": 1732.5
+        },
+        {
+          "url": "http://localhost:4198/chunk-7CGTOI24.js",
+          "bytes": 618,
+          "transfer": 918,
+          "type": "script",
+          "duration": 125.3999999910593
+        },
+        {
+          "url": "http://localhost:4198/main-6INOI2UI.js",
+          "bytes": 25043,
+          "transfer": 25343,
+          "type": "script",
+          "duration": 462.59999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-T5L64EUW.js",
+          "bytes": 12040,
+          "transfer": 12340,
+          "type": "script",
+          "duration": 383.3999999910593
+        },
+        {
+          "url": "http://localhost:4198/chunk-CVAQ75Z6.js",
+          "bytes": 6693,
+          "transfer": 6993,
+          "type": "script",
+          "duration": 317.90000000596046
+        },
+        {
+          "url": "http://localhost:4198/chunk-IZTRONLI.js",
+          "bytes": 418,
+          "transfer": 718,
+          "type": "script",
+          "duration": 385.79999999701977
+        },
+        {
+          "url": "http://localhost:4198/chunk-W6M5NZN6.js",
+          "bytes": 17379,
+          "transfer": 17679,
+          "type": "script",
+          "duration": 569.2000000029802
+        },
+        {
+          "url": "http://localhost:4198/portfolio.ico",
+          "bytes": 1724,
+          "transfer": 2024,
+          "type": "other",
+          "duration": 101.70000000298023
+        },
+        {
+          "url": "http://localhost:4198/favicon.svg",
+          "bytes": 344,
+          "transfer": 644,
+          "type": "other",
+          "duration": 121.79999999701977
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "complete": true,
+          "width": 1918
+        },
+        {
+          "src": "http://localhost:4198/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+          "complete": true,
+          "width": 1909
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "run": 3,
+      "lcp": {
+        "ms": 236,
+        "tag": "P",
+        "text": "Construyo aplicaciones web, integro sistemas y trabajo con bases de datos. Soy Bachiller en Ingeniería de Sist",
+        "url": ""
+      },
+      "cls": 0.027357328925619834,
+      "fcp": 236,
+      "domReady": 2081.0999999940395,
+      "resources": [
+        {
+          "url": "http://localhost:4198/styles-W7PKOY2K.css",
+          "bytes": 13199,
+          "transfer": 13499,
+          "type": "link",
+          "duration": 124.09999999403954
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+          "bytes": 48256,
+          "transfer": 48556,
+          "type": "css",
+          "duration": 308.30000001192093
+        },
+        {
+          "url": "http://localhost:4198/chunk-2AKV6OCP.js",
+          "bytes": 827,
+          "transfer": 1127,
+          "type": "script",
+          "duration": 108.20000000298023
+        },
+        {
+          "url": "http://localhost:4198/chunk-DRMG6FJL.js",
+          "bytes": 287,
+          "transfer": 587,
+          "type": "script",
+          "duration": 105
+        },
+        {
+          "url": "http://localhost:4198/chunk-3QD2RHH5.js",
+          "bytes": 270109,
+          "transfer": 270409,
+          "type": "script",
+          "duration": 1722.7000000029802
+        },
+        {
+          "url": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "bytes": 259122,
+          "transfer": 259422,
+          "type": "img",
+          "duration": 1678.2999999970198
+        },
+        {
+          "url": "http://localhost:4198/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+          "bytes": 169398,
+          "transfer": 169698,
+          "type": "img",
+          "duration": 1304.2999999970198
+        },
+        {
+          "url": "http://localhost:4198/chunk-7CGTOI24.js",
+          "bytes": 618,
+          "transfer": 918,
+          "type": "script",
+          "duration": 102.5
+        },
+        {
+          "url": "http://localhost:4198/main-6INOI2UI.js",
+          "bytes": 25043,
+          "transfer": 25343,
+          "type": "script",
+          "duration": 399.8999999910593
+        },
+        {
+          "url": "http://localhost:4198/chunk-T5L64EUW.js",
+          "bytes": 12040,
+          "transfer": 12340,
+          "type": "script",
+          "duration": 302.59999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-CVAQ75Z6.js",
+          "bytes": 6693,
+          "transfer": 6993,
+          "type": "script",
+          "duration": 301.29999999701977
+        },
+        {
+          "url": "http://localhost:4198/chunk-IZTRONLI.js",
+          "bytes": 418,
+          "transfer": 718,
+          "type": "script",
+          "duration": 398.70000000298023
+        },
+        {
+          "url": "http://localhost:4198/chunk-W6M5NZN6.js",
+          "bytes": 17379,
+          "transfer": 17679,
+          "type": "script",
+          "duration": 537.5999999940395
+        },
+        {
+          "url": "http://localhost:4198/portfolio.ico",
+          "bytes": 1724,
+          "transfer": 2024,
+          "type": "other",
+          "duration": 109.20000000298023
+        },
+        {
+          "url": "http://localhost:4198/favicon.svg",
+          "bytes": 344,
+          "transfer": 644,
+          "type": "other",
+          "duration": 102.70000000298023
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "complete": true,
+          "width": 1918
+        },
+        {
+          "src": "http://localhost:4198/assets/images/projects/escaneatodo/Screenshot%202026-10-22%20181653.png",
+          "complete": true,
+          "width": 1909
+        }
+      ]
+    },
+    {
+      "route": "/proyectos",
+      "run": 1,
+      "lcp": {
+        "ms": 4116,
+        "tag": "IMG",
+        "text": "",
+        "url": "http://localhost:4198/assets/images/projects/brasaOliva/portadaBrasa-oliva.png"
+      },
+      "cls": 0.015258160399449038,
+      "fcp": 328,
+      "domReady": 2367.0999999940395,
+      "resources": [
+        {
+          "url": "http://localhost:4198/styles-W7PKOY2K.css",
+          "bytes": 13199,
+          "transfer": 13499,
+          "type": "link",
+          "duration": 123.70000000298023
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+          "bytes": 48256,
+          "transfer": 48556,
+          "type": "css",
+          "duration": 322.5
+        },
+        {
+          "url": "http://localhost:4198/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+          "bytes": 713017,
+          "transfer": 713317,
+          "type": "img",
+          "duration": 3757.5
+        },
+        {
+          "url": "http://localhost:4198/chunk-2AKV6OCP.js",
+          "bytes": 827,
+          "transfer": 1127,
+          "type": "script",
+          "duration": 103.30000001192093
+        },
+        {
+          "url": "http://localhost:4198/chunk-DRMG6FJL.js",
+          "bytes": 287,
+          "transfer": 587,
+          "type": "script",
+          "duration": 107.09999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-3QD2RHH5.js",
+          "bytes": 270109,
+          "transfer": 270409,
+          "type": "script",
+          "duration": 1895.2000000029802
+        },
+        {
+          "url": "http://localhost:4198/chunk-7CGTOI24.js",
+          "bytes": 618,
+          "transfer": 918,
+          "type": "script",
+          "duration": 105.70000000298023
+        },
+        {
+          "url": "http://localhost:4198/assets/images/projects/urbancut/portada.png",
+          "bytes": 881044,
+          "transfer": 881344,
+          "type": "img",
+          "duration": 4053.5
+        },
+        {
+          "url": "http://localhost:4198/main-6INOI2UI.js",
+          "bytes": 25043,
+          "transfer": 25343,
+          "type": "script",
+          "duration": 370.09999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-A6H3LVLR.js",
+          "bytes": 9530,
+          "transfer": 9830,
+          "type": "script",
+          "duration": 227
+        },
+        {
+          "url": "http://localhost:4198/chunk-CVAQ75Z6.js",
+          "bytes": 6693,
+          "transfer": 6993,
+          "type": "script",
+          "duration": 211.1000000089407
+        },
+        {
+          "url": "http://localhost:4198/chunk-IZTRONLI.js",
+          "bytes": 418,
+          "transfer": 718,
+          "type": "script",
+          "duration": 322.8999999910593
+        },
+        {
+          "url": "http://localhost:4198/chunk-W6M5NZN6.js",
+          "bytes": 17379,
+          "transfer": 17679,
+          "type": "script",
+          "duration": 478.09999999403954
+        },
+        {
+          "url": "http://localhost:4198/portfolio.ico",
+          "bytes": 1724,
+          "transfer": 2024,
+          "type": "other",
+          "duration": 106.80000001192093
+        },
+        {
+          "url": "http://localhost:4198/favicon.svg",
+          "bytes": 344,
+          "transfer": 644,
+          "type": "other",
+          "duration": 109.1000000089407
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:4198/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+          "complete": true,
+          "width": 1898
+        },
+        {
+          "src": "http://localhost:4198/assets/images/projects/urbancut/portada.png",
+          "complete": true,
+          "width": 1915
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        }
+      ]
+    },
+    {
+      "route": "/proyectos",
+      "run": 2,
+      "lcp": {
+        "ms": 4104,
+        "tag": "IMG",
+        "text": "",
+        "url": "http://localhost:4198/assets/images/projects/brasaOliva/portadaBrasa-oliva.png"
+      },
+      "cls": 0.015258160399449038,
+      "fcp": 228,
+      "domReady": 2394.5999999940395,
+      "resources": [
+        {
+          "url": "http://localhost:4198/styles-W7PKOY2K.css",
+          "bytes": 13199,
+          "transfer": 13499,
+          "type": "link",
+          "duration": 116.59999999403954
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+          "bytes": 48256,
+          "transfer": 48556,
+          "type": "css",
+          "duration": 457.40000000596046
+        },
+        {
+          "url": "http://localhost:4198/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+          "bytes": 713017,
+          "transfer": 713317,
+          "type": "img",
+          "duration": 3850.9000000059605
+        },
+        {
+          "url": "http://localhost:4198/assets/images/projects/urbancut/portada.png",
+          "bytes": 881044,
+          "transfer": 881344,
+          "type": "img",
+          "duration": 4182.29999999702
+        },
+        {
+          "url": "http://localhost:4198/chunk-2AKV6OCP.js",
+          "bytes": 827,
+          "transfer": 1127,
+          "type": "script",
+          "duration": 104.79999999701977
+        },
+        {
+          "url": "http://localhost:4198/chunk-DRMG6FJL.js",
+          "bytes": 287,
+          "transfer": 587,
+          "type": "script",
+          "duration": 102.09999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-3QD2RHH5.js",
+          "bytes": 270109,
+          "transfer": 270409,
+          "type": "script",
+          "duration": 1987.0999999940395
+        },
+        {
+          "url": "http://localhost:4198/chunk-7CGTOI24.js",
+          "bytes": 618,
+          "transfer": 918,
+          "type": "script",
+          "duration": 85.80000001192093
+        },
+        {
+          "url": "http://localhost:4198/main-6INOI2UI.js",
+          "bytes": 25043,
+          "transfer": 25343,
+          "type": "script",
+          "duration": 442
+        },
+        {
+          "url": "http://localhost:4198/chunk-A6H3LVLR.js",
+          "bytes": 9530,
+          "transfer": 9830,
+          "type": "script",
+          "duration": 301.29999999701977
+        },
+        {
+          "url": "http://localhost:4198/chunk-CVAQ75Z6.js",
+          "bytes": 6693,
+          "transfer": 6993,
+          "type": "script",
+          "duration": 280
+        },
+        {
+          "url": "http://localhost:4198/chunk-IZTRONLI.js",
+          "bytes": 418,
+          "transfer": 718,
+          "type": "script",
+          "duration": 376.5
+        },
+        {
+          "url": "http://localhost:4198/chunk-W6M5NZN6.js",
+          "bytes": 17379,
+          "transfer": 17679,
+          "type": "script",
+          "duration": 547.6000000089407
+        },
+        {
+          "url": "http://localhost:4198/portfolio.ico",
+          "bytes": 1724,
+          "transfer": 2024,
+          "type": "other",
+          "duration": 118.20000000298023
+        },
+        {
+          "url": "http://localhost:4198/favicon.svg",
+          "bytes": 344,
+          "transfer": 644,
+          "type": "other",
+          "duration": 110.1000000089407
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:4198/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+          "complete": true,
+          "width": 1898
+        },
+        {
+          "src": "http://localhost:4198/assets/images/projects/urbancut/portada.png",
+          "complete": true,
+          "width": 1915
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        }
+      ]
+    },
+    {
+      "route": "/proyectos",
+      "run": 3,
+      "lcp": {
+        "ms": 4020,
+        "tag": "IMG",
+        "text": "",
+        "url": "http://localhost:4198/assets/images/projects/brasaOliva/portadaBrasa-oliva.png"
+      },
+      "cls": 0.015258160399449038,
+      "fcp": 236,
+      "domReady": 2280.2000000029802,
+      "resources": [
+        {
+          "url": "http://localhost:4198/styles-W7PKOY2K.css",
+          "bytes": 13199,
+          "transfer": 13499,
+          "type": "link",
+          "duration": 118.70000000298023
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+          "bytes": 48256,
+          "transfer": 48556,
+          "type": "css",
+          "duration": 469
+        },
+        {
+          "url": "http://localhost:4198/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+          "bytes": 713017,
+          "transfer": 713317,
+          "type": "img",
+          "duration": 3769.5
+        },
+        {
+          "url": "http://localhost:4198/assets/images/projects/urbancut/portada.png",
+          "bytes": 881044,
+          "transfer": 881344,
+          "type": "img",
+          "duration": 4124.899999991059
+        },
+        {
+          "url": "http://localhost:4198/chunk-2AKV6OCP.js",
+          "bytes": 827,
+          "transfer": 1127,
+          "type": "script",
+          "duration": 95.59999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-DRMG6FJL.js",
+          "bytes": 287,
+          "transfer": 587,
+          "type": "script",
+          "duration": 97.59999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-3QD2RHH5.js",
+          "bytes": 270109,
+          "transfer": 270409,
+          "type": "script",
+          "duration": 1935.699999988079
+        },
+        {
+          "url": "http://localhost:4198/chunk-7CGTOI24.js",
+          "bytes": 618,
+          "transfer": 918,
+          "type": "script",
+          "duration": 130.09999999403954
+        },
+        {
+          "url": "http://localhost:4198/main-6INOI2UI.js",
+          "bytes": 25043,
+          "transfer": 25343,
+          "type": "script",
+          "duration": 493.09999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-A6H3LVLR.js",
+          "bytes": 9530,
+          "transfer": 9830,
+          "type": "script",
+          "duration": 334
+        },
+        {
+          "url": "http://localhost:4198/chunk-CVAQ75Z6.js",
+          "bytes": 6693,
+          "transfer": 6993,
+          "type": "script",
+          "duration": 267.6000000089407
+        },
+        {
+          "url": "http://localhost:4198/chunk-IZTRONLI.js",
+          "bytes": 418,
+          "transfer": 718,
+          "type": "script",
+          "duration": 377
+        },
+        {
+          "url": "http://localhost:4198/chunk-W6M5NZN6.js",
+          "bytes": 17379,
+          "transfer": 17679,
+          "type": "script",
+          "duration": 542.5
+        },
+        {
+          "url": "http://localhost:4198/portfolio.ico",
+          "bytes": 1724,
+          "transfer": 2024,
+          "type": "other",
+          "duration": 104.80000001192093
+        },
+        {
+          "url": "http://localhost:4198/favicon.svg",
+          "bytes": 344,
+          "transfer": 644,
+          "type": "other",
+          "duration": 112.09999999403954
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:4198/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+          "complete": true,
+          "width": 1898
+        },
+        {
+          "src": "http://localhost:4198/assets/images/projects/urbancut/portada.png",
+          "complete": true,
+          "width": 1915
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        }
+      ]
+    },
+    {
+      "route": "/proyectos/ventas",
+      "run": 1,
+      "lcp": {
+        "ms": 1652,
+        "tag": "IMG",
+        "text": "",
+        "url": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png"
+      },
+      "cls": 0.015762158126721763,
+      "fcp": 372,
+      "domReady": 1809.4000000059605,
+      "resources": [
+        {
+          "url": "http://localhost:4198/styles-W7PKOY2K.css",
+          "bytes": 13199,
+          "transfer": 13499,
+          "type": "link",
+          "duration": 139.69999998807907
+        },
+        {
+          "url": "http://localhost:4198/chunk-2AKV6OCP.js",
+          "bytes": 827,
+          "transfer": 1127,
+          "type": "script",
+          "duration": 83.79999999701977
+        },
+        {
+          "url": "http://localhost:4198/chunk-DRMG6FJL.js",
+          "bytes": 287,
+          "transfer": 587,
+          "type": "script",
+          "duration": 93.79999999701977
+        },
+        {
+          "url": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "bytes": 259122,
+          "transfer": 259422,
+          "type": "img",
+          "duration": 1379.5
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+          "bytes": 48256,
+          "transfer": 48556,
+          "type": "css",
+          "duration": 437.5
+        },
+        {
+          "url": "http://localhost:4198/chunk-3QD2RHH5.js",
+          "bytes": 270109,
+          "transfer": 270409,
+          "type": "script",
+          "duration": 1331
+        },
+        {
+          "url": "http://localhost:4198/chunk-7CGTOI24.js",
+          "bytes": 618,
+          "transfer": 918,
+          "type": "script",
+          "duration": 97.5
+        },
+        {
+          "url": "http://localhost:4198/main-6INOI2UI.js",
+          "bytes": 25043,
+          "transfer": 25343,
+          "type": "script",
+          "duration": 379.5
+        },
+        {
+          "url": "http://localhost:4198/chunk-2UIIROLW.js",
+          "bytes": 25569,
+          "transfer": 25869,
+          "type": "script",
+          "duration": 386.5
+        },
+        {
+          "url": "http://localhost:4198/chunk-IZTRONLI.js",
+          "bytes": 418,
+          "transfer": 718,
+          "type": "script",
+          "duration": 107
+        },
+        {
+          "url": "http://localhost:4198/chunk-W6M5NZN6.js",
+          "bytes": 17379,
+          "transfer": 17679,
+          "type": "script",
+          "duration": 383.5
+        },
+        {
+          "url": "http://localhost:4198/chunk-LG2HAVOO.js",
+          "bytes": 86,
+          "transfer": 386,
+          "type": "script",
+          "duration": 103.59999999403954
+        },
+        {
+          "url": "http://localhost:4198/portfolio.ico",
+          "bytes": 1724,
+          "transfer": 2024,
+          "type": "other",
+          "duration": 91.90000000596046
+        },
+        {
+          "url": "http://localhost:4198/favicon.svg",
+          "bytes": 344,
+          "transfer": 644,
+          "type": "other",
+          "duration": 103.29999999701977
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "complete": true,
+          "width": 1918
+        },
+        {
+          "src": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "complete": true,
+          "width": 1918
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        }
+      ]
+    },
+    {
+      "route": "/proyectos/ventas",
+      "run": 2,
+      "lcp": {
+        "ms": 1504,
+        "tag": "IMG",
+        "text": "",
+        "url": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png"
+      },
+      "cls": 0.01591633994490358,
+      "fcp": 196,
+      "domReady": 1731,
+      "resources": [
+        {
+          "url": "http://localhost:4198/styles-W7PKOY2K.css",
+          "bytes": 13199,
+          "transfer": 13499,
+          "type": "link",
+          "duration": 115.8999999910593
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+          "bytes": 48256,
+          "transfer": 48556,
+          "type": "css",
+          "duration": 296.5
+        },
+        {
+          "url": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "bytes": 259122,
+          "transfer": 259422,
+          "type": "img",
+          "duration": 1269
+        },
+        {
+          "url": "http://localhost:4198/chunk-2AKV6OCP.js",
+          "bytes": 827,
+          "transfer": 1127,
+          "type": "script",
+          "duration": 96.59999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-DRMG6FJL.js",
+          "bytes": 287,
+          "transfer": 587,
+          "type": "script",
+          "duration": 91
+        },
+        {
+          "url": "http://localhost:4198/chunk-3QD2RHH5.js",
+          "bytes": 270109,
+          "transfer": 270409,
+          "type": "script",
+          "duration": 1209.2000000029802
+        },
+        {
+          "url": "http://localhost:4198/chunk-7CGTOI24.js",
+          "bytes": 618,
+          "transfer": 918,
+          "type": "script",
+          "duration": 102.79999999701977
+        },
+        {
+          "url": "http://localhost:4198/main-6INOI2UI.js",
+          "bytes": 25043,
+          "transfer": 25343,
+          "type": "script",
+          "duration": 328.70000000298023
+        },
+        {
+          "url": "http://localhost:4198/chunk-2UIIROLW.js",
+          "bytes": 25569,
+          "transfer": 25869,
+          "type": "script",
+          "duration": 336.09999999403954
+        },
+        {
+          "url": "http://localhost:4198/chunk-IZTRONLI.js",
+          "bytes": 418,
+          "transfer": 718,
+          "type": "script",
+          "duration": 105.20000000298023
+        },
+        {
+          "url": "http://localhost:4198/chunk-W6M5NZN6.js",
+          "bytes": 17379,
+          "transfer": 17679,
+          "type": "script",
+          "duration": 354.40000000596046
+        },
+        {
+          "url": "http://localhost:4198/chunk-LG2HAVOO.js",
+          "bytes": 86,
+          "transfer": 386,
+          "type": "script",
+          "duration": 111
+        },
+        {
+          "url": "http://localhost:4198/portfolio.ico",
+          "bytes": 1724,
+          "transfer": 2024,
+          "type": "other",
+          "duration": 99.29999999701977
+        },
+        {
+          "url": "http://localhost:4198/favicon.svg",
+          "bytes": 344,
+          "transfer": 644,
+          "type": "other",
+          "duration": 106.1000000089407
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "complete": true,
+          "width": 1918
+        },
+        {
+          "src": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "complete": true,
+          "width": 1918
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        }
+      ]
+    },
+    {
+      "route": "/proyectos/ventas",
+      "run": 3,
+      "lcp": {
+        "ms": 1620,
+        "tag": "IMG",
+        "text": "",
+        "url": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png"
+      },
+      "cls": 0.015762158126721763,
+      "fcp": 232,
+      "domReady": 1771.1000000089407,
+      "resources": [
+        {
+          "url": "http://localhost:4198/styles-W7PKOY2K.css",
+          "bytes": 13199,
+          "transfer": 13499,
+          "type": "link",
+          "duration": 111.59999999403954
+        },
+        {
+          "url": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "bytes": 259122,
+          "transfer": 259422,
+          "type": "img",
+          "duration": 1382.7999999970198
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+          "bytes": 48256,
+          "transfer": 48556,
+          "type": "css",
+          "duration": 519.0999999940395
+        },
+        {
+          "url": "http://localhost:4198/chunk-2AKV6OCP.js",
+          "bytes": 827,
+          "transfer": 1127,
+          "type": "script",
+          "duration": 91.79999999701977
+        },
+        {
+          "url": "http://localhost:4198/chunk-DRMG6FJL.js",
+          "bytes": 287,
+          "transfer": 587,
+          "type": "script",
+          "duration": 91.5
+        },
+        {
+          "url": "http://localhost:4198/chunk-3QD2RHH5.js",
+          "bytes": 270109,
+          "transfer": 270409,
+          "type": "script",
+          "duration": 1399.300000011921
+        },
+        {
+          "url": "http://localhost:4198/chunk-7CGTOI24.js",
+          "bytes": 618,
+          "transfer": 918,
+          "type": "script",
+          "duration": 107.09999999403954
+        },
+        {
+          "url": "http://localhost:4198/main-6INOI2UI.js",
+          "bytes": 25043,
+          "transfer": 25343,
+          "type": "script",
+          "duration": 385.3999999910593
+        },
+        {
+          "url": "http://localhost:4198/chunk-2UIIROLW.js",
+          "bytes": 25569,
+          "transfer": 25869,
+          "type": "script",
+          "duration": 463
+        },
+        {
+          "url": "http://localhost:4198/chunk-IZTRONLI.js",
+          "bytes": 418,
+          "transfer": 718,
+          "type": "script",
+          "duration": 146.1000000089407
+        },
+        {
+          "url": "http://localhost:4198/chunk-W6M5NZN6.js",
+          "bytes": 17379,
+          "transfer": 17679,
+          "type": "script",
+          "duration": 365.19999998807907
+        },
+        {
+          "url": "http://localhost:4198/chunk-LG2HAVOO.js",
+          "bytes": 86,
+          "transfer": 386,
+          "type": "script",
+          "duration": 109.3999999910593
+        },
+        {
+          "url": "http://localhost:4198/portfolio.ico",
+          "bytes": 1724,
+          "transfer": 2024,
+          "type": "other",
+          "duration": 107.09999999403954
+        },
+        {
+          "url": "http://localhost:4198/favicon.svg",
+          "bytes": 344,
+          "transfer": 644,
+          "type": "other",
+          "duration": 96.5
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "complete": true,
+          "width": 1918
+        },
+        {
+          "src": "http://localhost:4198/assets/images/ventas/ImagenPrincipalVentas.png",
+          "complete": true,
+          "width": 1918
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        },
+        {
+          "src": "",
+          "complete": false,
+          "width": 0
+        }
+      ]
+    }
+  ],
+  "consoleErrors": []
+}

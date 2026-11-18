@@ -1,258 +1,61 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-
-interface ContactCard {
-  icon: string;
-  title: string;
-  value: string;
-  description: string;
-  action?: string;
-  actionLabel?: string;
-  external?: boolean;
-}
-
-interface SocialLink {
-  name: string;
-  username: string;
-  icon: string;
-  url: string;
-}
-
-interface Contribution {
-  number: string;
-  title: string;
-  description: string;
-  technologies: string[];
-}
-
-interface AvailabilityItem {
-  label: string;
-  value: string;
-}
-
+import { Component, computed, inject } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { PROFESSIONAL_CONTACT } from '../../data/professional-contact';
+import { WEB_PLANS } from '../../data/service-offering';
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [RouterLink],
   templateUrl: './contact.html',
-  styleUrl: './contact.css'
+  styleUrl: './contact.css',
 })
 export class Contact {
-
-  // ============================================================
-  // DATOS DE CONTACTO
-  // ============================================================
-
-  readonly email = 'juanparojasc1999@gmail.com';
-
-  readonly phone = '6279-4709';
-
-  readonly whatsappNumber = '50662794709';
-
-  readonly linkedinUrl =
-    'https://www.linkedin.com/in/juan-pablo-rojas-contreras-15ab09345/';
-
-  readonly githubUrl =
-    'https://github.com/JPablorc09';
-
-  readonly cvUrl =
-    '/assets/documents/CV_Juan_Pablo_Rojas_Contreras.pdf';
-
-
-  // ============================================================
-  // WHATSAPP
-  // ============================================================
-
-  readonly whatsappMessage =
-    'Hola Juan Pablo. Vi su portafolio y estoy interesado(a) en cotizar un proyecto. Me gustaría recibir más información.';
-
-  readonly whatsappUrl =
-    `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(
-      this.whatsappMessage
-    )}`;
-
-
-  // ============================================================
-  // TARJETAS DE CONTACTO
-  // ============================================================
-
-  readonly contactCards: ContactCard[] = [
-
-    {
-      icon: '@',
-      title: 'Correo electrónico',
-      value: this.email,
-      description:
-        'Medio principal para oportunidades laborales, propuestas profesionales y consultas.',
-      action: `mailto:${this.email}?subject=Contacto%20desde%20el%20portafolio`,
-      actionLabel: 'Enviar correo'
-    },
-
-    {
-      icon: 'WA',
-      title: 'WhatsApp',
-      value: this.phone,
-      description:
-        'Contacto directo para cotizaciones de páginas web, sistemas, integraciones y proyectos.',
-      action: this.whatsappUrl,
-      actionLabel: 'Escribir por WhatsApp',
-      external: true
-    },
-
-    {
-      icon: 'CR',
-      title: 'Ubicación',
-      value: 'Costa Rica',
-      description:
-        'Disponible para oportunidades presenciales, híbridas o remotas.',
-      actionLabel: 'Costa Rica'
-    },
-
-    {
-      icon: 'TI',
-      title: 'Área profesional',
-      value: 'Tecnología y desarrollo',
-      description:
-        'Desarrollo web, sistemas empresariales, bases de datos, integraciones y soluciones tecnológicas.',
-      action: '/servicios',
-      actionLabel: 'Ver servicios'
-    }
-
-  ];
-
-
-  // ============================================================
-  // REDES PROFESIONALES
-  // ============================================================
-
-  readonly socialLinks: SocialLink[] = [
-
+  readonly contact = PROFESSIONAL_CONTACT;
+  private readonly queryParams = toSignal(inject(ActivatedRoute).queryParamMap);
+  readonly selectedPlan = computed(() =>
+    WEB_PLANS.find((plan) => plan.id === this.queryParams()?.get('plan')),
+  );
+  readonly quoteMessage = computed(() => {
+    const plan = this.selectedPlan();
+    return plan
+      ? `Hola Juan Pablo. Me interesa consultar el plan ${plan.name}. Me gustaría conversar sobre el alcance y recibir una cotización para mi proyecto.`
+      : 'Hola Juan Pablo. Vi su portafolio y me gustaría cotizar un proyecto. Quisiera conversar sobre las necesidades de mi negocio.';
+  });
+  readonly whatsappUrl = computed(
+    () => `${this.contact.whatsapp}?text=${encodeURIComponent(this.quoteMessage())}`,
+  );
+  readonly quoteEmailUrl = computed(
+    () =>
+      `mailto:${this.contact.email}?subject=${encodeURIComponent(this.selectedPlan() ? 'Consulta del plan ' + this.selectedPlan()!.name : 'Cotización de proyecto')}&body=${encodeURIComponent(this.quoteMessage())}`,
+  );
+  readonly employmentEmailUrl = `mailto:${this.contact.email}?subject=${encodeURIComponent('Oportunidad laboral - Juan Pablo Rojas Contreras')}`;
+  readonly socialLinks = [
     {
       name: 'LinkedIn',
-      username: 'Conectar profesionalmente',
-      icon: 'in',
-      url: this.linkedinUrl
+      description: 'Perfil y trayectoria profesional',
+      url: this.contact.linkedin,
     },
-
-    {
-      name: 'GitHub',
-      username: 'Ver repositorios y código',
-      icon: 'GH',
-      url: this.githubUrl
-    },
-
-    {
-      name: 'Correo',
-      username: this.email,
-      icon: '@',
-      url: `mailto:${this.email}`
-    }
-
+    { name: 'GitHub', description: 'Proyectos y repositorios públicos', url: this.contact.github },
   ];
-
-
-  // ============================================================
-  // APORTE PROFESIONAL
-  // ============================================================
-
-  readonly contributions: Contribution[] = [
-
+  readonly contributions = [
     {
-      number: '01',
       title: 'Desarrollo Full Stack',
-      description:
-        'Construcción de aplicaciones web completas, desde la interfaz hasta la lógica de negocio y la persistencia de datos.',
-      technologies: [
-        'Angular',
-        'TypeScript',
-        'ASP.NET Core',
-        'SQL Server'
-      ]
+      description: 'Interfaces Angular y TypeScript, APIs ASP.NET Core y persistencia de datos.',
     },
-
     {
-      number: '02',
       title: 'Integración de sistemas',
-      description:
-        'Conexión de aplicaciones mediante APIs REST, intercambio de información y servicios empresariales.',
-      technologies: [
-        'REST API',
-        'HttpClient',
-        'Swagger',
-        'Aranda ASMS'
-      ]
+      description: 'APIs REST, intercambio de información y validaciones entre aplicaciones.',
     },
-
     {
-      number: '03',
-      title: 'Monitoreo y gestión de incidentes',
+      title: 'Monitoreo y reportes',
       description:
-        'Monitoreo de infraestructura mediante PRTG, identificación de afectaciones y gestión de reportes e incidencias mediante integraciones con Aranda.',
-      technologies: [
-        'PRTG',
-        'Aranda',
-        'Monitoreo',
-        'Gestión de incidentes'
-      ]
+        'Experiencia con información de PRTG y reportes de fallas mediante integraciones con Aranda ASMS.',
     },
-
     {
-      number: '04',
       title: 'Bases de datos',
       description:
-        'Diseño de modelos relacionales, consultas, procedimientos y persistencia para aplicaciones empresariales.',
-      technologies: [
-        'SQL Server',
-        'T-SQL',
-        'Entity Framework Core'
-      ]
-    }
-
+        'Modelos relacionales, consultas y persistencia con SQL Server y Entity Framework Core.',
+    },
   ];
-
-
-  // ============================================================
-  // DISPONIBILIDAD
-  // ============================================================
-
-  readonly availability: AvailabilityItem[] = [
-
-    {
-      label: 'Modalidad',
-      value: 'Presencial, híbrida o remota'
-    },
-
-    {
-      label: 'Ubicación',
-      value: 'Costa Rica'
-    },
-
-    {
-      label: 'Servicios',
-      value: 'Desarrollo web y sistemas'
-    },
-
-    {
-      label: 'Contacto',
-      value: 'Correo o WhatsApp'
-    }
-
-  ];
-
-
-  // ============================================================
-  // DESCARGAR CV
-  // ============================================================
-
-  downloadCv(): void {
-
-    const link = document.createElement('a');
-
-    link.href = this.cvUrl;
-
-    link.download = 'CV-Juan-Pablo-Rojas-Contreras.pdf';
-
-    link.click();
-  }
-
 }

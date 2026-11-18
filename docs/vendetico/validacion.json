@@ -1,0 +1,166 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/contacto",
+      "status": 200
+    },
+    {
+      "route": "/experiencia",
+      "status": 200
+    },
+    {
+      "route": "/formacion",
+      "status": 200
+    },
+    {
+      "route": "/habilidades",
+      "status": 200
+    },
+    {
+      "route": "/proyectos",
+      "status": 200
+    },
+    {
+      "route": "/proyectos/asms",
+      "status": 200
+    },
+    {
+      "route": "/proyectos/brasa-oliva",
+      "status": 200
+    },
+    {
+      "route": "/proyectos/escaneatodo",
+      "status": 200
+    },
+    {
+      "route": "/proyectos/fallapp",
+      "status": 200
+    },
+    {
+      "route": "/proyectos/incidentes",
+      "status": 200
+    },
+    {
+      "route": "/proyectos/prtg",
+      "status": 200
+    },
+    {
+      "route": "/proyectos/radiomusicalapp",
+      "status": 200
+    },
+    {
+      "route": "/proyectos/urbancut",
+      "status": 200
+    },
+    {
+      "route": "/proyectos/vendetico",
+      "status": 200
+    },
+    {
+      "route": "/servicios",
+      "status": 200
+    },
+    {
+      "route": "/sobre-mi",
+      "status": 200
+    }
+  ],
+  "images": [
+    "/assets/images/vendetico/vendetico-principal.webp",
+    "/assets/images/vendetico/vendetico-principal-full.webp",
+    "/assets/images/vendetico/vendetico-principal-480.webp",
+    "/assets/images/vendetico/vendetico-principal-960.webp",
+    "/assets/images/vendetico/vendetico-dashboard.webp",
+    "/assets/images/vendetico/vendetico-dashboard-full.webp",
+    "/assets/images/vendetico/vendetico-dashboard-480.webp",
+    "/assets/images/vendetico/vendetico-dashboard-960.webp",
+    "/assets/images/vendetico/vendetico-productos.webp",
+    "/assets/images/vendetico/vendetico-productos-full.webp",
+    "/assets/images/vendetico/vendetico-productos-480.webp",
+    "/assets/images/vendetico/vendetico-productos-960.webp",
+    "/assets/images/vendetico/vendetico-inventario.webp",
+    "/assets/images/vendetico/vendetico-inventario-full.webp",
+    "/assets/images/vendetico/vendetico-inventario-480.webp",
+    "/assets/images/vendetico/vendetico-inventario-960.webp",
+    "/assets/images/vendetico/vendetico-clientes.webp",
+    "/assets/images/vendetico/vendetico-clientes-full.webp",
+    "/assets/images/vendetico/vendetico-clientes-480.webp",
+    "/assets/images/vendetico/vendetico-clientes-960.webp",
+    "/assets/images/vendetico/vendetico-caja.webp",
+    "/assets/images/vendetico/vendetico-caja-full.webp",
+    "/assets/images/vendetico/vendetico-caja-480.webp",
+    "/assets/images/vendetico/vendetico-caja-960.webp",
+    "/assets/images/vendetico/vendetico-reportes.webp",
+    "/assets/images/vendetico/vendetico-reportes-full.webp",
+    "/assets/images/vendetico/vendetico-reportes-480.webp",
+    "/assets/images/vendetico/vendetico-reportes-960.webp",
+    "/assets/images/vendetico/vendetico-login.webp",
+    "/assets/images/vendetico/vendetico-login-full.webp",
+    "/assets/images/vendetico/vendetico-login-480.webp",
+    "/assets/images/vendetico/vendetico-login-960.webp",
+    "/assets/images/vendetico/vendetico-mobile.webp",
+    "/assets/images/vendetico/vendetico-mobile-full.webp",
+    "/assets/images/vendetico/vendetico-resumen-mobile.webp",
+    "/assets/images/vendetico/vendetico-resumen-mobile-full.webp"
+  ],
+  "responsive": [
+    {
+      "route": "/",
+      "width": 390
+    },
+    {
+      "route": "/proyectos",
+      "width": 390
+    },
+    {
+      "route": "/proyectos/vendetico",
+      "width": 390
+    },
+    {
+      "route": "/habilidades",
+      "width": 390
+    },
+    {
+      "route": "/",
+      "width": 768
+    },
+    {
+      "route": "/proyectos",
+      "width": 768
+    },
+    {
+      "route": "/proyectos/vendetico",
+      "width": 768
+    },
+    {
+      "route": "/habilidades",
+      "width": 768
+    },
+    {
+      "route": "/",
+      "width": 1440
+    },
+    {
+      "route": "/proyectos",
+      "width": 1440
+    },
+    {
+      "route": "/proyectos/vendetico",
+      "width": 1440
+    },
+    {
+      "route": "/habilidades",
+      "width": 1440
+    }
+  ],
+  "errors": [],
+  "redirect": {
+    "status": 301,
+    "location": "/proyectos/vendetico"
+  },
+  "gallery": "Apertura, flecha derecha, Escape y restauración de foco correctos"
+}

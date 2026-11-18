@@ -1,121 +1,75 @@
-import { Routes } from '@angular/router';
-
+import { ActivatedRouteSnapshot, Routes } from '@angular/router';
+import { PAGE_SEO } from './seo/site';
+const titleFor = (path: string) => PAGE_SEO.find((page) => page.path === path)!.title;
 export const routes: Routes = [
-
-  // ============================================================
-  // INICIO
-  // ============================================================
   {
     path: '',
-    loadComponent: () =>
-      import('./pages/home/home')
-        .then(component => component.Home),
-    title: 'Inicio | Juan Pablo Rojas'
+    pathMatch: 'full',
+    loadComponent: () => import('./pages/home/home').then((m) => m.Home),
+    title: titleFor(''),
   },
-
-
-  // ============================================================
-  // SOBRE MÍ
-  // ============================================================
   {
     path: 'sobre-mi',
-    loadComponent: () =>
-      import('./pages/about/about')
-        .then(component => component.About),
-    title: 'Sobre mí | Juan Pablo Rojas'
+    loadComponent: () => import('./pages/about/about').then((m) => m.About),
+    title: titleFor('sobre-mi'),
   },
-
-
-  // ============================================================
-  // FORMACIÓN
-  // ============================================================
   {
     path: 'formacion',
-    loadComponent: () =>
-      import('./pages/education/education')
-        .then(component => component.Education),
-    title: 'Formación | Juan Pablo Rojas'
+    loadComponent: () => import('./pages/education/education').then((m) => m.Education),
+    title: titleFor('formacion'),
   },
-
-
-  // ============================================================
-  // EXPERIENCIA
-  // ============================================================
   {
     path: 'experiencia',
-    loadComponent: () =>
-      import('./pages/experience/experience')
-        .then(component => component.Experience),
-    title: 'Experiencia | Juan Pablo Rojas'
+    loadComponent: () => import('./pages/experience/experience').then((m) => m.Experience),
+    title: titleFor('experiencia'),
   },
-
-
-  // ============================================================
-  // PROYECTOS
-  // ============================================================
   {
     path: 'proyectos',
-    loadComponent: () =>
-      import('./pages/projects/projects')
-        .then(component => component.Projects),
-    title: 'Proyectos | Juan Pablo Rojas'
+    loadComponent: () => import('./pages/projects/projects').then((m) => m.Projects),
+    title: titleFor('proyectos'),
   },
-
-
-  // ============================================================
-  // DETALLE DE PROYECTO
-  // ============================================================
+  { path: 'proyectos/ventas', redirectTo: '/proyectos/vendetico', pathMatch: 'full' },
   {
     path: 'proyectos/:id',
+    canMatch: [
+      (_route, segments) =>
+        import('./data/projects').then(({ PROJECTS }) =>
+          PROJECTS.some((project) => project.id === segments[1]?.path),
+        ),
+    ],
     loadComponent: () =>
-      import('./pages/project-detail/project-detail')
-        .then(component => component.ProjectDetail),
-    title: 'Detalle del proyecto | Juan Pablo Rojas'
+      import('./pages/project-detail/project-detail').then((m) => m.ProjectDetail),
+    resolve: {
+      project: (route: ActivatedRouteSnapshot) =>
+        import('./data/projects').then(({ PROJECTS }) =>
+          PROJECTS.find((project) => project.id === route.paramMap.get('id')),
+        ),
+    },
+    title: (route) =>
+      import('./data/projects').then(
+        ({ PROJECTS }) =>
+          `${PROJECTS.find((project) => project.id === route.paramMap.get('id'))!.title} | Juan Pablo Rojas`,
+      ),
   },
-
-
-  // ============================================================
-  // SERVICIOS
-  // ============================================================
   {
     path: 'servicios',
-    loadComponent: () =>
-      import('./pages/services/services')
-        .then(component => component.Services),
-    title: 'Servicios | Juan Pablo Rojas'
+    loadComponent: () => import('./pages/services/services').then((m) => m.Services),
+    title: titleFor('servicios'),
   },
-
-
-  // ============================================================
-  // HABILIDADES
-  // ============================================================
   {
     path: 'habilidades',
-    loadComponent: () =>
-      import('./pages/skills/skills')
-        .then(component => component.Skills),
-    title: 'Habilidades | Juan Pablo Rojas'
+    loadComponent: () => import('./pages/skills/skills').then((m) => m.Skills),
+    title: titleFor('habilidades'),
   },
-
-
-  // ============================================================
-  // CONTACTO
-  // ============================================================
   {
     path: 'contacto',
-    loadComponent: () =>
-      import('./pages/contact/contact')
-        .then(component => component.Contact),
-    title: 'Contacto | Juan Pablo Rojas'
+    loadComponent: () => import('./pages/contact/contact').then((m) => m.Contact),
+    title: titleFor('contacto'),
   },
-
-
-  // ============================================================
-  // RUTA NO ENCONTRADA
-  // ============================================================
   {
     path: '**',
-    redirectTo: ''
-  }
-
+    loadComponent: () => import('./pages/not-found/not-found').then((m) => m.NotFound),
+    title: 'Página no encontrada | Juan Pablo Rojas',
+    data: { notFound: true },
+  },
 ];

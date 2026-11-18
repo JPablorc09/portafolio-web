@@ -1,0 +1,673 @@
+{
+  "date": "2026-10-27T17:06:09.621Z",
+  "httpChecks": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "Desarrollador Full Stack .NET y Angular en Costa Rica | Juan Pablo Rojas",
+      "description": "Juan Pablo Rojas Contreras, Bachiller en Ingeniería de Sistemas. Desarrollo Full Stack con .NET y Angular, proyectos propios y servicios web en Costa Rica.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/",
+      "h1": "Desarrollo Full Stack..NET y Angular."
+    },
+    {
+      "route": "/contacto",
+      "status": 200,
+      "title": "Contacto, oportunidades laborales y cotizaciones | Juan Pablo Rojas",
+      "description": "Contacte a Juan Pablo Rojas Contreras en Costa Rica para oportunidades laborales o proyectos de desarrollo web. Correo, WhatsApp y descarga del CV.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/contacto",
+      "h1": "Conversemos sobre el siguiente paso."
+    },
+    {
+      "route": "/experiencia",
+      "status": 200,
+      "title": "Experiencia en desarrollo e integración de sistemas | Juan Pablo Rojas",
+      "description": "Experiencia de Juan Pablo Rojas mediante Grupo Alega Costa Rica: desarrollo .NET, SQL Server, APIs e información de monitoreo para el Poder Judicial.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/experiencia",
+      "h1": "Desarrollo e integración de sistemas."
+    },
+    {
+      "route": "/formacion",
+      "status": 200,
+      "title": "Formación en Ingeniería de Sistemas y redes | Juan Pablo Rojas",
+      "description": "Bachiller en Ingeniería de Sistemas de la UAM, graduado en 2024. Curso CCNA 1 completado y aprendizaje aplicado al desarrollo de software.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/formacion",
+      "h1": "Aprender, aplicar y mejorar."
+    },
+    {
+      "route": "/habilidades",
+      "status": 200,
+      "title": "Conocimientos .NET, Angular y desarrollo asistido por IA | Juan Pablo Rojas",
+      "description": "Tecnologías de Juan Pablo Rojas organizadas por uso profesional, proyectos y aprendizaje. .NET, Angular, SQL Server y formación práctica con agentes de IA.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/habilidades",
+      "h1": "Tecnologías con contexto."
+    },
+    {
+      "route": "/proyectos",
+      "status": 200,
+      "title": "Proyectos de software, aplicaciones web e integraciones | Juan Pablo Rojas",
+      "description": "Explore proyectos personales, demos comerciales y resúmenes institucionales de Juan Pablo Rojas. Angular, ASP.NET Core, SQL Server y aplicaciones móviles.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos",
+      "h1": "Proyectos y casos de estudio."
+    },
+    {
+      "route": "/proyectos/asms",
+      "status": 200,
+      "title": "Integración Aranda ASMS | Juan Pablo Rojas",
+      "description": "Integración mediante APIs REST para intercambiar información con Aranda ASMS.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/asms",
+      "h1": "Integración Aranda ASMS"
+    },
+    {
+      "route": "/proyectos/brasa-oliva",
+      "status": 200,
+      "title": "Brasa & Oliva | Sitio Web para Restaurante | Juan Pablo Rojas",
+      "description": "Sitio web responsive para un restaurante ficticio, con menú interactivo, carrito de compras, preparación de pedidos por WhatsApp y formulario de reservaciones.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/brasa-oliva",
+      "h1": "Brasa & Oliva | Sitio Web para Restaurante"
+    },
+    {
+      "route": "/proyectos/escaneatodo",
+      "status": 200,
+      "title": "EscaneaTodo | Juan Pablo Rojas",
+      "description": "Aplicación web publicada para trabajar con documentos; incluye interfaces de escaneo, OCR, PDF y edición.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/escaneatodo",
+      "h1": "EscaneaTodo"
+    },
+    {
+      "route": "/proyectos/fallapp",
+      "status": 200,
+      "title": "FallApp | Juan Pablo Rojas",
+      "description": "Aplicación para registrar fallas, gestionar reportes e integrar su envío con Aranda ASMS.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/fallapp",
+      "h1": "FallApp"
+    },
+    {
+      "route": "/proyectos/incidentes",
+      "status": 200,
+      "title": "Sistema de Gestión de Incidentes | Juan Pablo Rojas",
+      "description": "Sistema web para gestionar incidentes, mantenimientos, estados, usuarios y permisos.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/incidentes",
+      "h1": "Sistema de Gestión de Incidentes"
+    },
+    {
+      "route": "/proyectos/prtg",
+      "status": 200,
+      "title": "Monitor de Eventos PRTG | Juan Pablo Rojas",
+      "description": "Aplicación para importar, consultar y administrar información de monitoreo procedente de PRTG.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/prtg",
+      "h1": "Monitor de Eventos PRTG"
+    },
+    {
+      "route": "/proyectos/radiomusicalapp",
+      "status": 200,
+      "title": "RadioMusicalApp | Juan Pablo Rojas",
+      "description": "Aplicación móvil de radios internacionales, en desarrollo y pruebas de publicación.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/radiomusicalapp",
+      "h1": "RadioMusicalApp"
+    },
+    {
+      "route": "/proyectos/urbancut",
+      "status": 200,
+      "title": "UrbanCut Barber Studio | Juan Pablo Rojas",
+      "description": "Sitio web responsive para una barbería ficticia, con galería interactiva y simulador de solicitudes de citas.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/urbancut",
+      "h1": "UrbanCut Barber Studio"
+    },
+    {
+      "route": "/proyectos/ventas",
+      "status": 200,
+      "title": "Sistema de Ventas e Inventario | Juan Pablo Rojas",
+      "description": "Sistema web para gestionar ventas, compras, inventario, productos, clientes y proveedores.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/ventas",
+      "h1": "Sistema de Ventas e Inventario"
+    },
+    {
+      "route": "/servicios",
+      "status": 200,
+      "title": "Desarrollo web y sistemas empresariales en Costa Rica | Juan Pablo Rojas",
+      "description": "Desarrollo de páginas web, aplicaciones, APIs REST e integraciones en Costa Rica. Consulte servicios, planes de referencia y solicite una cotización.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/servicios",
+      "h1": "Software para las necesidades de su negocio."
+    },
+    {
+      "route": "/sobre-mi",
+      "status": 200,
+      "title": "Perfil profesional y desarrollo de software | Juan Pablo Rojas",
+      "description": "Conozca a Juan Pablo Rojas Contreras: Bachiller en Ingeniería de Sistemas UAM, desarrollo Full Stack, integración de sistemas y aprendizaje continuo.",
+      "canonical": "https://portafolioprofesionaljuanpablorojasc.netlify.app/sobre-mi",
+      "h1": "Juan Pablo Rojas Contreras"
+    }
+  ],
+  "notFoundChecks": [
+    {
+      "route": "/ruta-inexistente",
+      "status": 404,
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/proyectos/no-existe",
+      "status": 404,
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/proyectos/control-financiero",
+      "status": 404,
+      "robots": "noindex, follow"
+    },
+    {
+      "route": "/proyectos/incidentes-clean-architecture",
+      "status": 404,
+      "robots": "noindex, follow"
+    }
+  ],
+  "sitemapUrls": [
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/contacto",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/experiencia",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/formacion",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/habilidades",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/asms",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/brasa-oliva",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/escaneatodo",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/fallapp",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/incidentes",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/prtg",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/radiomusicalapp",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/urbancut",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/proyectos/ventas",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/servicios",
+    "https://portafolioprofesionaljuanpablorojasc.netlify.app/sobre-mi"
+  ],
+  "robots": true,
+  "socialImage": {
+    "width": 1200,
+    "height": 630
+  },
+  "browserChecks": [
+    {
+      "route": "/",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/contacto",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/contacto",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/contacto",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/contacto",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/asms",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/asms",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/asms",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/asms",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/brasa-oliva",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/brasa-oliva",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/brasa-oliva",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/brasa-oliva",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/escaneatodo",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/escaneatodo",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/escaneatodo",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/escaneatodo",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/fallapp",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/fallapp",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/fallapp",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/fallapp",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/incidentes",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/incidentes",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/incidentes",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/incidentes",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/prtg",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/prtg",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/prtg",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/prtg",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/radiomusicalapp",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/radiomusicalapp",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/radiomusicalapp",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/radiomusicalapp",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/urbancut",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/urbancut",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/urbancut",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/urbancut",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ventas",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ventas",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ventas",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/proyectos/ventas",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/servicios",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/servicios",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/servicios",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/servicios",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    }
+  ],
+  "projectNavigation": true,
+  "quotationHydration": true,
+  "notFoundRecovery": true,
+  "cvStatus": 200,
+  "consoleErrors": [],
+  "expectedNotFoundNetwork": [
+    "http://localhost:4198/proyectos/no-existe"
+  ]
+}

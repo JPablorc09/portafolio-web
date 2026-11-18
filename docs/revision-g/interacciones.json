@@ -1,0 +1,755 @@
+{
+  "date": "2026-10-27T18:28:59.796Z",
+  "conditions": {
+    "viewport": "390x1100",
+    "deviceScaleFactor": 1,
+    "cpuSlowdown": 4,
+    "network": "local, no network throttle",
+    "session": "new Chrome profile; no pixel-validation workload",
+    "eventThresholdMs": 16
+  },
+  "interactionsObserved": 20,
+  "medianObservedMs": 80,
+  "maxObservedMs": 168,
+  "cycles": [
+    {
+      "entries": [
+        {
+          "id": 1906,
+          "duration": 168,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1906,
+          "duration": 144,
+          "name": "pointerup"
+        },
+        {
+          "id": 1906,
+          "duration": 144,
+          "name": "click"
+        },
+        {
+          "id": 1913,
+          "duration": 72,
+          "name": "pointerup"
+        },
+        {
+          "id": 1913,
+          "duration": 72,
+          "name": "click"
+        },
+        {
+          "id": 1920,
+          "duration": 64,
+          "name": "pointerup"
+        },
+        {
+          "id": 1920,
+          "duration": 64,
+          "name": "click"
+        },
+        {
+          "id": 1927,
+          "duration": 80,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1927,
+          "duration": 104,
+          "name": "pointerup"
+        },
+        {
+          "id": 1927,
+          "duration": 104,
+          "name": "click"
+        },
+        {
+          "id": 1934,
+          "duration": 56,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1934,
+          "duration": 40,
+          "name": "pointerup"
+        },
+        {
+          "id": 1934,
+          "duration": 40,
+          "name": "click"
+        },
+        {
+          "id": 1941,
+          "duration": 104,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1941,
+          "duration": 104,
+          "name": "pointerup"
+        },
+        {
+          "id": 1941,
+          "duration": 104,
+          "name": "click"
+        },
+        {
+          "id": 1948,
+          "duration": 64,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1948,
+          "duration": 48,
+          "name": "pointerup"
+        },
+        {
+          "id": 1948,
+          "duration": 48,
+          "name": "click"
+        },
+        {
+          "id": 1955,
+          "duration": 112,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1955,
+          "duration": 104,
+          "name": "pointerup"
+        },
+        {
+          "id": 1955,
+          "duration": 104,
+          "name": "click"
+        }
+      ],
+      "mainThreadLongTasks": [
+        {
+          "start": 4229.5999999940395,
+          "duration": 138
+        },
+        {
+          "start": 4622.20000000298,
+          "duration": 64
+        },
+        {
+          "start": 4999.20000000298,
+          "duration": 56
+        },
+        {
+          "start": 5378.0999999940395,
+          "duration": 52
+        },
+        {
+          "start": 5458.5999999940395,
+          "duration": 98
+        },
+        {
+          "start": 6233.20000000298,
+          "duration": 90
+        },
+        {
+          "start": 6999,
+          "duration": 86
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": 1906,
+          "duration": 168,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1906,
+          "duration": 144,
+          "name": "pointerup"
+        },
+        {
+          "id": 1906,
+          "duration": 144,
+          "name": "click"
+        },
+        {
+          "id": 1913,
+          "duration": 72,
+          "name": "pointerup"
+        },
+        {
+          "id": 1913,
+          "duration": 72,
+          "name": "click"
+        },
+        {
+          "id": 1920,
+          "duration": 64,
+          "name": "pointerup"
+        },
+        {
+          "id": 1920,
+          "duration": 64,
+          "name": "click"
+        },
+        {
+          "id": 1927,
+          "duration": 80,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1927,
+          "duration": 104,
+          "name": "pointerup"
+        },
+        {
+          "id": 1927,
+          "duration": 104,
+          "name": "click"
+        },
+        {
+          "id": 1934,
+          "duration": 56,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1934,
+          "duration": 40,
+          "name": "pointerup"
+        },
+        {
+          "id": 1934,
+          "duration": 40,
+          "name": "click"
+        },
+        {
+          "id": 1941,
+          "duration": 104,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1941,
+          "duration": 104,
+          "name": "pointerup"
+        },
+        {
+          "id": 1941,
+          "duration": 104,
+          "name": "click"
+        },
+        {
+          "id": 1948,
+          "duration": 64,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1948,
+          "duration": 48,
+          "name": "pointerup"
+        },
+        {
+          "id": 1948,
+          "duration": 48,
+          "name": "click"
+        },
+        {
+          "id": 1955,
+          "duration": 112,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1955,
+          "duration": 104,
+          "name": "pointerup"
+        },
+        {
+          "id": 1955,
+          "duration": 104,
+          "name": "click"
+        },
+        {
+          "id": 1962,
+          "duration": 32,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1962,
+          "duration": 24,
+          "name": "pointerup"
+        },
+        {
+          "id": 1962,
+          "duration": 24,
+          "name": "click"
+        },
+        {
+          "id": 1969,
+          "duration": 24,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1969,
+          "duration": 80,
+          "name": "pointerup"
+        },
+        {
+          "id": 1969,
+          "duration": 80,
+          "name": "click"
+        },
+        {
+          "id": 1976,
+          "duration": 48,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1976,
+          "duration": 24,
+          "name": "pointerup"
+        },
+        {
+          "id": 1976,
+          "duration": 24,
+          "name": "click"
+        },
+        {
+          "id": 1983,
+          "duration": 96,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1983,
+          "duration": 80,
+          "name": "pointerup"
+        },
+        {
+          "id": 1983,
+          "duration": 80,
+          "name": "click"
+        },
+        {
+          "id": 1990,
+          "duration": 40,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1990,
+          "duration": 24,
+          "name": "pointerup"
+        },
+        {
+          "id": 1990,
+          "duration": 24,
+          "name": "click"
+        },
+        {
+          "id": 1997,
+          "duration": 160,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1997,
+          "duration": 136,
+          "name": "pointerup"
+        },
+        {
+          "id": 1997,
+          "duration": 136,
+          "name": "click"
+        }
+      ],
+      "mainThreadLongTasks": [
+        {
+          "start": 4229.5999999940395,
+          "duration": 138
+        },
+        {
+          "start": 4622.20000000298,
+          "duration": 64
+        },
+        {
+          "start": 4999.20000000298,
+          "duration": 56
+        },
+        {
+          "start": 5378.0999999940395,
+          "duration": 52
+        },
+        {
+          "start": 5458.5999999940395,
+          "duration": 98
+        },
+        {
+          "start": 6233.20000000298,
+          "duration": 90
+        },
+        {
+          "start": 6999,
+          "duration": 86
+        },
+        {
+          "start": 7749.20000000298,
+          "duration": 65
+        },
+        {
+          "start": 8517.89999999106,
+          "duration": 81
+        },
+        {
+          "start": 9299.39999999106,
+          "duration": 117
+        }
+      ]
+    },
+    {
+      "entries": [
+        {
+          "id": 1906,
+          "duration": 168,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1906,
+          "duration": 144,
+          "name": "pointerup"
+        },
+        {
+          "id": 1906,
+          "duration": 144,
+          "name": "click"
+        },
+        {
+          "id": 1913,
+          "duration": 72,
+          "name": "pointerup"
+        },
+        {
+          "id": 1913,
+          "duration": 72,
+          "name": "click"
+        },
+        {
+          "id": 1920,
+          "duration": 64,
+          "name": "pointerup"
+        },
+        {
+          "id": 1920,
+          "duration": 64,
+          "name": "click"
+        },
+        {
+          "id": 1927,
+          "duration": 80,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1927,
+          "duration": 104,
+          "name": "pointerup"
+        },
+        {
+          "id": 1927,
+          "duration": 104,
+          "name": "click"
+        },
+        {
+          "id": 1934,
+          "duration": 56,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1934,
+          "duration": 40,
+          "name": "pointerup"
+        },
+        {
+          "id": 1934,
+          "duration": 40,
+          "name": "click"
+        },
+        {
+          "id": 1941,
+          "duration": 104,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1941,
+          "duration": 104,
+          "name": "pointerup"
+        },
+        {
+          "id": 1941,
+          "duration": 104,
+          "name": "click"
+        },
+        {
+          "id": 1948,
+          "duration": 64,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1948,
+          "duration": 48,
+          "name": "pointerup"
+        },
+        {
+          "id": 1948,
+          "duration": 48,
+          "name": "click"
+        },
+        {
+          "id": 1955,
+          "duration": 112,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1955,
+          "duration": 104,
+          "name": "pointerup"
+        },
+        {
+          "id": 1955,
+          "duration": 104,
+          "name": "click"
+        },
+        {
+          "id": 1962,
+          "duration": 32,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1962,
+          "duration": 24,
+          "name": "pointerup"
+        },
+        {
+          "id": 1962,
+          "duration": 24,
+          "name": "click"
+        },
+        {
+          "id": 1969,
+          "duration": 24,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1969,
+          "duration": 80,
+          "name": "pointerup"
+        },
+        {
+          "id": 1969,
+          "duration": 80,
+          "name": "click"
+        },
+        {
+          "id": 1976,
+          "duration": 48,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1976,
+          "duration": 24,
+          "name": "pointerup"
+        },
+        {
+          "id": 1976,
+          "duration": 24,
+          "name": "click"
+        },
+        {
+          "id": 1983,
+          "duration": 96,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1983,
+          "duration": 80,
+          "name": "pointerup"
+        },
+        {
+          "id": 1983,
+          "duration": 80,
+          "name": "click"
+        },
+        {
+          "id": 1990,
+          "duration": 40,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1990,
+          "duration": 24,
+          "name": "pointerup"
+        },
+        {
+          "id": 1990,
+          "duration": 24,
+          "name": "click"
+        },
+        {
+          "id": 1997,
+          "duration": 160,
+          "name": "pointerdown"
+        },
+        {
+          "id": 1997,
+          "duration": 136,
+          "name": "pointerup"
+        },
+        {
+          "id": 1997,
+          "duration": 136,
+          "name": "click"
+        },
+        {
+          "id": 2004,
+          "duration": 24,
+          "name": "pointerdown"
+        },
+        {
+          "id": 2004,
+          "duration": 32,
+          "name": "pointerup"
+        },
+        {
+          "id": 2004,
+          "duration": 32,
+          "name": "click"
+        },
+        {
+          "id": 2011,
+          "duration": 72,
+          "name": "pointerdown"
+        },
+        {
+          "id": 2011,
+          "duration": 64,
+          "name": "pointerup"
+        },
+        {
+          "id": 2011,
+          "duration": 64,
+          "name": "click"
+        },
+        {
+          "id": 2018,
+          "duration": 56,
+          "name": "pointerdown"
+        },
+        {
+          "id": 2018,
+          "duration": 48,
+          "name": "pointerup"
+        },
+        {
+          "id": 2018,
+          "duration": 48,
+          "name": "click"
+        },
+        {
+          "id": 2025,
+          "duration": 96,
+          "name": "pointerdown"
+        },
+        {
+          "id": 2025,
+          "duration": 88,
+          "name": "pointerup"
+        },
+        {
+          "id": 2025,
+          "duration": 88,
+          "name": "click"
+        },
+        {
+          "id": 2032,
+          "duration": 80,
+          "name": "pointerdown"
+        },
+        {
+          "id": 2032,
+          "duration": 56,
+          "name": "pointerup"
+        },
+        {
+          "id": 2032,
+          "duration": 56,
+          "name": "click"
+        },
+        {
+          "id": 2039,
+          "duration": 168,
+          "name": "pointerdown"
+        },
+        {
+          "id": 2039,
+          "duration": 152,
+          "name": "pointerup"
+        },
+        {
+          "id": 2039,
+          "duration": 152,
+          "name": "click"
+        }
+      ],
+      "mainThreadLongTasks": [
+        {
+          "start": 4229.5999999940395,
+          "duration": 138
+        },
+        {
+          "start": 4622.20000000298,
+          "duration": 64
+        },
+        {
+          "start": 4999.20000000298,
+          "duration": 56
+        },
+        {
+          "start": 5378.0999999940395,
+          "duration": 52
+        },
+        {
+          "start": 5458.5999999940395,
+          "duration": 98
+        },
+        {
+          "start": 6233.20000000298,
+          "duration": 90
+        },
+        {
+          "start": 6999,
+          "duration": 86
+        },
+        {
+          "start": 7749.20000000298,
+          "duration": 65
+        },
+        {
+          "start": 8517.89999999106,
+          "duration": 81
+        },
+        {
+          "start": 9299.39999999106,
+          "duration": 117
+        },
+        {
+          "start": 10052.70000000298,
+          "duration": 55
+        },
+        {
+          "start": 10816.39999999106,
+          "duration": 65
+        },
+        {
+          "start": 11656.39999999106,
+          "duration": 134
+        }
+      ]
+    }
+  ],
+  "consoleErrors": []
+}

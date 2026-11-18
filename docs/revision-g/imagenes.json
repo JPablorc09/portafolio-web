@@ -1,0 +1,366 @@
+{
+  "encoder": "cwebp 1.6.0\r\nlibsharpyuv: 0.4.2",
+  "settings": "lossless, exact, method 6; resized variants preserve aspect ratio",
+  "images": [
+    {
+      "source": "/assets/images/projects/brasaOliva/portadaBrasa-oliva.png",
+      "width": 1898,
+      "height": 788,
+      "originalBytes": 713017,
+      "originalSha256": "7fc421932c051cb6fa3b13c8d592bc986fd1b6f2db6ac767f23e0d512f299e11",
+      "fullWebpBytes": 423136,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/portadabrasa-oliva-480-9e9f6c0e1109.webp",
+          "width": 480,
+          "bytes": 41024
+        },
+        {
+          "src": "/assets/images/optimized/portadabrasa-oliva-960-74fcf685c976.webp",
+          "width": 960,
+          "bytes": 135402
+        },
+        {
+          "src": "/assets/images/optimized/portadabrasa-oliva-1600-d5fc378f25ec.webp",
+          "width": 1600,
+          "bytes": 326264
+        },
+        {
+          "src": "/assets/images/optimized/portadabrasa-oliva-1898-9b3b968ef40e.webp",
+          "width": 1898,
+          "bytes": 423136
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/projects/brasaOliva/MenuOliva.png",
+      "width": 1578,
+      "height": 830,
+      "originalBytes": 597477,
+      "originalSha256": "363dc4c3672c09e95d65c1c4b396e2b7a66f5a435805805bb47dcb50cb82fbbb",
+      "fullWebpBytes": 393812,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/menuoliva-480-e76a2c037cb7.webp",
+          "width": 480,
+          "bytes": 52152
+        },
+        {
+          "src": "/assets/images/optimized/menuoliva-960-83a859d54711.webp",
+          "width": 960,
+          "bytes": 175358
+        },
+        {
+          "src": "/assets/images/optimized/menuoliva-1578-a7def1b2af8d.webp",
+          "width": 1578,
+          "bytes": 393812
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/projects/brasaOliva/CarritoOliva.png",
+      "width": 435,
+      "height": 940,
+      "originalBytes": 74384,
+      "originalSha256": "c947a84b24c51c3f5b39fca2461af6b69e61a72672d6266bb4c0ab812601de19",
+      "fullWebpBytes": 43508,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/carritooliva-435-cbee0f4e7ef2.webp",
+          "width": 435,
+          "bytes": 43508
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/projects/brasaOliva/ReservaOliva.png",
+      "width": 1087,
+      "height": 842,
+      "originalBytes": 85888,
+      "originalSha256": "35e1d789e5780779df72035e7433413319fe13760806073ac15d579ba616c3a9",
+      "fullWebpBytes": 31402,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/reservaoliva-480-69d09770dfc2.webp",
+          "width": 480,
+          "bytes": 21132
+        },
+        {
+          "src": "/assets/images/optimized/reservaoliva-960-0736641e9fee.webp",
+          "width": 960,
+          "bytes": 67566
+        },
+        {
+          "src": "/assets/images/optimized/reservaoliva-1087-9e74f87825a2.webp",
+          "width": 1087,
+          "bytes": 31402
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/projects/urbancut/portada.png",
+      "width": 1915,
+      "height": 843,
+      "originalBytes": 881044,
+      "originalSha256": "ee0e2bba8e97546070098741bd09bd208fc352bba66140a9290c904b44a69bc8",
+      "fullWebpBytes": 474784,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/portada-480-ba010111fb89.webp",
+          "width": 480,
+          "bytes": 39872
+        },
+        {
+          "src": "/assets/images/optimized/portada-960-54defce18c3f.webp",
+          "width": 960,
+          "bytes": 138612
+        },
+        {
+          "src": "/assets/images/optimized/portada-1600-118fdd090072.webp",
+          "width": 1600,
+          "bytes": 456550
+        },
+        {
+          "src": "/assets/images/optimized/portada-1915-65fa4fdd558b.webp",
+          "width": 1915,
+          "bytes": 474784
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/ventas/ImagenPrincipalVentas.png",
+      "width": 1918,
+      "height": 943,
+      "originalBytes": 259122,
+      "originalSha256": "43636692d78bda573b70420532ce5db5ea3e6484db2e54f96a3b7cc1247f81a6",
+      "fullWebpBytes": 63702,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/imagenprincipalventas-480-6b8fe5d309a4.webp",
+          "width": 480,
+          "bytes": 21490
+        },
+        {
+          "src": "/assets/images/optimized/imagenprincipalventas-960-c4fb029b03ce.webp",
+          "width": 960,
+          "bytes": 73972
+        },
+        {
+          "src": "/assets/images/optimized/imagenprincipalventas-1600-5169eb9f6aaa.webp",
+          "width": 1600,
+          "bytes": 225112
+        },
+        {
+          "src": "/assets/images/optimized/imagenprincipalventas-1918-1798365eb1bd.webp",
+          "width": 1918,
+          "bytes": 63702
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/ventas/ImagenUsuarios.png",
+      "width": 1657,
+      "height": 486,
+      "originalBytes": 55866,
+      "originalSha256": "76dee442e2ab5bc721ea996b990199915c5c1c6cf2004c16e5542f9f858bcc6d",
+      "fullWebpBytes": 18774,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/imagenusuarios-480-ec2302e5cbfd.webp",
+          "width": 480,
+          "bytes": 10048
+        },
+        {
+          "src": "/assets/images/optimized/imagenusuarios-960-f4e091770aee.webp",
+          "width": 960,
+          "bytes": 30966
+        },
+        {
+          "src": "/assets/images/optimized/imagenusuarios-1600-296d5d733e45.webp",
+          "width": 1600,
+          "bytes": 71984
+        },
+        {
+          "src": "/assets/images/optimized/imagenusuarios-1657-d355317258f8.webp",
+          "width": 1657,
+          "bytes": 18774
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/ventas/ImagenCategoria.png",
+      "width": 1657,
+      "height": 686,
+      "originalBytes": 73228,
+      "originalSha256": "ecd33c7fd731a8a9c8416a9eb639c44a53fc3b09bb5c548f9e57558c8eb6bff8",
+      "fullWebpBytes": 21064,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/imagencategoria-480-41173488468f.webp",
+          "width": 480,
+          "bytes": 13488
+        },
+        {
+          "src": "/assets/images/optimized/imagencategoria-960-611b77e67be6.webp",
+          "width": 960,
+          "bytes": 41988
+        },
+        {
+          "src": "/assets/images/optimized/imagencategoria-1600-3b11a2c318a1.webp",
+          "width": 1600,
+          "bytes": 94634
+        },
+        {
+          "src": "/assets/images/optimized/imagencategoria-1657-86617e65a4ce.webp",
+          "width": 1657,
+          "bytes": 21064
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/ventas/ImagenVendedor.png",
+      "width": 1913,
+      "height": 894,
+      "originalBytes": 247439,
+      "originalSha256": "de2f8b3605381ebd04d22b24bee63340e73a9f7d426dfbd71e4a6db38f8c25b2",
+      "fullWebpBytes": 57912,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/imagenvendedor-480-f96aaa9dfc4d.webp",
+          "width": 480,
+          "bytes": 20912
+        },
+        {
+          "src": "/assets/images/optimized/imagenvendedor-960-cdcc3a8885af.webp",
+          "width": 960,
+          "bytes": 73986
+        },
+        {
+          "src": "/assets/images/optimized/imagenvendedor-1600-774f5ae7aeae.webp",
+          "width": 1600,
+          "bytes": 221038
+        },
+        {
+          "src": "/assets/images/optimized/imagenvendedor-1913-53ebf67069bf.webp",
+          "width": 1913,
+          "bytes": 57912
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/ventas/ImagenCajasArqueo.png",
+      "width": 1654,
+      "height": 553,
+      "originalBytes": 60107,
+      "originalSha256": "036d6bd543c383d5f69dbea5f16565bb2b579ce47e47c8d36a963b1fb8c39709",
+      "fullWebpBytes": 18320,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/imagencajasarqueo-480-3fb24b363f72.webp",
+          "width": 480,
+          "bytes": 13630
+        },
+        {
+          "src": "/assets/images/optimized/imagencajasarqueo-960-7b42c29a2dcd.webp",
+          "width": 960,
+          "bytes": 41464
+        },
+        {
+          "src": "/assets/images/optimized/imagencajasarqueo-1600-128968633cd4.webp",
+          "width": 1600,
+          "bytes": 93078
+        },
+        {
+          "src": "/assets/images/optimized/imagencajasarqueo-1654-98083b315a7d.webp",
+          "width": 1654,
+          "bytes": 18320
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/projects/escaneatodo/Screenshot 2026-10-22 181653.png",
+      "width": 1909,
+      "height": 916,
+      "originalBytes": 169398,
+      "originalSha256": "28bc1afe79be6fcc55441a3a6bcdd444366549d862fad29ba0d6c84046535f91",
+      "fullWebpBytes": 69514,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/screenshot-2026-10-22-181653-480-0aee8ee6e672.webp",
+          "width": 480,
+          "bytes": 17620
+        },
+        {
+          "src": "/assets/images/optimized/screenshot-2026-10-22-181653-960-171d9babd825.webp",
+          "width": 960,
+          "bytes": 49938
+        },
+        {
+          "src": "/assets/images/optimized/screenshot-2026-10-22-181653-1600-24261187920e.webp",
+          "width": 1600,
+          "bytes": 112432
+        },
+        {
+          "src": "/assets/images/optimized/screenshot-2026-10-22-181653-1909-fd7b73391a0c.webp",
+          "width": 1909,
+          "bytes": 69514
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/projects/escaneatodo/Screenshot 2026-10-22 181832.png",
+      "width": 1900,
+      "height": 907,
+      "originalBytes": 90515,
+      "originalSha256": "9b087a8b8fec0415c0ea2b7a3d9024c4297bc405e5255ac421a0e342b392c75c",
+      "fullWebpBytes": 29284,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/screenshot-2026-10-22-181832-480-b099ec1bdda1.webp",
+          "width": 480,
+          "bytes": 16604
+        },
+        {
+          "src": "/assets/images/optimized/screenshot-2026-10-22-181832-960-3fd0ce2995a3.webp",
+          "width": 960,
+          "bytes": 51014
+        },
+        {
+          "src": "/assets/images/optimized/screenshot-2026-10-22-181832-1600-de27c938d9b0.webp",
+          "width": 1600,
+          "bytes": 105542
+        },
+        {
+          "src": "/assets/images/optimized/screenshot-2026-10-22-181832-1900-82120a67322d.webp",
+          "width": 1900,
+          "bytes": 29284
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/projects/radiomusicalapp/RadioMusicalApp_GraficoFunciones_1024x500.png",
+      "width": 1024,
+      "height": 500,
+      "originalBytes": 260410,
+      "originalSha256": "58deaff04455df59b8928db7ec9245059d9c9d242ffebcc5dec873dc05207f27",
+      "fullWebpBytes": 184130,
+      "variants": [
+        {
+          "src": "/assets/images/optimized/radiomusicalapp-graficofunciones-1024x500-480-e988837659a4.webp",
+          "width": 480,
+          "bytes": 58172
+        },
+        {
+          "src": "/assets/images/optimized/radiomusicalapp-graficofunciones-1024x500-960-7a277298fa42.webp",
+          "width": 960,
+          "bytes": 175832
+        },
+        {
+          "src": "/assets/images/optimized/radiomusicalapp-graficofunciones-1024x500-1024-0af1cdd763b4.webp",
+          "width": 1024,
+          "bytes": 184130
+        }
+      ]
+    }
+  ]
+}

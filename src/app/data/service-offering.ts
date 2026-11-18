@@ -1,0 +1,48 @@
+export const WEB_PLANS = [
+  {
+    id: 'emprendedor',
+    name: 'Emprendedor',
+    price: '₡75.000',
+    payment: 'pago único',
+    description: 'Ideal para comenzar a tener presencia profesional en Internet.',
+    features: [
+      'Página de una sola sección',
+      'Diseño adaptable',
+      'Información del negocio',
+      'Botón de WhatsApp',
+      'Redes sociales',
+      'Información de contacto',
+    ],
+  },
+  {
+    id: 'profesional',
+    name: 'Profesional',
+    price: '₡120.000',
+    payment: 'pago único',
+    description: 'Para negocios que necesitan una presencia web más completa.',
+    features: [
+      'Hasta 5 secciones',
+      'Diseño responsive',
+      'Integración con WhatsApp',
+      'Google Maps',
+      'Galería',
+      'Formulario de contacto',
+      'SEO básico',
+    ],
+  },
+  {
+    id: 'personalizado',
+    name: 'Personalizado',
+    price: '₡180.000',
+    payment: 'según proyecto',
+    description: 'Para proyectos que necesitan funcionalidades adicionales.',
+    features: [
+      'Diseño personalizado',
+      'Múltiples secciones',
+      'Catálogo de productos',
+      'Formularios avanzados',
+      'Analítica web',
+      'Funcionalidades adicionales',
+    ],
+  },
+] as const;

@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {Navbar} from './shared/navbar/navbar';
 import {Footer} from './shared/footer/footer';
@@ -11,4 +11,9 @@ import {Footer} from './shared/footer/footer';
 })
 export class App {
   title = 'Portafolio de Juan Pablo Rojas Contreras';
+
+  skipToContent(event: Event, content: HTMLElement): void {
+    event.preventDefault();
+    content.focus();
+  }
 }

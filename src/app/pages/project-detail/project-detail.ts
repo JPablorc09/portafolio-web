@@ -1,32 +1,36 @@
+import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 
-import {
-  Component,
-  HostListener,
-  OnDestroy,
-  OnInit
-} from '@angular/core';
-
-import { Title } from '@angular/platform-browser';
-
-import {
-  ActivatedRoute,
-  Router,
-  RouterLink
-} from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
+import { COVER_IMAGE_SIZES, GALLERY_IMAGE_SIZES, projectImage } from '../../data/project-image';
 import { PROJECTS } from '../../data/projects';
-import { Project } from '../../models/project';
+import {
+  isRestrictedProject,
+  Project,
+  PROJECT_CONTEXT_LABELS,
+  PROJECT_STATUS_LABELS,
+} from '../../models/project';
 
 @Component({
   selector: 'app-project-detail',
   standalone: true,
   imports: [RouterLink],
   templateUrl: './project-detail.html',
-  styleUrl: './project-detail.css'
+  styleUrl: './project-detail.css',
 })
 export class ProjectDetail implements OnInit, OnDestroy {
+  readonly imageAsset = projectImage;
+  readonly coverImageSizes = COVER_IMAGE_SIZES;
+  readonly galleryImageSizes = GALLERY_IMAGE_SIZES;
+
+  readonly contextLabels = PROJECT_CONTEXT_LABELS;
+  readonly statusLabels = PROJECT_STATUS_LABELS;
+
+  get restricted(): boolean {
+    return !!this.project && isRestrictedProject(this.project);
+  }
 
   // ============================================================
   // PROYECTO ACTUAL Y NAVEGACIÓN
@@ -51,6 +55,8 @@ export class ProjectDetail implements OnInit, OnDestroy {
 
   private openingElement: HTMLElement | null = null;
 
+  private focusTimer?: ReturnType<typeof setTimeout>;
+
   // ============================================================
   // CONSTRUCTOR
   // ============================================================
@@ -58,7 +64,7 @@ export class ProjectDetail implements OnInit, OnDestroy {
   constructor(
     private readonly route: ActivatedRoute,
     private readonly router: Router,
-    private readonly titleService: Title
+    private readonly changeDetector: ChangeDetectorRef,
   ) {}
 
   // ============================================================
@@ -66,69 +72,50 @@ export class ProjectDetail implements OnInit, OnDestroy {
   // ============================================================
 
   ngOnInit(): void {
+    this.routeSubscription = this.route.paramMap.subscribe((params) => {
+      const id = params.get('id');
 
-    this.routeSubscription = this.route.paramMap.subscribe(
-      params => {
+      const index = PROJECTS.findIndex((item) => item.id === id);
 
-        const id = params.get('id');
+      // Si no existe el proyecto, regresar al listado.
+      if (index < 0) {
+        this.closeLightbox(false);
 
-        const index = PROJECTS.findIndex(
-          item => item.id === id
-        );
+        this.project = undefined;
+        this.previousProject = undefined;
+        this.nextProject = undefined;
 
-        // Si no existe el proyecto, regresar al listado.
-        if (index < 0) {
+        void this.router.navigate(['/proyectos']);
 
-          this.closeLightbox();
-
-          this.project = undefined;
-          this.previousProject = undefined;
-          this.nextProject = undefined;
-
-          void this.router.navigate(['/proyectos']);
-
-          return;
-        }
-
-        // Cerrar cualquier galería abierta.
-        this.closeLightbox();
-
-        // Reiniciar la imagen seleccionada.
-        this.selectedImageIndex = 0;
-
-        // Obtener el proyecto.
-        this.project = PROJECTS[index];
-
-        // Proyecto anterior.
-        this.previousProject =
-          index > 0
-            ? PROJECTS[index - 1]
-            : undefined;
-
-        // Proyecto siguiente.
-        this.nextProject =
-          index < PROJECTS.length - 1
-            ? PROJECTS[index + 1]
-            : undefined;
-
-        // Actualizar el título del navegador.
-        this.titleService.setTitle(
-          `${this.project.title} | Juan Pablo Rojas`
-        );
-
-        // Regresar al inicio al cambiar de proyecto.
-        if (typeof window !== 'undefined') {
-
-          window.scrollTo({
-            top: 0,
-            behavior: 'auto'
-          });
-
-        }
-
+        return;
       }
-    );
 
+      // Cerrar cualquier galería abierta.
+      this.closeLightbox(false);
+
+      // Reiniciar la imagen seleccionada.
+      this.selectedImageIndex = 0;
+
+      // Obtener el proyecto.
+      this.project = PROJECTS[index];
+
+      // Proyecto anterior.
+      this.previousProject = index > 0 ? PROJECTS[index - 1] : undefined;
+
+      // Proyecto siguiente.
+      this.nextProject = index < PROJECTS.length - 1 ? PROJECTS[index + 1] : undefined;
+
+      // La ruta reutiliza el componente; notificar el cambio en modo zoneless.
+      this.changeDetector.markForCheck();
+
+      // Regresar al inicio al cambiar de proyecto.
+      if (typeof window !== 'undefined') {
+        window.scrollTo({
+          top: 0,
+          behavior: 'instant',
+        });
+      }
+    });
   }
 
   // ============================================================
@@ -136,25 +123,26 @@ export class ProjectDetail implements OnInit, OnDestroy {
   // ============================================================
 
   ngOnDestroy(): void {
-
     this.routeSubscription?.unsubscribe();
 
-    this.closeLightbox();
-
+    this.closeLightbox(false);
   }
 
   // ============================================================
   // OBTENER IMÁGENES DEL PROYECTO
   // ============================================================
 
-  get projectImages(): string[] {
+  imageTitle(image: string): string {
+    return this.project?.imageTitles?.[image] || 'Captura ' + (this.projectImages.indexOf(image) + 1) + ' de ' + (this.project?.title || 'proyecto');
+  }
 
+  get projectImages(): string[] {
     if (!this.project) {
       return [];
     }
 
     // No mostrar imágenes internas de proyectos confidenciales.
-    if (this.project.confidential) {
+    if (this.restricted || this.project.imageKind !== 'capture') {
       return [];
     }
 
@@ -162,27 +150,17 @@ export class ProjectDetail implements OnInit, OnDestroy {
 
     // Imagen principal.
     if (this.project.image) {
-
       images.push(this.project.image);
-
     }
 
     // Imágenes adicionales.
     for (const image of this.project.gallery ?? []) {
-
-      if (
-        image &&
-        !images.includes(image)
-      ) {
-
+      if (image && !images.includes(image)) {
         images.push(image);
-
       }
-
     }
 
     return images;
-
   }
 
   // ============================================================
@@ -190,11 +168,7 @@ export class ProjectDetail implements OnInit, OnDestroy {
   // ============================================================
 
   get selectedImage(): string {
-
-    return this.projectImages[
-      this.selectedImageIndex
-    ] ?? '';
-
+    return this.projectImages[this.selectedImageIndex] ?? '';
   }
 
   // ============================================================
@@ -202,24 +176,15 @@ export class ProjectDetail implements OnInit, OnDestroy {
   // ============================================================
 
   get totalImages(): number {
-
     return this.projectImages.length;
-
   }
 
   // ============================================================
   // ABRIR LIGHTBOX
   // ============================================================
 
-  openLightboxByImage(
-    image: string,
-    trigger?: HTMLElement
-  ): void {
-
-    if (
-      typeof document === 'undefined' ||
-      this.lightboxOpen
-    ) {
+  openLightboxByImage(image: string, trigger?: HTMLElement): void {
+    if (typeof document === 'undefined' || this.lightboxOpen) {
       return;
     }
 
@@ -231,18 +196,14 @@ export class ProjectDetail implements OnInit, OnDestroy {
 
     // Guardar el elemento que abrió la galería.
     this.openingElement =
-      trigger ??
-      (
-        document.activeElement instanceof HTMLElement
-          ? document.activeElement
-          : null
-      );
+      trigger ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
 
     this.selectedImageIndex = index;
 
+    clearTimeout(this.focusTimer);
+
     // Guardar el overflow anterior.
-    this.previousOverflow =
-      document.body.style.overflow;
+    this.previousOverflow = document.body.style.overflow;
 
     this.lightboxOpen = true;
 
@@ -250,23 +211,17 @@ export class ProjectDetail implements OnInit, OnDestroy {
     document.body.style.overflow = 'hidden';
 
     // Enfocar el botón de cierre.
-    setTimeout(() => {
-
-      document
-        .querySelector<HTMLElement>(
-          '.project-lightbox__close'
-        )
-        ?.focus();
-
+    this.focusTimer = setTimeout(() => {
+      document.querySelector<HTMLElement>('.project-lightbox__close')?.focus();
     }, 0);
-
   }
 
   // ============================================================
   // CERRAR LIGHTBOX
   // ============================================================
 
-  closeLightbox(): void {
+  closeLightbox(restoreFocus = true): void {
+    clearTimeout(this.focusTimer);
 
     if (!this.lightboxOpen) {
       return;
@@ -275,11 +230,8 @@ export class ProjectDetail implements OnInit, OnDestroy {
     this.lightboxOpen = false;
 
     if (typeof document !== 'undefined') {
-
       // Restaurar el desplazamiento.
-      document.body.style.overflow =
-        this.previousOverflow;
-
+      document.body.style.overflow = this.previousOverflow;
     }
 
     const trigger = this.openingElement;
@@ -287,14 +239,13 @@ export class ProjectDetail implements OnInit, OnDestroy {
     this.openingElement = null;
 
     // Devolver el foco al elemento original.
-    setTimeout(() => {
+    if (!restoreFocus) return;
 
+    this.focusTimer = setTimeout(() => {
       if (trigger?.isConnected) {
         trigger.focus();
       }
-
     }, 0);
-
   }
 
   // ============================================================
@@ -302,7 +253,6 @@ export class ProjectDetail implements OnInit, OnDestroy {
   // ============================================================
 
   previousImage(event?: Event): void {
-
     event?.stopPropagation();
 
     const count = this.totalImages;
@@ -311,11 +261,7 @@ export class ProjectDetail implements OnInit, OnDestroy {
       return;
     }
 
-    this.selectedImageIndex =
-      (
-        this.selectedImageIndex - 1 + count
-      ) % count;
-
+    this.selectedImageIndex = (this.selectedImageIndex - 1 + count) % count;
   }
 
   // ============================================================
@@ -323,7 +269,6 @@ export class ProjectDetail implements OnInit, OnDestroy {
   // ============================================================
 
   nextImage(event?: Event): void {
-
     event?.stopPropagation();
 
     const count = this.totalImages;
@@ -332,11 +277,7 @@ export class ProjectDetail implements OnInit, OnDestroy {
       return;
     }
 
-    this.selectedImageIndex =
-      (
-        this.selectedImageIndex + 1
-      ) % count;
-
+    this.selectedImageIndex = (this.selectedImageIndex + 1) % count;
   }
 
   // ============================================================
@@ -344,9 +285,7 @@ export class ProjectDetail implements OnInit, OnDestroy {
   // ============================================================
 
   stopPropagation(event: Event): void {
-
     event.stopPropagation();
-
   }
 
   // ============================================================
@@ -355,14 +294,12 @@ export class ProjectDetail implements OnInit, OnDestroy {
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboard(event: KeyboardEvent): void {
-
     if (!this.lightboxOpen) {
       return;
     }
 
     // Cerrar con ESC.
     if (event.key === 'Escape') {
-
       event.preventDefault();
 
       this.closeLightbox();
@@ -372,7 +309,6 @@ export class ProjectDetail implements OnInit, OnDestroy {
 
     // Imagen anterior.
     if (event.key === 'ArrowLeft') {
-
       event.preventDefault();
 
       this.previousImage();
@@ -382,7 +318,6 @@ export class ProjectDetail implements OnInit, OnDestroy {
 
     // Imagen siguiente.
     if (event.key === 'ArrowRight') {
-
       event.preventDefault();
 
       this.nextImage();
@@ -392,52 +327,28 @@ export class ProjectDetail implements OnInit, OnDestroy {
 
     // Mantener el foco dentro del lightbox.
     if (event.key === 'Tab') {
+      const modal = document.querySelector<HTMLElement>('.project-lightbox');
 
-      const modal =
-        document.querySelector<HTMLElement>(
-          '.project-lightbox'
-        );
+      const focusables = modal?.querySelectorAll<HTMLElement>('button:not([disabled]), a[href]');
 
-      const focusables =
-        modal?.querySelectorAll<HTMLElement>(
-          'button:not([disabled]), a[href]'
-        );
-
-      if (
-        !modal ||
-        !focusables ||
-        focusables.length === 0
-      ) {
+      if (!modal || !focusables || focusables.length === 0) {
         return;
       }
 
       const first = focusables[0];
 
-      const last =
-        focusables[focusables.length - 1];
+      const last = focusables[focusables.length - 1];
 
-      if (
-        event.shiftKey &&
-        document.activeElement === first
-      ) {
-
+      if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
 
         last.focus();
-
-      } else if (
-        !event.shiftKey &&
-        document.activeElement === last
-      ) {
-
+      } else if (!event.shiftKey && document.activeElement === last) {
         event.preventDefault();
 
         first.focus();
-
       }
-
     }
-
   }
 
   // ============================================================
@@ -445,15 +356,21 @@ export class ProjectDetail implements OnInit, OnDestroy {
   // ============================================================
 
   imageError(event: Event): void {
-
     const img = event.target as HTMLImageElement;
+
+    const fallback = '/assets/images/projects/project-placeholder.svg';
+    if (img.src.endsWith(fallback)) return;
 
     // Evitar bucles si también falla el placeholder.
     img.onerror = null;
+    img.removeAttribute('srcset');
+    const original = img.dataset['originalSrc'];
+    if (original && img.getAttribute('src') !== original) {
+      img.src = original;
+      return;
+    }
 
-    img.src =
-      '/assets/images/projects/project-placeholder.png';
-
+    img.alt = 'Ilustración genérica de respaldo; no se pudo cargar la captura.';
+    img.src = fallback;
   }
-
 }

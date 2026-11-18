@@ -1,80 +1,35 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-
-interface FooterLink {
-  label: string;
-  route: string;
-}
-
-interface FooterSocial {
-  label: string;
-  icon: string;
-  url: string;
-}
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { PROFESSIONAL_CONTACT } from '../../data/professional-contact';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './footer.html',
-  styleUrl: './footer.css'
+  styleUrl: './footer.css',
 })
 export class Footer {
   readonly currentYear = new Date().getFullYear();
-
-  readonly navigationLinks: FooterLink[] = [
-    {
-      label: 'Inicio',
-      route: '/'
-    },
-    {
-      label: 'Sobre mí',
-      route: '/sobre-mi'
-    },
-    {
-      label: 'Experiencia',
-      route: '/experiencia'
-    },
-    {
-      label: 'Proyectos',
-      route: '/proyectos'
-    },
-    {
-      label: 'Habilidades',
-      route: '/habilidades'
-    },
-    {
-      label: 'Formación',
-      route: '/formacion'
-    },
-    {
-      label: 'Contacto',
-      route: '/contacto'
-    }
+  readonly contact = PROFESSIONAL_CONTACT;
+  readonly navigationLinks = [
+    { label: 'Inicio', route: '/' },
+    { label: 'Proyectos', route: '/proyectos' },
+    { label: 'Experiencia', route: '/experiencia' },
+    { label: 'Sobre mí', route: '/sobre-mi' },
+    { label: 'Formación', route: '/formacion' },
+    { label: 'Conocimientos', route: '/habilidades' },
+    { label: 'Servicios', route: '/servicios' },
+    { label: 'Contacto', route: '/contacto' },
   ];
-
-  readonly socialLinks: FooterSocial[] = [
-    {
-      label: 'LinkedIn',
-      icon: 'in',
-      url: 'https://www.linkedin.com/in/juan-pablo-rojas-contreras-15ab09345/'
-    },
-    {
-      label: 'GitHub',
-      icon: 'GH',
-      url: 'https://github.com/JPablorc09'
-    },
-    {
-      label: 'Correo',
-      icon: '@',
-      url: 'mailto:juanparojasc1999@gmail.com'
-    }
+  readonly socialLinks = [
+    { label: 'LinkedIn', url: this.contact.linkedin },
+    { label: 'GitHub', url: this.contact.github },
   ];
 
   scrollToTop(): void {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reducedMotion ? 'instant' : 'smooth' });
+    document.querySelector<HTMLAnchorElement>('.navbar__brand')?.focus({ preventScroll: true });
   }
 }

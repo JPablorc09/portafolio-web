@@ -1,3 +1,5 @@
-.main-content {
-  min-height: 100vh;
-}
+:host { display: flex; flex-direction: column; min-height: 100vh; }
+.main-content { flex: 1; min-width: 0; }
+.main-content:focus { outline: none; }
+.skip-link { position: fixed; inset-block-start: 12px; inset-inline-start: 16px; z-index: 1000; padding: 12px 18px; border: 1px solid var(--control-border); border-radius: 8px; background: var(--surface); color: var(--text); text-decoration: none; transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); outline: 3px solid var(--focus); outline-offset: 3px; }

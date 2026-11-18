@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist/portafolio-web/browser"
+
+# @netlify/angular-runtime detects the exported netlifyAppEngineHandler.
+# No SPA catch-all rewrite: unknown routes must retain the SSR 404 response.
+
+[[redirects]]
+  from = "/proyectos/ventas"
+  to = "/proyectos/vendetico"
+  status = 301
+  force = true

@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-26T22:32:27.523Z",
+  "checks": [
+    {
+      "route": "/sobre-mi",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/sobre-mi",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/formacion",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/experiencia",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 320,
+      "scrollWidth": 320,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 390,
+      "scrollWidth": 375,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 768,
+      "scrollWidth": 753,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 1024,
+      "scrollWidth": 1009,
+      "main": 1,
+      "h1": 1
+    },
+    {
+      "route": "/habilidades",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "main": 1,
+      "h1": 1
+    }
+  ],
+  "ccna1Completed": true,
+  "contractorCorrect": true,
+  "institutionalProjects": 4,
+  "nativeDetailsKeyboard": true,
+  "anchor": {
+    "hash": "#desarrollo-asistido-ia",
+    "scrollY": 2449,
+    "top": 2.9375
+  },
+  "cvStatus": 200,
+  "consoleErrors": []
+}

@@ -1,142 +1,48 @@
 <header class="navbar">
-
-  <nav class="navbar__container">
-
-    <!-- =====================================================
-         IDENTIDAD / LOGO
-         ===================================================== -->
-    <a
-      routerLink="/"
-      class="navbar__brand"
-      (click)="closeMenu()"
-    >
-
-      <span class="navbar__logo">
-        JP
-      </span>
-
+  <div class="navbar__container">
+    <a routerLink="/" class="navbar__brand" aria-label="Juan Pablo Rojas Contreras: ir al inicio" (click)="closeMenu(true)">
+      <span class="navbar__logo" aria-hidden="true">JP</span>
       <span class="navbar__identity">
-        <strong>
-          Juan Pablo Rojas
-        </strong>
-
-        <small>
-          Ingeniero de Sistemas
-        </small>
+        <strong>Juan Pablo Rojas</strong>
+        <small>Desarrollador Full Stack</small>
       </span>
-
     </a>
 
-
-    <!-- =====================================================
-         BOTÓN MENÚ MÓVIL
-         ===================================================== -->
     <button
+      #menuToggle
       type="button"
       class="navbar__toggle"
-      aria-label="Abrir menú"
+      aria-controls="site-navigation"
+      [attr.aria-label]="menuOpen() ? 'Cerrar menú principal' : 'Abrir menú principal'"
       [attr.aria-expanded]="menuOpen()"
       (click)="toggleMenu()"
     >
-
-      <span></span>
-      <span></span>
-      <span></span>
-
+      {{ menuOpen() ? 'Cerrar' : 'Menú' }}
+      <span class="navbar__menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
     </button>
 
+    <nav id="site-navigation" class="navbar__links" aria-label="Navegación principal" [class.navbar__links--open]="menuOpen()">
+      <a class="navbar__mobile-home" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page" (click)="closeMenu(true)">Inicio</a>
+      @for (link of primaryLinks; track link.path) {
+        <a [routerLink]="link.path" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu(true)">{{ link.label }}</a>
+      }
 
-    <!-- =====================================================
-         NAVEGACIÓN
-         ===================================================== -->
-    <div
-      class="navbar__links"
-      [class.navbar__links--open]="menuOpen()"
-    >
+      <div class="navbar__profile" routerLinkActive="navbar__profile--active">
+        <button #profileToggle type="button" class="navbar__profile-toggle" aria-controls="profile-navigation" [attr.aria-expanded]="profileOpen()" (click)="toggleProfile()">
+          Perfil <span aria-hidden="true">▾</span>
+        </button>
+        <span class="navbar__profile-label">Perfil</span>
+        <div id="profile-navigation" class="navbar__profile-links" [class.navbar__profile-links--open]="profileOpen()">
+          @for (link of profileLinks; track link.path) {
+            <a [routerLink]="link.path" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu(true)">{{ link.label }}</a>
+          }
+        </div>
+      </div>
 
-      <!-- INICIO -->
-      <a
-        routerLink="/"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        (click)="closeMenu()"
-      >
-        Inicio
-      </a>
-
-
-      <!-- SOBRE MÍ -->
-      <a
-        routerLink="/sobre-mi"
-        routerLinkActive="active"
-        (click)="closeMenu()"
-      >
-        Sobre mí
-      </a>
-
-
-      <!-- FORMACIÓN -->
-      <a
-        routerLink="/formacion"
-        routerLinkActive="active"
-        (click)="closeMenu()"
-      >
-        Formación
-      </a>
-
-
-      <!-- EXPERIENCIA -->
-      <a
-        routerLink="/experiencia"
-        routerLinkActive="active"
-        (click)="closeMenu()"
-      >
-        Experiencia
-      </a>
-
-
-      <!-- PROYECTOS -->
-      <a
-        routerLink="/proyectos"
-        routerLinkActive="active"
-        (click)="closeMenu()"
-      >
-        Proyectos
-      </a>
-
-
-      <!-- SERVICIOS -->
-      <a
-        routerLink="/servicios"
-        routerLinkActive="active"
-        (click)="closeMenu()"
-      >
-        Servicios
-      </a>
-
-
-      <!-- HABILIDADES -->
-      <a
-        routerLink="/habilidades"
-        routerLinkActive="active"
-        (click)="closeMenu()"
-      >
-        Habilidades
-      </a>
-
-
-      <!-- CONTACTO -->
-      <a
-        routerLink="/contacto"
-        routerLinkActive="active"
-        class="navbar__contact"
-        (click)="closeMenu()"
-      >
-        Contacto
-      </a>
-
-    </div>
-
-  </nav>
-
+      @for (link of businessLinks; track link.path) {
+        <a [routerLink]="link.path" routerLinkActive="active" ariaCurrentWhenActive="page" (click)="closeMenu(true)">{{ link.label }}</a>
+      }
+      <a class="navbar__cv" [href]="cvUrl" download="CV_Juan_Pablo_Rojas_Contreras.pdf" (click)="closeMenu(true)">Descargar CV <span aria-hidden="true">↓</span></a>
+    </nav>
+  </div>
 </header>
